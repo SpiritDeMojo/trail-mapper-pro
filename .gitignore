@@ -3,3 +3,6 @@ dist/
 .DS_Store
 *.log
 audit.mjs
+.env
+.env.local
+.env.*.local

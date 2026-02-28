@@ -2,30 +2,28 @@
    Route Service — OpenRouteService foot-hiking API
    ═══════════════════════════════════════════════════════ */
 
-// In production, requests go through /api/ors serverless proxy (keys stay server-side)
-// In local dev, falls back to direct API call if a key is set in settings
 const PROXY_ENDPOINT = '/api/ors';
 const DIRECT_ENDPOINT = 'https://api.openrouteservice.org/v2/directions/foot-hiking/geojson';
 
 /**
- * Get stored ORS API key (only used for local dev fallback)
+ * Get ORS API key — checks localStorage first, then Vite env var for local dev
  */
 export function getORSKey() {
-    return localStorage.getItem('ors_api_key') || '';
+    return localStorage.getItem('ors_api_key') || (typeof import.meta !== 'undefined' && import.meta.env?.VITE_ORS_KEY) || '';
 }
 
 /**
- * Set ORS API key
+ * Set ORS API key (localStorage override)
  */
 export function setORSKey(key) {
     localStorage.setItem('ors_api_key', key);
 }
 
 /**
- * Make an ORS API request — uses proxy in production, direct key in local dev
+ * Make an ORS API request — tries proxy (production), falls back to direct (local dev)
  */
 async function callORS(requestBody) {
-    // Try serverless proxy first (production)
+    // Try serverless proxy first
     try {
         const proxyRes = await fetch(PROXY_ENDPOINT, {
             method: 'POST',
@@ -37,33 +35,22 @@ async function callORS(requestBody) {
             return await proxyRes.json();
         }
 
-        // If proxy returns 500 (no key configured) and we have a local key, fall back
-        const localKey = getORSKey();
-        if (proxyRes.status === 500 && localKey) {
-            return await callORSDirect(requestBody, localKey);
-        }
-
-        const errText = await proxyRes.text();
-        throw new Error(`ORS API error (${proxyRes.status}): ${errText}`);
+        // Proxy failed — fall through to direct call
     } catch (err) {
-        // Network error on proxy (local dev without Vercel) — try direct
-        const localKey = getORSKey();
-        if (localKey) {
-            return await callORSDirect(requestBody, localKey);
-        }
-        throw err;
+        // Network error (proxy doesn't exist in local dev) — fall through
     }
-}
 
-/**
- * Direct ORS API call (local dev fallback only)
- */
-async function callORSDirect(requestBody, apiKey) {
+    // Direct API call with local key
+    const localKey = getORSKey();
+    if (!localKey) {
+        throw new Error('No ORS API key available. Add one in Settings or set VITE_ORS_KEY in .env.local');
+    }
+
     const response = await fetch(DIRECT_ENDPOINT, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
-            'Authorization': apiKey
+            'Authorization': localKey
         },
         body: JSON.stringify(requestBody)
     });
@@ -81,7 +68,6 @@ async function callORSDirect(requestBody, apiKey) {
  * Returns { waypoints: [[lat,lon],...], distance: meters, duration: seconds }
  */
 export async function fetchHikingRoute(startLat, startLon, endLat, endLon, viaPoints = []) {
-    // Build coordinates array: [start, ...via, end] in [lon, lat] format (ORS convention)
     const coordinates = [
         [startLon, startLat],
         ...viaPoints.map(p => [p[1], p[0]]),
@@ -99,7 +85,7 @@ export async function fetchHikingRoute(startLat, startLon, endLat, endLon, viaPo
     const summary = feature.properties.summary;
 
     return {
-        waypoints: coords.map(c => [c[1], c[0]]), // Convert [lon,lat] → [lat,lon]
+        waypoints: coords.map(c => [c[1], c[0]]),
         distance: summary.distance,
         duration: summary.duration,
         instructions: feature.properties.segments?.[0]?.steps || []
@@ -108,11 +94,9 @@ export async function fetchHikingRoute(startLat, startLon, endLat, endLon, viaPo
 
 /**
  * Fetch a circular hiking route
- * Routes: start → destination (summit/feature) → start
+ * Routes: car park → summit/feature → car park via real hiking trails
  */
 export async function fetchCircularRoute(startLat, startLon, destLat, destLon) {
-    // For a circular route, go: start → destination → start
-    // ORS will find different trail paths for each leg
     const coordinates = [
         [startLon, startLat],
         [destLon, destLat],

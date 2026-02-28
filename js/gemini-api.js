@@ -2,30 +2,28 @@
    Gemini API — Google Generative AI client for walk generation
    ═══════════════════════════════════════════════════════ */
 
-// In production, requests go through /api/gemini serverless proxy (keys stay server-side)
-// In local dev, falls back to direct API call if a key is set in settings
 const PROXY_ENDPOINT = '/api/gemini';
 const DIRECT_ENDPOINT = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent';
 
 /**
- * Get stored Gemini API key (only used for local dev fallback)
+ * Get Gemini API key — checks localStorage first, then Vite env var for local dev
  */
 export function getGeminiKey() {
-    return localStorage.getItem('gemini_api_key') || '';
+    return localStorage.getItem('gemini_api_key') || (typeof import.meta !== 'undefined' && import.meta.env?.VITE_GEMINI_KEY) || '';
 }
 
 /**
- * Set Gemini API key
+ * Set Gemini API key (localStorage override)
  */
 export function setGeminiKey(key) {
     localStorage.setItem('gemini_api_key', key);
 }
 
 /**
- * Make a Gemini API request — uses proxy in production, direct key in local dev
+ * Make a Gemini API request — tries proxy (production), falls back to direct (local dev)
  */
 async function callGemini(requestBody) {
-    // Try serverless proxy first (production)
+    // Try serverless proxy first
     try {
         const proxyRes = await fetch(PROXY_ENDPOINT, {
             method: 'POST',
@@ -36,30 +34,18 @@ async function callGemini(requestBody) {
         if (proxyRes.ok) {
             return await proxyRes.json();
         }
-
-        // If proxy returns 500 (no key configured) and we have a local key, fall back
-        const localKey = getGeminiKey();
-        if (proxyRes.status === 500 && localKey) {
-            return await callGeminiDirect(requestBody, localKey);
-        }
-
-        const errText = await proxyRes.text();
-        throw new Error(`Gemini API error (${proxyRes.status}): ${errText}`);
+        // Proxy failed — fall through to direct call
     } catch (err) {
-        // Network error on proxy (local dev without Vercel) — try direct
-        const localKey = getGeminiKey();
-        if (localKey) {
-            return await callGeminiDirect(requestBody, localKey);
-        }
-        throw err;
+        // Network error (proxy doesn't exist in local dev) — fall through
     }
-}
 
-/**
- * Direct Gemini API call (local dev fallback only)
- */
-async function callGeminiDirect(requestBody, apiKey) {
-    const response = await fetch(`${DIRECT_ENDPOINT}?key=${apiKey}`, {
+    // Direct API call with local key
+    const localKey = getGeminiKey();
+    if (!localKey) {
+        throw new Error('No Gemini API key available. Add one in Settings or set VITE_GEMINI_KEY in .env.local');
+    }
+
+    const response = await fetch(`${DIRECT_ENDPOINT}?key=${localKey}`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(requestBody)
@@ -90,7 +76,7 @@ function extractTextFromResponse(data) {
 }
 
 /**
- * Generate a walk from a natural language description using Gemini
+ * Generate a walk from a natural language description using Gemini + Google Search
  */
 export async function generateWalkFromPrompt(userPrompt) {
     const systemPrompt = `You are an expert Lake District walking guide. Given a user's description of their ideal walk, you generate a detailed walk specification in JSON format.
@@ -122,11 +108,11 @@ You must return ONLY valid JSON (no markdown, no explanation) with this exact st
 }
 
 IMPORTANT RULES:
-- lat/lon is the CAR PARK starting point (real coordinates in the Lake District, ~54.2-54.6 lat, -2.7 to -3.3 lon)
-- destinationLat/destinationLon is the MAIN FEATURE of the walk (the summit, waterfall, tarn, viewpoint etc.) — this must be a DIFFERENT point from the car park
-- For circular walks: endLat/endLon = lat/lon (returns to car park). destinationLat/destinationLon is the summit/feature
-- For linear walks: endLat/endLon is the finishing point, destinationLat/destinationLon is the main feature
-- Use ACTUAL place names, car parks, paths, and landmarks that REALLY EXIST
+- lat/lon is the CAR PARK starting point (real Lake District coordinates ~54.2-54.6 lat, -2.7 to -3.3 lon)
+- destinationLat/destinationLon is the MAIN FEATURE (summit, waterfall, tarn, viewpoint) — must be DIFFERENT from car park
+- For circular walks: endLat/endLon = lat/lon (returns to car park)
+- For linear walks: endLat/endLon is the finishing point
+- Use ACTUAL place names, car parks, paths, landmarks that REALLY EXIST
 - Directions should be 5-8 detailed steps a walker could actually follow
 - parkingDetail should include real postcodes where possible`;
 
