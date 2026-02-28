@@ -9,7 +9,7 @@ let filteredWalks = [];
 let detailMap = null;
 let activeFilters = { difficulty: 'all', type: 'all' };
 
-const WALKS_VERSION = '1.1'; // Bump this to invalidate localStorage cache
+const WALKS_VERSION = '2.0'; // Bump to invalidate localStorage and load fresh ORS routes
 
 /**
  * Get walk data (from localStorage if modified, otherwise from server)
