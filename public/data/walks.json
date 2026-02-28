@@ -1,8 +1,8 @@
 [
   {
     "name": "Orrest Head",
-    "distance": "1.9 km",
-    "time": "40 mins",
+    "distance": "2.4 km",
+    "time": "1 hour 5 mins",
     "difficulty": "Easy",
     "desc": "A short climb rewarded with Wainwright's first Lake District view — the panorama that started it all.",
     "start": "Windermere town centre",
@@ -215,21 +215,21 @@
         "landmark": "Return path"
       }
     ],
-    "parkingDetail": "Windermere Library Car Park, Broad Street, LA23 2AB (free after 6pm). Or Lake District Visitor Centre, Glebe Road.",
+    "parkingDetail": "Broad Street Car Park, Broad St, Windermere LA23 2AB (pay and display, free after 6pm). Or Windermere Station Car Park, Station Rd, Windermere LA23 1AH (pay and display).",
     "thePayoff": "A short climb rewarded with Wainwright's first Lake District view — the panorama that started it all.",
     "endLat": 54.38025,
     "endLon": -2.90395
   },
   {
     "name": "Tarn Hows",
-    "distance": "2.8 km",
-    "time": "1 hour",
+    "distance": "3.2 km",
+    "time": "1 hour 15 minutes",
     "difficulty": "Easy",
     "desc": "A picture-perfect lake loop through one of the most photographed spots in England — gentle, stunning, and unforgettable.",
     "start": "Tarn Hows Car Park",
     "lat": 54.3833,
     "lon": -3.0333,
-    "elevation": "210m",
+    "elevation": "100m",
     "terrain": "Gravel paths",
     "routeUrl": "",
     "walkType": "lakeside",
@@ -410,60 +410,44 @@
     "directions": [
       {
         "step": 1,
-        "instruction": "From the car park, follow the clear gravel path downhill towards the tarn. You'll see the water within 2 minutes.",
-        "landmark": "Car park exit"
+        "instruction": "From the Tarn Hows Car Park, follow the main path leading towards the tarn."
       },
       {
         "step": 2,
-        "instruction": "At the tarn, turn RIGHT to walk clockwise. The path is wide, flat, and accessible — perfect for all abilities.",
-        "landmark": "Tarn shore"
+        "instruction": "At the first junction near the tarn, turn left to begin the circular walk in a clockwise direction."
       },
       {
         "step": 3,
-        "instruction": "Follow the north shore with stunning views across the water to the Langdale Pikes. Several benches here for photos.",
-        "landmark": "North shore viewpoint"
+        "instruction": "Follow the well-maintained path as it gently undulates around the shore of Tarn Hows, enjoying views across the water and fells."
       },
       {
         "step": 4,
-        "instruction": "Round the northwest corner — this is the classic Tarn Hows view you see on postcards. The bench here is the best seat in the house.",
-        "landmark": "Northwest bench (postcard view)"
+        "instruction": "You will pass several benches and viewpoints. Continue following the main path, ignoring any smaller tracks leading away from the tarn."
       },
       {
         "step": 5,
-        "instruction": "Continue along the west shore through tall conifers. The path dips slightly and the tarn feels more secluded here.",
-        "landmark": "Conifer woods"
+        "instruction": "As you complete the circuit, the path will eventually lead you back towards the starting point near the car park."
       },
       {
         "step": 6,
-        "instruction": "Pass the southwest bay — on still mornings, the reflections here are extraordinary.",
-        "landmark": "Southwest reflections"
-      },
-      {
-        "step": 7,
-        "instruction": "Cross the dam at the south end and continue along the southeast shore. A small wooden bridge crosses a stream.",
-        "landmark": "Dam and bridge"
-      },
-      {
-        "step": 8,
-        "instruction": "Follow the east shore back towards the car park. The path climbs gently back up to where you started.",
-        "landmark": "Return to car park"
+        "instruction": "Rejoin the initial path that leads directly back to the Tarn Hows Car Park."
       }
     ],
-    "parkingDetail": "National Trust Tarn Hows Car Park, LA22 0QF. £5 non-NT members (free for NT). Can be busy — arrive before 10am in summer.",
+    "parkingDetail": "National Trust Tarn Hows Car Park, LA21 8DP. Pay and display: £6.50 for up to 2 hours, £8 for over 2 hours (card payment only). Free for National Trust members. Can be very busy, especially at peak times – arrive early or late.",
     "thePayoff": "A picture-perfect lake loop through one of the most photographed spots in England — gentle, stunning, and unforgettable.",
     "endLat": 54.3833,
     "endLon": -3.0333
   },
   {
     "name": "Aira Force",
-    "distance": "2.6 km",
-    "time": "1.5 hours",
+    "distance": "2.1 km",
+    "time": "1 hour",
     "difficulty": "Moderate",
     "desc": "A magical gorge walk to a 20-metre waterfall plunging through a stone bridge — Wordsworth wrote about this place.",
     "start": "Aira Force Car Park",
     "lat": 54.5743,
     "lon": -2.92727,
-    "elevation": "190m",
+    "elevation": "75m",
     "terrain": "Stone steps and wooded gorge",
     "routeUrl": "",
     "walkType": "waterfall",
@@ -608,53 +592,43 @@
     "directions": [
       {
         "step": 1,
-        "instruction": "From the car park, go through the gate and follow the wide path alongside Aira Beck. The sound of water guides you.",
-        "landmark": "Car park gate"
+        "instruction": "From the car park, follow the well-marked path towards the waterfall. You'll typically head towards the lower bridge first.",
+        "landmark": "Aira Force Car Park"
       },
       {
         "step": 2,
-        "instruction": "After 5 minutes, the path enters a beautiful wooded gorge. It narrows and climbs stone steps — take care if wet.",
-        "landmark": "Gorge entrance"
+        "instruction": "Cross the lower bridge (often called Memorial Bridge) over Aira Beck.",
+        "landmark": "Memorial Bridge"
       },
       {
         "step": 3,
-        "instruction": "Reach the lower viewing platform. Aira Force crashes 20 metres through the rocks ahead — spectacular after rain.",
-        "landmark": "Lower waterfall view"
+        "instruction": "Follow the path upstream on the left bank of the beck, enjoying views of the lower falls.",
+        "landmark": "Lower Falls"
       },
       {
         "step": 4,
-        "instruction": "Climb to the iconic stone bridge ABOVE the waterfall. Look down into the spray — this is the view Wordsworth loved.",
-        "landmark": "Stone bridge above falls"
+        "instruction": "Continue ascending via stone steps and paths to reach the main Aira Force waterfall viewing points.",
+        "landmark": "Aira Force Waterfall"
       },
       {
         "step": 5,
-        "instruction": "Continue uphill to see High Force, the upper waterfall — smaller but beautiful.",
-        "landmark": "High Force (upper falls)"
+        "instruction": "Proceed further upstream and cross the upper bridge (High Force Bridge) which spans the beck above the main falls.",
+        "landmark": "High Force Bridge"
       },
       {
         "step": 6,
-        "instruction": "Cross the bridge and descend the opposite bank of the gorge. Different angles of the falls appear through the trees.",
-        "landmark": "Return bridge"
-      },
-      {
-        "step": 7,
-        "instruction": "Follow the path back downstream on this side. It's quieter and gives a new perspective on the gorge.",
-        "landmark": "Return path"
-      },
-      {
-        "step": 8,
-        "instruction": "Rejoin the main path and return to the car park.",
-        "landmark": "Back to start"
+        "instruction": "Descend back towards the car park on the opposite (right) bank of Aira Beck, completing the loop.",
+        "landmark": "Aira Beck"
       }
     ],
-    "parkingDetail": "National Trust Aira Force Car Park, A592, CA11 0JS. £7 non-NT members. Well-signed from A592.",
+    "parkingDetail": "National Trust Aira Force Car Park, A592, CA11 0JS. Parking is free for National Trust members. Non-members pay £7 for up to 2 hours, £10 for up to 4 hours, and £12 for all day. Well-signed from A592.",
     "thePayoff": "A magical gorge walk to a 20-metre waterfall plunging through a stone bridge — Wordsworth wrote about this place.",
     "endLat": 54.5743,
     "endLon": -2.92727
   },
   {
     "name": "Catbells",
-    "distance": "3.1 km",
+    "distance": "5.6 km",
     "time": "2 hours",
     "difficulty": "Moderate",
     "desc": "The most popular family summit in the Lakes — a thrilling ridge walk with Derwentwater sparkling below.",
@@ -856,21 +830,21 @@
         "landmark": "Descent"
       }
     ],
-    "parkingDetail": "Gutherscale roadside parking, Portinscale to Grange road (limited spaces). Or Hawes End NT landing — arrive by Keswick Launch boat (adds to the adventure!).",
+    "parkingDetail": "Hawes End National Trust car park (CA12 5UE, limited spaces, fills quickly). Alternative roadside parking near Gutherscale (very limited). Or arrive by Keswick Launch boat at Hawes End landing.",
     "thePayoff": "The most popular family summit in the Lakes — a thrilling ridge walk with Derwentwater sparkling below.",
     "endLat": 54.581,
     "endLon": -3.1614
   },
   {
     "name": "Helvellyn via Striding Edge",
-    "distance": "11.0 km",
+    "distance": "12.5 km",
     "time": "6 hours",
     "difficulty": "Challenging",
     "desc": "England's most famous mountain ridge — a genuine scramble with 600m drops either side, ending at the third-highest peak in the Lakes.",
     "start": "Glenridding main car park",
     "lat": 54.5436,
     "lon": -2.9506,
-    "elevation": "950m",
+    "elevation": "800m",
     "terrain": "High mountain ridge and scramble",
     "routeUrl": "",
     "walkType": "ridge",
@@ -1285,7 +1259,7 @@
   {
     "name": "Gummer's How",
     "distance": "2.5 km",
-    "time": "1 hour",
+    "time": "1 hour 25 minutes",
     "difficulty": "Easy",
     "desc": "The best 'effort-to-view' ratio in the Lake District, offering a bird's-eye view of the entire length of Windermere.",
     "start": "Gummer's How Car Park",
@@ -1460,38 +1434,33 @@
     "directions": [
       {
         "step": 1,
-        "instruction": "Carefully cross the road from the car park and go through the wooden kissing gate.",
-        "landmark": "Kissing Gate"
+        "instruction": "From Gummer's How Car Park, take the clear path leading uphill, signposted for Gummer's How.",
+        "landmark": "Gummer's How Car Park"
       },
       {
         "step": 2,
-        "instruction": "Follow the wide, well-maintained path through the woods and onto the open hillside.",
-        "landmark": "Woodland Path"
+        "instruction": "Follow the well-maintained path as it ascends through the woodland.",
+        "landmark": "Woodland path"
       },
       {
         "step": 3,
-        "instruction": "When the path forks, take the stone steps for a direct climb or the grassy path to the right for a gentler ascent.",
-        "landmark": "Stone Steps"
+        "instruction": "Continue on the path, navigating rocky sections and stone steps.",
+        "landmark": "Rocky path and stone steps"
       },
       {
         "step": 4,
-        "instruction": "Reach the summit ridge and walk to the stone cairn to see the length of Windermere laid out below.",
-        "landmark": "Gummer's How Summit"
+        "instruction": "Emerge from the trees onto more open ground, following the clear path towards the summit.",
+        "landmark": "Open ground"
       },
       {
         "step": 5,
-        "instruction": "Continue past the summit to the northern edge for views towards the high fells.",
-        "landmark": "Viewpoint"
+        "instruction": "Reach the trig point at the summit of Gummer's How.",
+        "landmark": "Gummer's How Summit (Trig Point)"
       },
       {
         "step": 6,
-        "instruction": "To return, follow the path that skirts the eastern side of the hill to avoid the steep steps.",
-        "landmark": "Grassy Path"
-      },
-      {
-        "step": 7,
-        "instruction": "Rejoin the main track and head back through the gate to the car park.",
-        "landmark": "Kissing Gate"
+        "instruction": "Return by the same path back to the car park.",
+        "landmark": "Car Park"
       }
     ],
     "parkingDetail": "Gummer's How Car Park, FELL FOOT BROW, LA12 8NP. A large, free forestry car park on the hill above Fell Foot Park.",
@@ -1501,14 +1470,14 @@
   },
   {
     "name": "School Knott",
-    "distance": "4.0 km",
-    "time": "1.5 hours",
+    "distance": "6.0 km",
+    "time": "2 hours 15 minutes",
     "difficulty": "Easy",
     "desc": "A peaceful escape from the village crowds with a perfect reflection of the fells in the hidden School Knott Tarn.",
     "start": "Windermere Railway Station",
     "lat": 54.3802,
     "lon": -2.9035,
-    "elevation": "160m",
+    "elevation": "190m",
     "terrain": "Grassy slopes and fields",
     "routeUrl": "",
     "walkType": "summit",
@@ -1894,38 +1863,38 @@
     "directions": [
       {
         "step": 1,
-        "instruction": "Walk from the car park towards Bowness bay and then head into the town center.",
-        "landmark": "Bowness Promenade"
+        "instruction": "Exit Braithwaite Fold Car Park, turn right onto the A592 (Lake Road) and walk towards Bowness town centre.",
+        "landmark": "A592 (Lake Road)"
       },
       {
         "step": 2,
-        "instruction": "Between the chip shop and the clothing store, turn up the steep Brantfell Road.",
-        "landmark": "Brantfell Road"
+        "instruction": "At the mini-roundabout, turn left onto Longland Road, heading uphill.",
+        "landmark": "Longland Road"
       },
       {
         "step": 3,
-        "instruction": "When the road ends, go through the gate into Post Office Wood and follow the track uphill.",
-        "landmark": "Post Office Wood"
+        "instruction": "Continue up Longland Road, passing the Hydro Hotel on your left. The road narrows and becomes a track.",
+        "landmark": "Hydro Hotel"
       },
       {
         "step": 4,
-        "instruction": "At the junction, follow the sign for the Dales Way/Brant Fell and climb the grassy path.",
-        "landmark": "Dales Way"
+        "instruction": "Look for a public footpath sign on your right, leading up a clear track. Take this path.",
+        "landmark": "Public footpath sign"
       },
       {
         "step": 5,
-        "instruction": "Scramble up the short rocky outcrop to reach the summit and the best views of the lake.",
-        "landmark": "Brant Fell Summit"
+        "instruction": "Follow the clear path uphill, passing through gates, until you reach the summit of Brant Fell.",
+        "landmark": "Brant Fell summit"
       },
       {
         "step": 6,
-        "instruction": "Descend towards the viewpoint seat and follow the path left through the fields of Matson Ground.",
-        "landmark": "Viewpoint Seat"
+        "instruction": "From the summit, continue on the path heading generally south-east, descending back towards Bowness.",
+        "landmark": "Descending path"
       },
       {
         "step": 7,
-        "instruction": "Follow the lane back down into Bowness to return to the car park.",
-        "landmark": "Matson Ground"
+        "instruction": "The path will eventually join Helm Road. Follow this road downhill back towards Bowness town centre and the car park.",
+        "landmark": "Helm Road"
       }
     ],
     "parkingDetail": "Braithwaite Fold Car Park, BOWNESS-ON-WINDERMERE, LA23 3HB. Large pay and display car park near the lake shore.",
@@ -2374,15 +2343,15 @@
   },
   {
     "name": "Helm Crag",
-    "distance": "8.0 km",
-    "time": "3.5 hours",
+    "distance": "6.5 km",
+    "time": "2.5 hours",
     "difficulty": "Challenging",
     "desc": "Getting up close to the iconic 'Lion and the Lamb' rock formation and peering down into the hidden Easedale valley.",
     "start": "Broadgate Meadow Car Park, Grasmere",
     "lat": 54.4612,
     "lon": -3.0274,
     "elevation": "405m",
-    "terrain": "Woodland, zig-zag path, and ridge",
+    "terrain": "Fields, clear fell path, steep sections, and a rocky ridge",
     "routeUrl": "",
     "walkType": "summit",
     "waypoints": [
@@ -2550,43 +2519,43 @@
     "directions": [
       {
         "step": 1,
-        "instruction": "Walk from the car park towards the center of Grasmere and turn onto Easedale Road.",
-        "landmark": "Easedale Road"
+        "instruction": "From Broadgate Meadow Car Park, exit and turn right, walking south through Grasmere village.",
+        "landmark": "Grasmere village"
       },
       {
         "step": 2,
-        "instruction": "Follow the road past the houses until you see a sign for Helm Crag via Lancrigg.",
-        "landmark": "Lancrigg Lane"
+        "instruction": "Continue past the village shops and cafes until you reach the main junction near St Oswald's Church.",
+        "landmark": "St Oswald's Church"
       },
       {
         "step": 3,
-        "instruction": "Follow the path through the beautiful Lancrigg woods and out onto the fellside.",
-        "landmark": "Lancrigg Woods"
+        "instruction": "Turn right onto Easedale Road, passing the Grasmere Sports Field on your left.",
+        "landmark": "Easedale Road, Grasmere Sports Field"
       },
       {
         "step": 4,
-        "instruction": "Climb the well-constructed zig-zag path that leads directly to the summit ridge.",
-        "landmark": "Zig-zag Path"
+        "instruction": "After a short distance, look for a signed public footpath on your left, clearly marked for Helm Crag.",
+        "landmark": "Public footpath sign"
       },
       {
         "step": 5,
-        "instruction": "Explore the summit ridge to find the Lion and the Lamb rocks on the southern end.",
-        "landmark": "The Lion and the Lamb"
+        "instruction": "Take this path, which immediately begins to ascend the fellside, passing through gates and over stiles.",
+        "landmark": "Fellside path"
       },
       {
         "step": 6,
-        "instruction": "Walk to the highest point to see the formidable Howitzer rock.",
-        "landmark": "The Howitzer"
+        "instruction": "Follow the well-defined path as it climbs steadily, offering views back over Grasmere.",
+        "landmark": "Views over Grasmere"
       },
       {
         "step": 7,
-        "instruction": "Continue along the ridge and then drop down into Far Easedale to follow the valley path back.",
-        "landmark": "Far Easedale"
+        "instruction": "The path leads directly to the rocky ridge and the distinctive summit of Helm Crag (often referred to as the 'Lion and the Lamb').",
+        "landmark": "Helm Crag summit, Lion and Lamb"
       },
       {
         "step": 8,
-        "instruction": "The valley path brings you back to Easedale Road and into Grasmere.",
-        "landmark": "Easedale Road"
+        "instruction": "After enjoying the views, descend by retracing your steps carefully back to Grasmere village and the car park.",
+        "landmark": "Grasmere village, Broadgate Meadow Car Park"
       }
     ],
     "parkingDetail": "Broadgate Meadow Car Park, GRASMERE, LA22 9TA. Located on the northern edge of the village near the play area.",
@@ -2817,7 +2786,7 @@
     "time": "2.5 hours",
     "difficulty": "Moderate",
     "desc": "A front-row seat to the beauty of Grasmere Lake, often cited as the loveliest view in the Lake District.",
-    "start": "Red Bank Road Car Park, Grasmere",
+    "start": "Grasmere Car Park, Grasmere",
     "lat": 54.4576,
     "lon": -3.0257,
     "elevation": "395m",
@@ -2989,56 +2958,56 @@
     "directions": [
       {
         "step": 1,
-        "instruction": "Walk from the car park through the village towards the National Trust property, Allan Bank.",
-        "landmark": "Allan Bank"
+        "instruction": "From Grasmere Car Park, walk through the village past St Oswald's Church and Sarah Nelson's Gingerbread Shop.",
+        "landmark": "St Oswald's Church, Gingerbread Shop"
       },
       {
         "step": 2,
-        "instruction": "Follow the private road past the house and continue onto the signposted fell path.",
-        "landmark": "Allan Bank Lane"
+        "instruction": "Cross the bridge over the River Rothay and take the lane signposted 'Allan Bank'.",
+        "landmark": "River Rothay bridge, Allan Bank sign"
       },
       {
         "step": 3,
-        "instruction": "Climb through the woods and onto the open hillside, following the main path uphill.",
-        "landmark": "Fell Path"
+        "instruction": "Follow the lane uphill, passing Allan Bank (National Trust property) on your left.",
+        "landmark": "Allan Bank (National Trust)"
       },
       {
         "step": 4,
-        "instruction": "The path levels out before a final rocky climb to the cairn at the summit of Silver How.",
-        "landmark": "Silver How Summit"
+        "instruction": "Continue on the main track as it climbs steadily, eventually emerging onto open fellside.",
+        "landmark": "Open fellside"
       },
       {
         "step": 5,
-        "instruction": "From the summit, look down directly at the island in Grasmere Lake.",
-        "landmark": "Lake View"
+        "instruction": "Follow the clear path to the summit of Silver How, enjoying the panoramic views.",
+        "landmark": "Silver How summit"
       },
       {
         "step": 6,
-        "instruction": "Descend south towards Dow Bank, then take the sharp left path to return along the base of the fell.",
-        "landmark": "Dow Bank"
+        "instruction": "From the summit, descend south-eastwards on a clear path, heading towards a wall and gate. Continue downhill, eventually joining a track that leads towards Red Bank.",
+        "landmark": "Wall and gate, track to Red Bank"
       },
       {
         "step": 7,
-        "instruction": "Follow the level path back to Allan Bank and retrace your steps to the village.",
-        "landmark": "Allan Bank"
+        "instruction": "Turn left onto Red Bank Road and follow it back down into Grasmere village, returning to the car park.",
+        "landmark": "Red Bank Road"
       }
     ],
-    "parkingDetail": "Red Bank Road Car Park, GRASMERE, LA22 9SW. Pay and display car park near the church and the gingerbread shop.",
+    "parkingDetail": "Grasmere Car Park, GRASMERE, LA22 9TA. Pay and display car park near the church and the gingerbread shop.",
     "thePayoff": "A front-row seat to the beauty of Grasmere Lake, often cited as the loveliest view in the Lake District.",
     "endLat": 54.4576,
     "endLon": -3.0257
   },
   {
     "name": "Claife Heights",
-    "distance": "8.0 km",
-    "time": "3 hours",
+    "distance": "6.8 km",
+    "time": "2 hours 15 minutes",
     "difficulty": "Moderate",
     "desc": "Two magical tarns — Moss Eccles and Wise Een — sit in open moorland with Coniston Old Man on the horizon, a landscape Beatrix Potter loved and helped preserve for the nation.",
     "start": "Far Sawrey village",
     "lat": 54.3541,
     "lon": -2.9367,
-    "elevation": "270m",
-    "terrain": "Open moorland and conifer plantation",
+    "elevation": "202m",
+    "terrain": "Woodland paths (conifer and deciduous), open heathland sections, and some lakeside paths.",
     "routeUrl": "",
     "walkType": "woodland",
     "waypoints": [
@@ -3240,7 +3209,7 @@
         "landmark": "Far Sawrey / car park"
       }
     ],
-    "parkingDetail": "Harrowslack National Trust Car Park, LA22 0LR. Pay & Display (NT members free); 24 spaces. Alternative: Ash Landing car park nearby. Single-track lane from Far Sawrey village. Or park at Braithwaite Hall, Far Sawrey (honesty box donation, ~£2). For the full Heights loop, Far Sawrey village is the best starting point.",
+    "parkingDetail": "Harrowslack National Trust Car Park, LA22 0LR. Pay & Display (NT members free); 24 spaces. Alternative: Ash Landing car park nearby, LA22 0LR. Single-track lane from Far Sawrey village. Or park at Braithwaite Hall, Far Sawrey, LA22 0LL (honesty box donation, ~£2). For the full Heights loop, Far Sawrey village is the best starting point.",
     "thePayoff": "Two magical tarns — Moss Eccles and Wise Een — sit in open moorland with Coniston Old Man on the horizon, a landscape Beatrix Potter loved and helped preserve for the nation.",
     "endLat": 54.3541,
     "endLon": -2.9367
@@ -3423,38 +3392,38 @@
     "directions": [
       {
         "step": 1,
-        "instruction": "From Rydal Road car park, turn right and at the mini-roundabout bear left into Kirkstone Road. In just 50m turn left into Nook Lane and bear left again. Follow the lane north past Nook End Farm, go through the farmyard and the gate beyond.",
-        "landmark": "Nook Lane / Nook End Farm"
+        "instruction": "From Rydal Road Car Park, head north briefly on Rydal Road (A591), then turn left onto the minor road signposted for Rydal. Follow this road past Rydal Mount.",
+        "landmark": "Rydal Mount"
       },
       {
         "step": 2,
-        "instruction": "On the track, bear left then left again to descend to Low Sweden Bridge. Cross the bridge and follow the track back right and up the hillside. Go through the next gateway and bear left — you'll now have a wall on your left that guides you up the ridge.",
-        "landmark": "Low Sweden Bridge"
+        "instruction": "Just past Rydal Mount, take the clear path climbing steeply on your right, heading up towards Nab Scar.",
+        "landmark": "Nab Scar"
       },
       {
         "step": 3,
-        "instruction": "Keep close to the wall as you climb steadily north. There is a short scramble at Low Brock Crags (the 'bad step') — an easier path avoids this to the east. Continue up past Low Pike (508m) to High Pike (656m) with the wall still on your left.",
-        "landmark": "Low Pike → High Pike"
+        "instruction": "From Nab Scar, follow the distinct ridge path northwards, passing over Lord Crag, to reach the summit of Heron Pike.",
+        "landmark": "Heron Pike"
       },
       {
         "step": 4,
-        "instruction": "From High Pike the wall falls away. Follow the clear ridge path north to Dove Crag (792m), then bear slightly left to reach rocky Hart Crag (822m). Drop down to Link Hause then climb the east ridge of Fairfield, finally bearing right to the summit cairn.",
-        "landmark": "Dove Crag → Hart Crag → Fairfield Summit"
+        "instruction": "Maintain the ridge walk, descending slightly before ascending to Great Rigg. From Great Rigg, the path continues to the highest point of the walk, Fairfield.",
+        "landmark": "Fairfield"
       },
       {
         "step": 5,
-        "instruction": "From Fairfield's summit (873m) turn due south — use a compass here as the plateau is featureless in cloud. Pick up the cairned path to Great Rigg (766m). At Great Rigg's summit cairn, bear left to follow the ridge south to Heron Pike.",
-        "landmark": "Fairfield Summit → Great Rigg → Heron Pike"
+        "instruction": "From Fairfield's summit, descend eastwards, then follow the ridge over Link Hause to Hart Crag, and then on to Dove Crag.",
+        "landmark": "Dove Crag"
       },
       {
         "step": 6,
-        "instruction": "Continue south from Heron Pike, descending steeply down Nab Scar. At the bottom of the scar, turn left just above Rydal Hall onto the signposted footpath for Ambleside. Weave through the grounds of Rydal Hall following public footpath signs.",
-        "landmark": "Nab Scar → Rydal Hall"
+        "instruction": "From Dove Crag, begin the long descent south-eastwards, traversing the summits of High Pike and then Low Pike.",
+        "landmark": "Low Pike"
       },
       {
         "step": 7,
-        "instruction": "Bear left onto the track signposted Ambleside. Reach the road at Scandale Bridge, bear left and cross to the pavement. It's now under 1km back to the car park along the A591.",
-        "landmark": "Scandale Bridge → Ambleside"
+        "instruction": "From Low Pike, continue descending towards Scandale Beck, following the path alongside the beck and then the track down Scandale to eventually re-join the roads leading back into Ambleside and the car park.",
+        "landmark": "Scandale Beck"
       }
     ],
     "parkingDetail": "Rydal Road Car Park, Ambleside, LA22 9AN. Large pay & display car park off the A591. Pay by phone code 9917. Chargeable 8am–8pm daily. This is the main car park for Ambleside town centre and the standard starting point for the Horseshoe.",
@@ -3465,7 +3434,7 @@
   {
     "name": "Scout Scar",
     "distance": "6.0 km",
-    "time": "2 hours",
+    "time": "2 hours 30 minutes",
     "difficulty": "Easy",
     "desc": "A spectacular limestone escarpment with a 'mushroom' shelter on the summit offering one of the finest all-round panoramas in the southern Lake District — from the Lakeland fells to Morecambe Bay.",
     "start": "Scout Scar car park",
@@ -3640,33 +3609,33 @@
     "directions": [
       {
         "step": 1,
-        "instruction": "From the car park in the old quarry on Underbarrow Road, cross the road and go through the gate to join the clear path heading south along the top of Scout Scar escarpment.",
-        "landmark": "Scout Scar car park"
+        "instruction": "From the car park, take the clear path leading uphill, heading towards the escarpment.",
+        "landmark": "Scout Scar Car Park"
       },
       {
         "step": 2,
-        "instruction": "Follow the escarpment path south with the dramatic limestone edge on your right and views opening up over Kendal and the Kent Valley. The path is well-worn and clear.",
-        "landmark": "Scout Scar escarpment"
+        "instruction": "Upon reaching the top of the initial climb, turn right to join the main path that runs along the top of the limestone escarpment.",
+        "landmark": "Top of initial ascent"
       },
       {
         "step": 3,
-        "instruction": "Reach the 'mushroom' viewpoint shelter at the highest point of Scout Scar (235m). From here the panorama takes in the Lakeland fells to the north, Morecambe Bay to the south, and the Pennines to the east. This is the summit — enjoy it!",
-        "landmark": "Mushroom shelter / Scout Scar summit"
+        "instruction": "Follow this path along the open ridge, enjoying panoramic views over the Lyth Valley and Morecambe Bay.",
+        "landmark": "Limestone escarpment ridge"
       },
       {
         "step": 4,
-        "instruction": "Continue south along the ridge to the southern end of Scout Scar, then descend slightly west to join the path swinging around to Cunswick Scar.",
-        "landmark": "Southern end of Scout Scar"
+        "instruction": "Continue along the ridge until you reach the distinctive mushroom-shaped shelter, often referred to as the 'Mushroom' or 'Shelter'.",
+        "landmark": "Mushroom-shaped shelter"
       },
       {
         "step": 5,
-        "instruction": "Follow the path north across to Cunswick Scar, another limestone escarpment with fine views. Cross the trig point area and continue northeast, descending gradually back toward Underbarrow Road.",
-        "landmark": "Cunswick Scar"
+        "instruction": "From the shelter, you can either retrace your steps along the ridge or take a slightly lower path that runs parallel to the main ridge path.",
+        "landmark": "Shelter"
       },
       {
         "step": 6,
-        "instruction": "Follow the path northeast back to the Underbarrow Road and turn right along the road for a short distance back to the car park.",
-        "landmark": "Underbarrow Road / car park"
+        "instruction": "Follow your chosen return path, which will lead you back towards the car park area.",
+        "landmark": "Path back to car park"
       }
     ],
     "parkingDetail": "Scout Scar Car Park (free), Underbarrow Road, Kendal, LA8 8HB. This is the SECOND car park on the right after leaving Kendal and crossing the A591 — do not stop at the first car park (by the mast). The car park sits in an old quarry. Postcode covers a wide area so ignore satnav if it takes you past — the quarry car park is approximately 1.5 miles out of Kendal on the Underbarrow Road.",
@@ -4069,38 +4038,31 @@
     "directions": [
       {
         "step": 1,
-        "instruction": "From the south White Moss car park, take the left-hand path (not the one to the toilet block) which leads away through woodland alongside the River Rothay. There are picnic benches here and paddling spots.",
-        "landmark": "White Moss Car Park (South)"
+        "instruction": "From White Moss South car park, cross the A591 carefully at the pedestrian crossing."
       },
       {
         "step": 2,
-        "instruction": "You reach a wheelchair-accessible bridge. Cross it and take the path straight ahead, clearly signposted 'Woodland Walk To Viewpoints On Loughrigg Terrace.' Follow this wide path through White Moss Wood.",
-        "landmark": "Wheelchair bridge / Loughrigg Terrace signpost"
+        "instruction": "Turn left and walk a short distance along the pavement, then take the signed footpath on your right leading down towards Rydal Water."
       },
       {
         "step": 3,
-        "instruction": "At the fork in the woodland, take the left fork. Go through the gate in the stone wall, out of the woodland, and turn left. The path descends along the field wall to Rydal Water. Cross the small streams via stepping stones (boots make this easy) and walk along the beautiful lake shore.",
-        "landmark": "Rydal Water shore"
+        "instruction": "Follow the path along the northern shore of Rydal Water, keeping the lake on your right."
       },
       {
         "step": 4,
-        "instruction": "The path leaves the lake shore and ascends. At the junction with a gate on the left, take the path up to the right signposted for Rydal Caves. The path rises steeply with loose scree — take your time. Pass a wishing tree (coins wedged in bark) and some small caves on your left.",
-        "landmark": "Path up to Rydal Caves (signposted)"
+        "instruction": "Continue until you see a clear path branching off to your left, uphill, signposted for \"Rydal Caves\" or \"Loughrigg Cave\". Follow this path to the caves."
       },
       {
         "step": 5,
-        "instruction": "At the crossroads near the top, go straight over to reach Rydal Cave — a vast, cathedral-like quarry chamber with a deep turquoise pool inside glowing with reflected light. Look but don't stand under the ceiling overhangs. Look out for small fish in the pool.",
-        "landmark": "Rydal Cave"
+        "instruction": "Explore the impressive Rydal Caves (Loughrigg Cave)."
       },
       {
         "step": 6,
-        "instruction": "Leaving the cave, return to the crossroads and take the left turn. After a short level section it becomes steep and rocky again — take the right fork at the next fork. At the end of the path you'll reach another junction; turn left toward Grasmere.",
-        "landmark": "Path towards Grasmere"
+        "instruction": "After exploring, continue on the path past the caves, ascending slightly to join the higher path of Loughrigg Terrace. Enjoy the views over Rydal Water."
       },
       {
         "step": 7,
-        "instruction": "Descend to Grasmere lake shore and enjoy the view. Then follow the River Rothay back to the bridge near the weir. Cross the bridge and turn right, following the path back through the woodland to the car park.",
-        "landmark": "Grasmere shore → River Rothay → car park"
+        "instruction": "Follow Loughrigg Terrace westwards, then descend back towards the A591 and White Moss car park, re-crossing the road to your starting point."
       }
     ],
     "parkingDetail": "White Moss Car Park (South), A591, near Grasmere, LA22 9SE. Pay & display, National Trust. Two car parks at White Moss: the south car park is the correct one for this route (if coming from Grasmere direction, it's on the right after the north car park on the left). Toilets with baby-changing facilities on site.",
@@ -4110,7 +4072,7 @@
   },
   {
     "name": "Buttermere Shoreline",
-    "distance": "7.5 km",
+    "distance": "7.2 km",
     "time": "2.5 hours",
     "difficulty": "Easy",
     "desc": "A perfect lake circuit with dramatic fell reflections, a secret rock tunnel carved through the cliff face, and Haystacks — Wainwright's favourite mountain — watching over every step.",
@@ -4286,41 +4248,41 @@
     "directions": [
       {
         "step": 1,
-        "instruction": "From the village car park, walk south through the village. Pass the Fish Hotel on your left and St James's Church. Continue south on the lane and take the signed path right toward the lake shore.",
-        "landmark": "Buttermere village / Fish Hotel"
+        "instruction": "From Buttermere National Park Car Park, walk south through Buttermere village towards the lake.",
+        "landmark": "Buttermere village"
       },
       {
         "step": 2,
-        "instruction": "Reach the northwestern shore of Buttermere and turn left (southeast) along the lake shore path. The views across the water to Fleetwith Pike and Haystacks open up immediately — the fell scree is perfectly reflected in calm conditions.",
-        "landmark": "Northwest shore of Buttermere"
+        "instruction": "Turn left (east) onto the minor road and follow it along the northern shore of the lake towards Gatesgarth.",
+        "landmark": "Gatesgarth"
       },
       {
         "step": 3,
-        "instruction": "Continue along the northwest shore. You will reach a remarkable rock tunnel cut through a cliff face — duck through it carefully as the floor is uneven and wet. This short tunnel bypasses a section of cliff that juts into the lake.",
-        "landmark": "Rock tunnel through cliff"
+        "instruction": "At Gatesgarth, cross the bridge over Buttermere Dubs and join the footpath that follows the southern shore of the lake.",
+        "landmark": "Buttermere Dubs"
       },
       {
         "step": 4,
-        "instruction": "Emerge from the tunnel and continue southeast along the shore past Hassness House. The path reaches the road briefly near Warnscale Beck at the head of the lake.",
-        "landmark": "Hassness House / lake head"
+        "instruction": "Continue along the well-maintained path, passing through the Hassness Estate and its famous rock tunnel.",
+        "landmark": "Hassness Estate, Rock Tunnel"
       },
       {
         "step": 5,
-        "instruction": "Cross Warnscale Beck and walk along the lane briefly to Peggy's Bridge at the foot (eastern end) of the lake. Cross the bridge — this is the most scenic part of the walk with Fleetwith Pike towering above you.",
-        "landmark": "Peggy's Bridge"
+        "instruction": "The path continues along the western side of the lake, offering views back towards the village.",
+        "landmark": "Western shore"
       },
       {
         "step": 6,
-        "instruction": "From Peggy's Bridge continue west (right) past Gatesgarth Farm, keeping to the southern lakeshore path. This south shore is quieter and gives lovely views back toward Buttermere village and the High Stile range.",
-        "landmark": "Gatesgarth Farm / south shore"
+        "instruction": "Follow the path as it eventually leads back to the northern end of the lake and the village.",
+        "landmark": "Buttermere village"
       },
       {
         "step": 7,
-        "instruction": "Follow the southern shore path all the way back west to the footbridge over Buttermere Dubs (the stream linking Buttermere and Crummock Water). Cross it and follow the path north back up into Buttermere village.",
-        "landmark": "Buttermere Dubs footbridge → village"
+        "instruction": "Return to the car park.",
+        "landmark": "Buttermere National Park Car Park"
       }
     ],
-    "parkingDetail": "Buttermere Village Car Park (LDNPA), Buttermere, CA13 9UZ. Pay & display. Alternative: National Trust Car Park, CA13 9XA (same village). Both are in Buttermere village. The lake is a short walk south from the village. Arrive early in summer as both fill quickly. The Fish Hotel (CA13 9XA) is nearby for post-walk refreshments.",
+    "parkingDetail": "Buttermere National Park Car Park (LDNPA), Buttermere, CA13 9UZ. Pay & display. The lake is a short walk south from the village. Arrive early in summer as it fills quickly. The Fish Hotel (CA13 9XA) is nearby for post-walk refreshments.",
     "thePayoff": "A perfect lake circuit with dramatic fell reflections, a secret rock tunnel carved through the cliff face, and Haystacks — Wainwright's favourite mountain — watching over every step.",
     "endLat": 54.5385,
     "endLon": -3.2784
@@ -4334,7 +4296,7 @@
     "start": "Old Dungeon Ghyll Car Park",
     "lat": 54.447,
     "lon": -3.0905,
-    "elevation": "95m",
+    "elevation": "200m",
     "terrain": "Glacial valley floor, stony tracks and fields",
     "routeUrl": "",
     "walkType": "village",
@@ -4548,7 +4510,7 @@
     "time": "2.5 hours",
     "difficulty": "Moderate",
     "desc": "Cathedral Cavern — a 40-foot-high cathedral of volcanic rock hewn by Victorian quarrymen — is entered through a dramatic tunnel and dwarfs all who stand inside, with light filtering through a natural 'window' in the rock above.",
-    "start": "Tilberthwaite Ghyll Car Park",
+    "start": "Tilberthwaite Car Park",
     "lat": 54.4178,
     "lon": -3.0766,
     "elevation": "280m",
@@ -4754,7 +4716,7 @@
         "landmark": "High Tilberthwaite Farm → car park"
       }
     ],
-    "parkingDetail": "Tilberthwaite Ghyll Car Park, Tilberthwaite, near Coniston, LA21 8DG. Grid reference NY306009. Large layby/car park on the left, accessed via a single-track road signposted 'Tilberthwaite' from the A593 between Ambleside and Coniston. Cashless parking via RingGo app. Limited spaces — arrive early in summer. The road can be icy in winter.",
+    "parkingDetail": "Tilberthwaite Car Park, Tilberthwaite, near Coniston, LA21 8DG. Grid reference NY306009. Large layby/car park on the left, accessed via a single-track road signposted 'Tilberthwaite' from the A593 between Ambleside and Coniston. Cashless parking via RingGo app. Limited spaces — arrive early in summer. The road can be icy in winter.",
     "thePayoff": "Cathedral Cavern — a 40-foot-high cathedral of volcanic rock hewn by Victorian quarrymen — is entered through a dramatic tunnel and dwarfs all who stand inside, with light filtering through a natural 'window' in the rock above.",
     "endLat": 54.4178,
     "endLon": -3.0766
@@ -4990,7 +4952,7 @@
     "start": "Glen Mary Bridge Car Park",
     "lat": 54.3858,
     "lon": -3.0482,
-    "elevation": "250m",
+    "elevation": "156m",
     "terrain": "Steep waterfall path and woodland track",
     "routeUrl": "",
     "walkType": "waterfall",
@@ -5209,7 +5171,7 @@
     "time": "2.5 hours",
     "difficulty": "Moderate",
     "desc": "The dramatic 'Skull' reflection in the deep blue waters of the massive slate quarry and the incredible Cathedral Cavern.",
-    "start": "Hodge Close Car Park",
+    "start": "Informal parking area at Hodge Close Quarry",
     "lat": 54.4059,
     "lon": -3.0556,
     "elevation": "220m",
@@ -5381,46 +5343,38 @@
     "directions": [
       {
         "step": 1,
-        "instruction": "From the car park, walk the short distance to the edge of the massive Hodge Close Quarry.",
-        "landmark": "Hodge Close Quarry"
+        "instruction": "From the informal parking area at Hodge Close Quarry, follow the track down towards the main quarry entrance and explore the impressive quarry face and pool."
       },
       {
         "step": 2,
-        "instruction": "Look for the 'Skull' shape formed by the reflection of the caves in the still water.",
-        "landmark": "The Skull Reflection"
+        "instruction": "Head back up the track slightly from the quarry and take the path leading generally south-east, signposted towards Little Langdale or Slater Bridge."
       },
       {
         "step": 3,
-        "instruction": "Follow the main track north through the woods, heading towards Little Langdale.",
-        "landmark": "Woodland Path"
+        "instruction": "Follow this path, which can be rocky and uneven, until you reach the historic Slater Bridge."
       },
       {
         "step": 4,
-        "instruction": "Descend the slope towards the River Brathay and look for the tunnel entrance.",
-        "landmark": "River Brathay"
+        "instruction": "Cross Slater Bridge and continue on the path, following signs or the general direction towards Cathedral Quarry (also known as Cathedral Cavern)."
       },
       {
         "step": 5,
-        "instruction": "Use your torch to walk through the tunnel into the massive 'Cathedral Cavern'.",
-        "landmark": "Cathedral Cavern"
+        "instruction": "Enter and explore the various chambers and tunnels of Cathedral Quarry, including the impressive main cavern with its central pillar."
       },
       {
         "step": 6,
-        "instruction": "Exit the cavern and follow the path to the iconic stone packhorse bridge.",
-        "landmark": "Slater's Bridge"
+        "instruction": "Exit Cathedral Quarry and take the path heading north-west, which will lead you back towards the direction of Hodge Close Quarry."
       },
       {
         "step": 7,
-        "instruction": "Cross the bridge and follow the path uphill and back towards the south.",
-        "landmark": "Stone Walls"
+        "instruction": "Follow the track, which may involve a short section on a minor road or through fields, keeping the fells to your left."
       },
       {
         "step": 8,
-        "instruction": "Follow the quiet lane past Parrock Quarry to return to the Hodge Close car park.",
-        "landmark": "Hodge Close Car Park"
+        "instruction": "Continue until you return to the informal parking area at Hodge Close Quarry where you started."
       }
     ],
-    "parkingDetail": "Hodge Close Quarry parking area, LA21 8DJ. Small free car park; additional parking often available at nearby Parrock Quarry or local farms (£5 fee).",
+    "parkingDetail": "Very limited, informal free parking directly at Hodge Close Quarry (LA21 8DJ). This small area fills quickly. Alternative paid parking is available at Tilberthwaite Car Park (LA21 8DG) or various spots in Little Langdale.",
     "thePayoff": "The dramatic 'Skull' reflection in the deep blue waters of the massive slate quarry and the incredible Cathedral Cavern.",
     "endLat": 54.4059,
     "endLon": -3.0556
@@ -5428,13 +5382,13 @@
   {
     "name": "Blea Tarn Langdale",
     "distance": "3.5 km",
-    "time": "1.5 hours",
+    "time": "1 hour",
     "difficulty": "Easy",
     "desc": "One of the most iconic views in England, with the Langdale Pikes perfectly reflected in the still waters of the tarn.",
     "start": "Blea Tarn Car Park",
     "lat": 54.428,
     "lon": -3.083,
-    "elevation": "190m",
+    "elevation": "50m",
     "terrain": "Larch plantation and tarn shore",
     "routeUrl": "",
     "walkType": "lakeside",
@@ -5603,43 +5557,28 @@
     "directions": [
       {
         "step": 1,
-        "instruction": "Cross the road from the car park and go through the wooden gate marked for Blea Tarn.",
-        "landmark": "Car Park Gate"
+        "instruction": "From the car park, head through the gate and follow the clear path towards Blea Tarn.",
+        "landmark": "Blea Tarn"
       },
       {
         "step": 2,
-        "instruction": "Follow the wide, well-maintained path through the small larch plantation.",
-        "landmark": "Woodland"
+        "instruction": "The path leads through a beautiful larch plantation, keeping the tarn on your right.",
+        "landmark": "Larch plantation"
       },
       {
         "step": 3,
-        "instruction": "Continue until you reach the shore of the tarn for the classic view of the Pikes.",
-        "landmark": "Blea Tarn Shore"
+        "instruction": "Cross the small wooden bridge(s) at the far end of the tarn.",
+        "landmark": "Wooden bridge"
       },
       {
         "step": 4,
-        "instruction": "Follow the path as it skirts the western side of the water.",
-        "landmark": "Western Path"
+        "instruction": "Continue along the path on the opposite side of the tarn, now with the tarn on your left.",
+        "landmark": "Blea Tarn"
       },
       {
         "step": 5,
-        "instruction": "Cross the small footbridge at the southern end of the tarn.",
-        "landmark": "Footbridge"
-      },
-      {
-        "step": 6,
-        "instruction": "Turn left to follow the path back along the eastern side through the heather.",
-        "landmark": "Heather Slopes"
-      },
-      {
-        "step": 7,
-        "instruction": "Pause at the viewpoint overlooking the Great Langdale valley before reaching the road.",
-        "landmark": "Great Langdale Viewpoint"
-      },
-      {
-        "step": 8,
-        "instruction": "Follow the path parallel to the road for a short distance to return to the car park.",
-        "landmark": "Blea Tarn Car Park"
+        "instruction": "Follow the well-maintained path as it gently curves back towards the car park.",
+        "landmark": "Car park"
       }
     ],
     "parkingDetail": "Blea Tarn National Trust car park, LA22 9PG. Pay and display (free for NT members). Access is via a narrow, steep mountain road.",
@@ -5653,7 +5592,7 @@
     "time": "5 hours",
     "difficulty": "Challenging",
     "desc": "Breathtaking 360-degree views across the Lake District and out to Morecambe Bay, combined with fascinating industrial ruins.",
-    "start": "Old Station Car Park, Coniston",
+    "start": "Coniston Tourist Information Centre Car Park",
     "lat": 54.3821,
     "lon": -3.1092,
     "elevation": "803m",
@@ -5825,46 +5764,46 @@
     "directions": [
       {
         "step": 1,
-        "instruction": "From the car park, walk up Station Road and turn left past the Sun Hotel.",
-        "landmark": "Sun Hotel"
+        "instruction": "Start from the Coniston Tourist Information Centre Car Park. Walk through the village, heading west towards the Sun Inn.",
+        "landmark": "Sun Inn"
       },
       {
         "step": 2,
-        "instruction": "Follow the track uphill beside Church Beck, heading into the fells.",
-        "landmark": "Church Beck"
+        "instruction": "Turn left onto the road signposted 'Walna Scar'. Follow this road as it climbs steeply out of the village, passing houses and eventually becoming a rough track.",
+        "landmark": "Walna Scar Road"
       },
       {
         "step": 3,
-        "instruction": "Cross the Miner's Bridge and follow the steep path up through the old slate works.",
-        "landmark": "Miner's Bridge"
+        "instruction": "Continue on Walna Scar Road (track) for a significant distance, passing through gates. The track eventually levels out somewhat.",
+        "landmark": "Walna Scar Road"
       },
       {
         "step": 4,
-        "instruction": "Ascend the Coppermines Valley, passing dramatic industrial ruins and waterfalls.",
-        "landmark": "Coppermines Valley"
+        "instruction": "Look for a clear path branching off to the right, heading uphill directly towards the Old Man. This path is usually well-trodden and marked.",
+        "landmark": "Path to Coniston Old Man"
       },
       {
         "step": 5,
-        "instruction": "Reach the peaceful mountain tarn of Low Water, a great spot for a rest.",
-        "landmark": "Low Water"
+        "instruction": "Follow this path, ascending steadily. You'll pass old slate workings and eventually reach a col. From here, the path continues to the summit of Coniston Old Man.",
+        "landmark": "Coniston Old Man Summit"
       },
       {
         "step": 6,
-        "instruction": "Follow the steep, zig-zagging path up the final slope to the summit cairn.",
-        "landmark": "The Summit"
+        "instruction": "From the summit, descend north-east towards Low Water. The path is clear but steep and rocky.",
+        "landmark": "Low Water"
       },
       {
         "step": 7,
-        "instruction": "Descend via the south ridge path, enjoying views down to Goats Water.",
-        "landmark": "South Ridge"
+        "instruction": "Pass Low Water on your left and continue descending. You'll eventually reach the main Walna Scar Road track again.",
+        "landmark": "Walna Scar Road"
       },
       {
         "step": 8,
-        "instruction": "Join the Walna Scar Road track and follow it all the way back down to Coniston village.",
-        "landmark": "Walna Scar Road"
+        "instruction": "Turn right onto Walna Scar Road and retrace your steps back down into Coniston village and to the car park.",
+        "landmark": "Coniston Village"
       }
     ],
-    "parkingDetail": "Old Station Car Park, Coniston, LA21 8HU. Large pay and display car park in the village center.",
+    "parkingDetail": "Coniston Tourist Information Centre Car Park, Coniston, LA21 8HU. Large pay and display car park in the village center.",
     "thePayoff": "Breathtaking 360-degree views across the Lake District and out to Morecambe Bay, combined with fascinating industrial ruins.",
     "endLat": 54.3821,
     "endLon": -3.1092
@@ -6269,43 +6208,43 @@
     "directions": [
       {
         "step": 1,
-        "instruction": "From Staveley Mill Yard, walk out to the main road and turn right towards the church.",
-        "landmark": "Staveley Mill Yard"
+        "instruction": "From Staveley Mill Yard, head towards the main road (A591).",
+        "landmark": "Staveley Mill Yard, A591"
       },
       {
         "step": 2,
-        "instruction": "Follow the road signed for Kentmere until you reach the picturesque Barley Bridge.",
-        "landmark": "Barley Bridge"
+        "instruction": "Cross the A591 carefully and turn left, then immediately right onto the lane signposted 'Kentmere'.",
+        "landmark": "A591, Kentmere Lane"
       },
       {
         "step": 3,
-        "instruction": "Cross the bridge and turn right, then follow the lane as it climbs gently uphill.",
-        "landmark": "River Kent"
+        "instruction": "Follow the Kentmere lane, passing houses, until you see a footpath sign on your right, just before a bridge over the River Kent.",
+        "landmark": "River Kent bridge, footpath sign"
       },
       {
         "step": 4,
-        "instruction": "Enter Craggy Wood through the gate on your left and follow the main circular trail.",
-        "landmark": "Craggy Wood Gate"
+        "instruction": "Take this footpath, which leads through fields alongside the River Kent.",
+        "landmark": "River Kent"
       },
       {
         "step": 5,
-        "instruction": "Climb to the high point of the wood for views over the village and towards the fells.",
-        "landmark": "Woodland Viewpoint"
+        "instruction": "Continue on the riverside path, passing through gates and stiles, until you reach a footbridge.",
+        "landmark": "Footbridge"
       },
       {
         "step": 6,
-        "instruction": "Follow the path out of the wood and through the fields heading south.",
-        "landmark": "Field Path"
+        "instruction": "Cross the footbridge and turn left, following the path through Craggy Wood.",
+        "landmark": "Craggy Wood"
       },
       {
         "step": 7,
-        "instruction": "Emerge onto the quiet Scroggs Lane and follow it back down into the village.",
-        "landmark": "Scroggs Lane"
+        "instruction": "The path eventually emerges onto a quiet lane. Turn left and follow this lane back towards Staveley.",
+        "landmark": "Quiet lane"
       },
       {
         "step": 8,
-        "instruction": "Pass the Eagle & Child pub and return to the Mill Yard for a local brew.",
-        "landmark": "Eagle & Child Inn"
+        "instruction": "The lane will bring you back to the A591. Cross back over to return to Staveley Mill Yard.",
+        "landmark": "A591, Staveley Mill Yard"
       }
     ],
     "parkingDetail": "Staveley Mill Yard, LA8 9LR. Free parking (please respect business spaces). Closest train station is Staveley.",
@@ -6537,8 +6476,8 @@
   },
   {
     "name": "South to Winster",
-    "distance": "6.5 km",
-    "time": "2.5 hours",
+    "distance": "7.24 km",
+    "time": "2 hours",
     "difficulty": "Easy",
     "desc": "A peaceful escape into the undulating 'hidden' Winster Valley, featuring lush rolling hills and ancient dry stone walls.",
     "start": "Gilpin Hotel & Lake House",
@@ -6763,7 +6702,7 @@
     "time": "2 hours",
     "difficulty": "Easy",
     "desc": "A tranquil discovery of the 'new' St Catherine's Church and the lonely, evocative tower of the medieval old church.",
-    "start": "Gilpin Hotel & Lake House",
+    "start": "St Catherine's Church, Bowness-on-Windermere",
     "lat": 54.3553,
     "lon": -2.8805,
     "elevation": "120m",
@@ -6974,7 +6913,7 @@
         "landmark": "Gilpin Hotel"
       }
     ],
-    "parkingDetail": "Gilpin Hotel & Lake House, LA23 3NE. Private guest parking. The church is a short walk from the hotel.",
+    "parkingDetail": "Limited roadside parking is available near St Catherine's Church on the A5074 (Crook Road), LA23 3NF. For more reliable and official public parking, consider using car parks in Bowness-on-Windermere, such as Rayrigg Road Car Park (LA23 3BZ), which would extend the overall walk distance slightly.",
     "thePayoff": "A tranquil discovery of the 'new' St Catherine's Church and the lonely, evocative tower of the medieval old church.",
     "endLat": 54.3553,
     "endLon": -2.8805
