@@ -2,16 +2,16 @@
    Route Service — OpenRouteService foot-hiking API
    ═══════════════════════════════════════════════════════ */
 
-const ORS_ENDPOINT = 'https://api.openrouteservice.org/v2/directions/foot-hiking/geojson';
-
-// Default key — can be overridden via settings
-const DEFAULT_ORS_KEY = 'eyJvcmciOiI1YjNjZTM1OTc4NTExMTAwMDFjZjYyNDgiLCJpZCI6IjU0ZTI0YTM0MGI0YTQyMzY5ODZlYzZkZjhiMzAxMmFkIiwiaCI6Im11cm11cjY0In0=';
+// In production, requests go through /api/ors serverless proxy (keys stay server-side)
+// In local dev, falls back to direct API call if a key is set in settings
+const PROXY_ENDPOINT = '/api/ors';
+const DIRECT_ENDPOINT = 'https://api.openrouteservice.org/v2/directions/foot-hiking/geojson';
 
 /**
- * Get stored ORS API key
+ * Get stored ORS API key (only used for local dev fallback)
  */
 export function getORSKey() {
-    return localStorage.getItem('ors_api_key') || DEFAULT_ORS_KEY;
+    return localStorage.getItem('ors_api_key') || '';
 }
 
 /**
@@ -22,33 +22,50 @@ export function setORSKey(key) {
 }
 
 /**
- * Fetch a walking route between two points using ORS foot-hiking profile
- * Returns { waypoints: [[lat,lon],...], distance: meters, duration: seconds }
+ * Make an ORS API request — uses proxy in production, direct key in local dev
  */
-export async function fetchHikingRoute(startLat, startLon, endLat, endLon, viaPoints = []) {
-    const apiKey = getORSKey();
-    if (!apiKey) {
-        throw new Error('No OpenRouteService API key set. Go to Settings to add one.');
+async function callORS(requestBody) {
+    // Try serverless proxy first (production)
+    try {
+        const proxyRes = await fetch(PROXY_ENDPOINT, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(requestBody)
+        });
+
+        if (proxyRes.ok) {
+            return await proxyRes.json();
+        }
+
+        // If proxy returns 500 (no key configured) and we have a local key, fall back
+        const localKey = getORSKey();
+        if (proxyRes.status === 500 && localKey) {
+            return await callORSDirect(requestBody, localKey);
+        }
+
+        const errText = await proxyRes.text();
+        throw new Error(`ORS API error (${proxyRes.status}): ${errText}`);
+    } catch (err) {
+        // Network error on proxy (local dev without Vercel) — try direct
+        const localKey = getORSKey();
+        if (localKey) {
+            return await callORSDirect(requestBody, localKey);
+        }
+        throw err;
     }
+}
 
-    // Build coordinates array: [start, ...via, end] in [lon, lat] format (ORS convention)
-    const coordinates = [
-        [startLon, startLat],
-        ...viaPoints.map(p => [p[1], p[0]]),
-        [endLon, endLat]
-    ];
-
-    const response = await fetch(ORS_ENDPOINT, {
+/**
+ * Direct ORS API call (local dev fallback only)
+ */
+async function callORSDirect(requestBody, apiKey) {
+    const response = await fetch(DIRECT_ENDPOINT, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
             'Authorization': apiKey
         },
-        body: JSON.stringify({
-            coordinates,
-            preference: 'recommended',
-            instructions: true
-        })
+        body: JSON.stringify(requestBody)
     });
 
     if (!response.ok) {
@@ -56,7 +73,27 @@ export async function fetchHikingRoute(startLat, startLon, endLat, endLon, viaPo
         throw new Error(`ORS API error (${response.status}): ${errText}`);
     }
 
-    const data = await response.json();
+    return await response.json();
+}
+
+/**
+ * Fetch a walking route between two points using ORS foot-hiking profile
+ * Returns { waypoints: [[lat,lon],...], distance: meters, duration: seconds }
+ */
+export async function fetchHikingRoute(startLat, startLon, endLat, endLon, viaPoints = []) {
+    // Build coordinates array: [start, ...via, end] in [lon, lat] format (ORS convention)
+    const coordinates = [
+        [startLon, startLat],
+        ...viaPoints.map(p => [p[1], p[0]]),
+        [endLon, endLat]
+    ];
+
+    const data = await callORS({
+        coordinates,
+        preference: 'recommended',
+        instructions: true
+    });
+
     const feature = data.features[0];
     const coords = feature.geometry.coordinates;
     const summary = feature.properties.summary;
@@ -71,41 +108,23 @@ export async function fetchHikingRoute(startLat, startLon, endLat, endLon, viaPo
 
 /**
  * Fetch a circular hiking route
- * Uses a midpoint estimation to create a via-point for the return leg
+ * Routes: start → destination (summit/feature) → start
  */
 export async function fetchCircularRoute(startLat, startLon, destLat, destLon) {
-    const apiKey = getORSKey();
-    if (!apiKey) {
-        throw new Error('No OpenRouteService API key set. Go to Settings to add one.');
-    }
-
     // For a circular route, go: start → destination → start
-    // ORS will find different paths for each leg if the terrain allows
+    // ORS will find different trail paths for each leg
     const coordinates = [
         [startLon, startLat],
         [destLon, destLat],
         [startLon, startLat]
     ];
 
-    const response = await fetch(ORS_ENDPOINT, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-            'Authorization': apiKey
-        },
-        body: JSON.stringify({
-            coordinates,
-            preference: 'recommended',
-            instructions: true
-        })
+    const data = await callORS({
+        coordinates,
+        preference: 'recommended',
+        instructions: true
     });
 
-    if (!response.ok) {
-        const errText = await response.text();
-        throw new Error(`ORS API error (${response.status}): ${errText}`);
-    }
-
-    const data = await response.json();
     const feature = data.features[0];
     const coords = feature.geometry.coordinates;
     const summary = feature.properties.summary;

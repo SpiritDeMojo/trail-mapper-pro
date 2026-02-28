@@ -4,7 +4,7 @@
 
 import { createMap, parkingMarker, destMarker, drawRoute, fitToWaypoints } from './map-utils.js';
 import { generateWalkFromPrompt, generateDirections } from './gemini-api.js';
-import { fetchHikingRoute, fetchCircularRoute, getORSKey, formatDistance, formatDuration } from './route-service.js';
+import { fetchHikingRoute, fetchCircularRoute, formatDistance, formatDuration } from './route-service.js';
 import { addWalk } from './library.js';
 
 let aiMap = null;
@@ -64,56 +64,56 @@ async function aiGenerate() {
     btn.textContent = '🔄 Thinking...';
     statusEl.style.display = 'block';
     statusEl.className = 'ai-status';
-    statusEl.innerHTML = '<span class="spinner"></span> Gemini is designing your walk...';
+    statusEl.innerHTML = '<span class="spinner"></span> Gemini is researching your walk with Google Search...';
     resultEl.style.display = 'none';
     jsonOutput.style.display = 'none';
 
     try {
-        // Step 1: Get walk metadata from Gemini
-        statusEl.innerHTML = '<span class="spinner"></span> Step 1/3: AI generating walk details...';
+        // Step 1: Get walk metadata from Gemini (grounded with Google Search)
+        statusEl.innerHTML = '<span class="spinner"></span> Step 1/3: AI researching and designing your walk...';
         const walk = await generateWalkFromPrompt(prompt);
         generatedWalk = walk;
 
         // Step 2: Get real trail route from ORS
-        const hasORS = !!getORSKey();
-        if (hasORS && walk.lat && walk.lon) {
-            statusEl.innerHTML = '<span class="spinner"></span> Step 2/3: Fetching real trail route...';
+        if (walk.lat && walk.lon) {
+            statusEl.innerHTML = '<span class="spinner"></span> Step 2/3: Fetching real trail route from GPS data...';
 
             try {
+                // Determine if circular and find the destination point
+                const destLat = walk.destinationLat || walk.endLat || walk.lat;
+                const destLon = walk.destinationLon || walk.endLon || walk.lon;
                 const endLat = walk.endLat || walk.lat;
                 const endLon = walk.endLon || walk.lon;
+
                 const isCircular = walk.isCircular !== false && (
-                    Math.abs(walk.lat - endLat) < 0.001 && Math.abs(walk.lon - endLon) < 0.001
+                    Math.abs(walk.lat - endLat) < 0.002 && Math.abs(walk.lon - endLon) < 0.002
                 );
 
                 let routeData;
-                if (isCircular && walk.lat && walk.lon) {
-                    // For circular, we need a destination point different from start
-                    // Estimate a midpoint to route through
-                    const midLat = walk.lat + (Math.random() - 0.5) * 0.02;
-                    const midLon = walk.lon + (Math.random() - 0.5) * 0.02;
-
-                    // If AI gave us distinct endLat/endLon that differ from start, use those as via
-                    if (walk.endLat && walk.endLon &&
-                        (Math.abs(walk.endLat - walk.lat) > 0.001 || Math.abs(walk.endLon - walk.lon) > 0.001)) {
-                        routeData = await fetchCircularRoute(walk.lat, walk.lon, walk.endLat, walk.endLon);
+                if (isCircular) {
+                    // Circular: car park → summit/feature → car park
+                    // Use the destination (summit/waterfall/viewpoint) as the via-point
+                    if (Math.abs(destLat - walk.lat) > 0.001 || Math.abs(destLon - walk.lon) > 0.001) {
+                        routeData = await fetchCircularRoute(walk.lat, walk.lon, destLat, destLon);
                     } else {
-                        // Use a nearby point based on the walk distance
-                        routeData = await fetchHikingRoute(walk.lat, walk.lon, midLat, midLon);
+                        // Destination same as start — offset slightly for a loop
+                        const offsetLat = walk.lat + 0.008;
+                        const offsetLon = walk.lon + 0.005;
+                        routeData = await fetchCircularRoute(walk.lat, walk.lon, offsetLat, offsetLon);
                     }
                 } else {
+                    // Linear: start → end
                     routeData = await fetchHikingRoute(walk.lat, walk.lon, endLat, endLon);
                 }
 
                 generatedWaypoints = routeData.waypoints;
                 walk.waypoints = generatedWaypoints;
 
-                // Update distance/time with real data
+                // Update distance/time with real GPS data
                 walk.distance = formatDistance(routeData.distance);
                 walk.time = formatDuration(routeData.duration);
             } catch (routeErr) {
                 console.warn('ORS routing failed, using AI coordinates:', routeErr);
-                // Fallback: create simple waypoints from AI coordinates
                 generatedWaypoints = [[walk.lat, walk.lon]];
                 if (walk.endLat && walk.endLon) {
                     generatedWaypoints.push([walk.endLat, walk.endLon]);
@@ -121,7 +121,6 @@ async function aiGenerate() {
                 walk.waypoints = generatedWaypoints;
             }
         } else {
-            // No ORS key — just use AI coordinates
             generatedWaypoints = [[walk.lat, walk.lon]];
             if (walk.endLat && walk.endLon &&
                 (Math.abs(walk.endLat - walk.lat) > 0.001 || Math.abs(walk.endLon - walk.lon) > 0.001)) {
@@ -132,13 +131,15 @@ async function aiGenerate() {
 
         // Step 3: Generate directions if AI didn't provide good ones
         if (!walk.directions || walk.directions.length < 3) {
-            statusEl.innerHTML = '<span class="spinner"></span> Step 3/3: AI generating directions...';
+            statusEl.innerHTML = '<span class="spinner"></span> Step 3/3: AI generating step-by-step directions...';
             const dirs = await generateDirections(walk.name, generatedWaypoints, walk.start || 'Car Park', walk.difficulty);
             if (dirs && dirs.length > 0) walk.directions = dirs;
         }
 
-        // Clean up the walk object for export
+        // Clean up walk object for export
         delete walk.isCircular;
+        delete walk.destinationLat;
+        delete walk.destinationLon;
         if (!walk.routeUrl) walk.routeUrl = '';
         generatedWalk = walk;
 
@@ -177,7 +178,6 @@ function clearMap() {
         aiMap.removeLayer(routeLayers.glow);
         routeLayers = null;
     }
-    // Remove all markers
     aiMap.eachLayer(layer => {
         if (layer instanceof L.Marker) {
             aiMap.removeLayer(layer);

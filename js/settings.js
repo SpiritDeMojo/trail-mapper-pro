@@ -10,7 +10,7 @@ import { getWalks, setWalks, addWalk } from './library.js';
  * Initialise settings view
  */
 export function initSettings() {
-    // Load current keys
+    // Load current keys (these are local dev overrides only)
     document.getElementById('settings-ors-key').value = getORSKey();
     document.getElementById('settings-gemini-key').value = getGeminiKey();
 
@@ -41,23 +41,19 @@ function saveSettings() {
 
 /**
  * Re-route all walks using real ORS trail data
+ * In production, routes go through the serverless proxy automatically
  */
 async function auditRoutes() {
     const walks = getWalks();
     const progressEl = document.getElementById('audit-progress');
     progressEl.style.display = 'block';
 
-    if (!getORSKey()) {
-        progressEl.innerHTML = '❌ No ORS API key set. Add one above and save first.';
-        return;
-    }
-
     const total = walks.length;
     let completed = 0;
     let failed = 0;
 
     progressEl.innerHTML = `
-        <div>Re-routing ${total} walks using real trail data...</div>
+        <div>Re-routing ${total} walks using real GPS trail data...</div>
         <div class="progress-bar"><div class="progress-fill" style="width: 0%"></div></div>
         <div id="audit-log" style="margin-top:8px;font-size:11px;color:var(--text-muted);max-height:200px;overflow-y:auto;"></div>
     `;
@@ -80,18 +76,24 @@ async function auditRoutes() {
 
             let routeData;
             if (isCircular) {
-                // For circular, use a midpoint of existing waypoints as via
-                let midLat, midLon;
-                if (w.waypoints && w.waypoints.length > 2) {
-                    const midIdx = Math.floor(w.waypoints.length / 3);
-                    midLat = w.waypoints[midIdx][0];
-                    midLon = w.waypoints[midIdx][1];
+                // For circular walks, use the farthest waypoint as the destination
+                let destLat, destLon;
+                if (w.waypoints && w.waypoints.length > 4) {
+                    // Find the waypoint farthest from start (the summit/feature)
+                    let maxDist = 0;
+                    for (const wp of w.waypoints) {
+                        const dist = Math.abs(wp[0] - w.lat) + Math.abs(wp[1] - w.lon);
+                        if (dist > maxDist) {
+                            maxDist = dist;
+                            destLat = wp[0];
+                            destLon = wp[1];
+                        }
+                    }
                 } else {
-                    // Estimate based on direction and distance
-                    midLat = w.lat + 0.005;
-                    midLon = w.lon + 0.005;
+                    destLat = w.lat + 0.005;
+                    destLon = w.lon + 0.005;
                 }
-                routeData = await fetchCircularRoute(w.lat, w.lon, midLat, midLon);
+                routeData = await fetchCircularRoute(w.lat, w.lon, destLat, destLon);
             } else {
                 routeData = await fetchHikingRoute(w.lat, w.lon, w.endLat, w.endLon);
             }
