@@ -4723,13 +4723,13 @@
   },
   {
     "name": "Skelwith Bridge to Elterwater",
-    "distance": "12.0 km",
-    "time": "4.5 hours",
-    "difficulty": "Challenging",
+    "distance": "4.0 km",
+    "time": "1.5 hours",
+    "difficulty": "Easy",
     "desc": "Three contrasting waterfalls — Skelwith Force, Colwith Force, and the photogenic Slater Bridge over the River Brathay — all linked by a winding path through some of the most secluded and picturesque farmland in Langdale.",
-    "start": "Elterwater car park",
-    "lat": 54.4224,
-    "lon": -3.0134,
+    "start": "Skelwith Bridge Car Park",
+    "lat": 54.422078,
+    "lon": -3.014245,
     "elevation": "80m",
     "terrain": "Gravel paths, woodland and farmland",
     "routeUrl": "",
@@ -4938,10 +4938,10 @@
         "landmark": "Return to Elterwater / Britannia Inn"
       }
     ],
-    "parkingDetail": "Elterwater National Trust Car Park, Elterwater village, LA22 9HU. Pay & display (NT members free). Grid reference NY328047. In the centre of Elterwater village by the bridge over Great Langdale Beck. Turn right off the A593 (Ambleside–Coniston road) onto the B5343, then after a couple of miles turn left into Elterwater. The Britannia Inn is steps from the car park.",
+    "parkingDetail": "Small lay-by parking near Skelwith Bridge on the B5343. Chester's by the River cafe nearby with customer parking. Alt: National Trust car park at Elterwater (LA22 9HU), 2km along the route.",
     "thePayoff": "Three contrasting waterfalls — Skelwith Force, Colwith Force, and the photogenic Slater Bridge over the River Brathay — all linked by a winding path through some of the most secluded and picturesque farmland in Langdale.",
-    "endLat": 54.4224,
-    "endLon": -3.0134
+    "endLat": 54.4285,
+    "endLon": -3.0438
   },
   {
     "name": "Tom Ghyll Waterfalls",
