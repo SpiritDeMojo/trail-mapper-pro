@@ -122,6 +122,37 @@ export async function fetchCircularRoute(startLat, startLon, destLat, destLon) {
 }
 
 /**
+ * Fetch a multi-waypoint hiking route
+ * Routes through an array of [lat, lon] points using ORS foot-hiking
+ * For circular walks: include the start point as the last waypoint
+ */
+export async function fetchMultiWaypointRoute(waypointArray) {
+    if (!waypointArray || waypointArray.length < 2) {
+        throw new Error('Need at least 2 waypoints');
+    }
+
+    // Convert [lat, lon] to [lon, lat] for ORS
+    const coordinates = waypointArray.map(p => [p[1], p[0]]);
+
+    const data = await callORS({
+        coordinates,
+        preference: 'recommended',
+        instructions: true
+    });
+
+    const feature = data.features[0];
+    const coords = feature.geometry.coordinates;
+    const summary = feature.properties.summary;
+
+    return {
+        waypoints: coords.map(c => [c[1], c[0]]),
+        distance: summary.distance,
+        duration: summary.duration,
+        instructions: feature.properties.segments?.flatMap(s => s.steps) || []
+    };
+}
+
+/**
  * Create interpolated straight-line points (fallback when no API key)
  */
 export function interpolateRoute(start, end, numPoints = 20) {

@@ -4,7 +4,7 @@
 
 import { createMap, parkingMarker, destMarker, drawRoute, fitToWaypoints } from './map-utils.js';
 import { generateWalkFromPrompt, generateDirections } from './gemini-api.js';
-import { fetchHikingRoute, fetchCircularRoute, formatDistance, formatDuration } from './route-service.js';
+import { fetchHikingRoute, fetchCircularRoute, fetchMultiWaypointRoute, formatDistance, formatDuration } from './route-service.js';
 import { addWalk } from './library.js';
 
 let aiMap = null;
@@ -64,39 +64,46 @@ async function aiGenerate() {
     btn.textContent = '🔄 Thinking...';
     statusEl.style.display = 'block';
     statusEl.className = 'ai-status';
-    statusEl.innerHTML = '<span class="spinner"></span> Gemini is researching your walk with Google Search...';
+    statusEl.innerHTML = '<span class="spinner"></span> AI is designing your walk...';
     resultEl.style.display = 'none';
     jsonOutput.style.display = 'none';
 
     try {
-        // Step 1: Get walk metadata from Gemini (grounded with Google Search)
-        statusEl.innerHTML = '<span class="spinner"></span> Step 1/3: AI researching and designing your walk...';
+        // Step 1: Get walk metadata + loop waypoints from Gemini
+        statusEl.innerHTML = '<span class="spinner"></span> Step 1/3: AI researching and designing your walk route...';
         const walk = await generateWalkFromPrompt(prompt);
         generatedWalk = walk;
 
-        // Step 2: Get real trail route from ORS
+        // Step 2: Get real trail route from ORS using multi-waypoint routing
         if (walk.lat && walk.lon) {
-            statusEl.innerHTML = '<span class="spinner"></span> Step 2/3: Fetching real trail route from GPS data...';
+            statusEl.innerHTML = '<span class="spinner"></span> Step 2/3: Routing on real hiking trails via GPS...';
 
             try {
-                // Determine if circular and find the destination point
-                const destLat = walk.destinationLat || walk.endLat || walk.lat;
-                const destLon = walk.destinationLon || walk.endLon || walk.lon;
                 const endLat = walk.endLat || walk.lat;
                 const endLon = walk.endLon || walk.lon;
-
                 const isCircular = walk.isCircular !== false && (
                     Math.abs(walk.lat - endLat) < 0.002 && Math.abs(walk.lon - endLon) < 0.002
                 );
 
                 let routeData;
-                if (isCircular) {
-                    // Circular: car park → summit/feature → car park
-                    // Use the destination (summit/waterfall/viewpoint) as the via-point
+
+                // Use loopWaypoints if Gemini provided them (preferred)
+                if (walk.loopWaypoints && walk.loopWaypoints.length >= 2) {
+                    const routePoints = [
+                        [walk.lat, walk.lon],
+                        ...walk.loopWaypoints
+                    ];
+                    if (isCircular) {
+                        routePoints.push([walk.lat, walk.lon]); // Return to start
+                    }
+                    routeData = await fetchMultiWaypointRoute(routePoints);
+                } else if (isCircular) {
+                    // Fallback: 3-point circular with destination
+                    const destLat = walk.destinationLat || endLat;
+                    const destLon = walk.destinationLon || endLon;
                     if (Math.abs(destLat - walk.lat) > 0.001 || Math.abs(destLon - walk.lon) > 0.001) {
                         routeData = await fetchCircularRoute(walk.lat, walk.lon, destLat, destLon);
                     } else {
-                        // Destination same as start — offset slightly for a loop
                         const offsetLat = walk.lat + 0.008;
                         const offsetLon = walk.lon + 0.005;
                         routeData = await fetchCircularRoute(walk.lat, walk.lon, offsetLat, offsetLon);
@@ -114,9 +121,17 @@ async function aiGenerate() {
                 walk.time = formatDuration(routeData.duration);
             } catch (routeErr) {
                 console.warn('ORS routing failed, using AI coordinates:', routeErr);
-                generatedWaypoints = [[walk.lat, walk.lon]];
-                if (walk.endLat && walk.endLon) {
-                    generatedWaypoints.push([walk.endLat, walk.endLon]);
+                // Fallback: use loop waypoints directly as route points
+                if (walk.loopWaypoints && walk.loopWaypoints.length >= 2) {
+                    generatedWaypoints = [[walk.lat, walk.lon], ...walk.loopWaypoints];
+                    if (walk.endLat === walk.lat && walk.endLon === walk.lon) {
+                        generatedWaypoints.push([walk.lat, walk.lon]);
+                    }
+                } else {
+                    generatedWaypoints = [[walk.lat, walk.lon]];
+                    if (walk.endLat && walk.endLon) {
+                        generatedWaypoints.push([walk.endLat, walk.endLon]);
+                    }
                 }
                 walk.waypoints = generatedWaypoints;
             }

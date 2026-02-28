@@ -79,7 +79,7 @@ function extractTextFromResponse(data) {
  * Generate a walk from a natural language description using Gemini + Google Search
  */
 export async function generateWalkFromPrompt(userPrompt) {
-    const systemPrompt = `You are an expert Lake District walking guide. Given a user's description of their ideal walk, you generate a detailed walk specification in JSON format.
+    const systemPrompt = `You are an expert Lake District walking guide and route planner. Given a user's description of their ideal walk, you generate a detailed walk specification with PRECISE route waypoints in JSON format.
 
 You must return ONLY valid JSON (no markdown, no explanation) with this exact structure:
 {
@@ -93,27 +93,37 @@ You must return ONLY valid JSON (no markdown, no explanation) with this exact st
     "lon": -2.XXXX or -3.XXXX,
     "endLat": 54.XXXX,
     "endLon": -2.XXXX or -3.XXXX,
-    "destinationLat": 54.XXXX,
-    "destinationLon": -2.XXXX or -3.XXXX,
     "elevation": "e.g. 238m or N/A for flat walks",
     "terrain": "e.g. Woodland and open fell",
     "walkType": "summit | lakeside | waterfall | heritage | woodland | ridge | village",
     "parkingDetail": "Specific car park name, postcode if known, tips",
     "thePayoff": "One evocative sentence about the wow moment of this walk",
+    "isCircular": true,
+    "loopWaypoints": [
+        [54.XXXX, -2.XXXX],
+        [54.XXXX, -2.XXXX],
+        [54.XXXX, -2.XXXX],
+        [54.XXXX, -2.XXXX]
+    ],
     "directions": [
         {"step": 1, "instruction": "Detailed direction...", "landmark": "Notable feature"},
         {"step": 2, "instruction": "...", "landmark": "..."}
-    ],
-    "isCircular": true
+    ]
 }
 
-IMPORTANT RULES:
-- lat/lon is the CAR PARK starting point (real Lake District coordinates ~54.2-54.6 lat, -2.7 to -3.3 lon)
-- destinationLat/destinationLon is the MAIN FEATURE (summit, waterfall, tarn, viewpoint) — must be DIFFERENT from car park
+CRITICAL RULES FOR ROUTING:
+- lat/lon is the CAR PARK (real Lake District coordinates ~54.2-54.6 lat, -2.7 to -3.3 lon)
+- loopWaypoints are 4-6 intermediate points forming the ACTUAL walking loop
+  - These must be on or very near real footpaths, bridleways, or tracks
+  - They define the route shape — ORS will route between them on real paths
+  - For circular: the walk goes CarPark → wp1 → wp2 → wp3 → wp4 → CarPark
+  - For linear: the walk goes CarPark → wp1 → wp2 → wp3 → EndPoint
+  - Space them to capture key turns and features (don't cluster them)
+  - NEVER put waypoints on lake surfaces, cliff faces, or away from paths
 - For circular walks: endLat/endLon = lat/lon (returns to car park)
 - For linear walks: endLat/endLon is the finishing point
 - Use ACTUAL place names, car parks, paths, landmarks that REALLY EXIST
-- Directions should be 5-8 detailed steps a walker could actually follow
+- Directions should be 5-8 detailed steps matching the waypoint sequence
 - parkingDetail should include real postcodes where possible`;
 
     const requestBody = {
@@ -171,7 +181,7 @@ Generate 5-8 steps. Be specific about turns, landmarks, and features. Make direc
                 maxOutputTokens: 2048,
                 responseMimeType: 'application/json'
             },
-            tools: [{ googleSearchRetrieval: {} }]
+            tools: []
         };
 
         const data = await callGemini(requestBody);
