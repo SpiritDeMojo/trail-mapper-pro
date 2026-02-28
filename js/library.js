@@ -2,7 +2,7 @@
    Walk Library — Grid + Detail View
    ═══════════════════════════════════════════════════════ */
 
-import { createMap, difficultyColor, walkTypeIcon, parkingMarker, destMarker, drawRoute, fitToWaypoints } from './map-utils.js';
+import { createMap, difficultyColor, walkTypeIcon, parkingMarker, destMarker, drawRoute, fitToWaypoints, downloadGPX, renderElevationProfile } from './map-utils.js';
 
 let walks = [];
 let filteredWalks = [];
@@ -230,7 +230,7 @@ export function openDetail(index) {
         dirDiv.style.display = 'none';
     }
 
-    // Export button
+    // Export + GPX buttons
     document.getElementById('btn-export-detail').onclick = () => {
         const jsonStr = JSON.stringify(w, null, 2);
         navigator.clipboard.writeText(jsonStr).then(() => {
@@ -239,6 +239,31 @@ export function openDetail(index) {
             setTimeout(() => { btn.textContent = '📋 Export Walk JSON'; }, 2000);
         });
     };
+
+    // GPX download button
+    let gpxBtn = document.getElementById('btn-gpx-download');
+    if (!gpxBtn) {
+        gpxBtn = document.createElement('button');
+        gpxBtn.id = 'btn-gpx-download';
+        gpxBtn.className = 'btn-secondary';
+        gpxBtn.textContent = '📥 Download GPX';
+        gpxBtn.style.cssText = 'margin-left:8px;';
+        document.getElementById('btn-export-detail').parentNode.appendChild(gpxBtn);
+    }
+    gpxBtn.onclick = () => {
+        downloadGPX(w);
+        gpxBtn.textContent = '✅ Downloaded!';
+        setTimeout(() => { gpxBtn.textContent = '📥 Download GPX'; }, 2000);
+    };
+
+    // Route type badge (Circular/Linear)
+    const isCircular = w.endLat === w.lat && w.endLon === w.lon;
+    const routeType = document.getElementById('detail-route-type');
+    if (routeType) {
+        routeType.innerHTML = isCircular
+            ? '<span style="color:#4ecdc4;">🔄 Circular Route</span>'
+            : '<span style="color:#a78bfa;">➡️ Linear Route</span>';
+    }
 
     // Show detail, hide library
     library.classList.remove('active');
@@ -275,6 +300,9 @@ export function openDetail(index) {
         } else {
             parkingMarker(w.lat, w.lon, w.start).addTo(detailMap);
         }
+
+        // Render elevation profile
+        renderElevationProfile('detail-elevation', w.waypoints, w.elevation);
     }, 100);
 
     detail.scrollTop = 0;

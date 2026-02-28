@@ -76,12 +76,14 @@ const ROUTES = {
     'Tarn Hows': {
         carPark: [54.3874, -3.0358], // NT car park LA22 0PW
         loop: [
-            [54.3880, -3.0375], // Path towards tarn
-            [54.3900, -3.0420], // North end of tarn
-            [54.3895, -3.0460], // West side
-            [54.3870, -3.0455], // South west
-            [54.3860, -3.0420], // South side
-            [54.3870, -3.0380], // Back to car park
+            [54.3880, -3.0380], // Path descending to tarn
+            [54.3900, -3.0395], // NE corner of tarn
+            [54.3915, -3.0420], // North shore
+            [54.3910, -3.0450], // NW bend
+            [54.3895, -3.0470], // West side path
+            [54.3875, -3.0465], // SW end of tarn
+            [54.3865, -3.0440], // South shore
+            [54.3870, -3.0400], // SE corner, heading back
         ]
     },
 
