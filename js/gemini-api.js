@@ -2,7 +2,7 @@
    Gemini API — Google Generative AI client for walk generation
    ═══════════════════════════════════════════════════════ */
 
-const GEMINI_ENDPOINT = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent';
+const GEMINI_ENDPOINT = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent';
 
 // Default key — can be overridden via settings
 const DEFAULT_GEMINI_KEY = 'AIzaSyCbBg1KGryWrkL8F2wSCz_bemMbHVbwShM';
@@ -19,6 +19,23 @@ export function getGeminiKey() {
  */
 export function setGeminiKey(key) {
     localStorage.setItem('gemini_api_key', key);
+}
+
+/**
+ * Extract text from Gemini response (handles thinking model parts)
+ */
+function extractTextFromResponse(data) {
+    const parts = data.candidates?.[0]?.content?.parts;
+    if (!parts || parts.length === 0) return null;
+
+    // Gemini 2.5 returns "thought" parts followed by the actual text part
+    // We want the last text part (the actual response, not the thinking)
+    for (let i = parts.length - 1; i >= 0; i--) {
+        if (parts[i].text !== undefined && parts[i].text !== '') {
+            return parts[i].text;
+        }
+    }
+    return null;
 }
 
 /**
@@ -77,7 +94,7 @@ IMPORTANT RULES:
             ],
             generationConfig: {
                 temperature: 0.7,
-                maxOutputTokens: 2048,
+                maxOutputTokens: 4096,
                 responseMimeType: 'application/json'
             }
         })
@@ -90,8 +107,8 @@ IMPORTANT RULES:
 
     const data = await response.json();
 
-    // Extract the text content from Gemini response
-    const text = data.candidates?.[0]?.content?.parts?.[0]?.text;
+    // Extract text (handles thinking model parts)
+    const text = extractTextFromResponse(data);
     if (!text) {
         throw new Error('Gemini returned an empty response.');
     }
@@ -135,7 +152,7 @@ Generate 5-8 steps. Be specific about turns, landmarks, and features. Make direc
                 contents: [{ role: 'user', parts: [{ text: prompt }] }],
                 generationConfig: {
                     temperature: 0.6,
-                    maxOutputTokens: 1024,
+                    maxOutputTokens: 2048,
                     responseMimeType: 'application/json'
                 }
             })
@@ -144,7 +161,7 @@ Generate 5-8 steps. Be specific about turns, landmarks, and features. Make direc
         if (!response.ok) return [];
 
         const data = await response.json();
-        const text = data.candidates?.[0]?.content?.parts?.[0]?.text;
+        const text = extractTextFromResponse(data);
         if (!text) return [];
 
         const cleanJson = text.replace(/```json\n?/g, '').replace(/```\n?/g, '').trim();
