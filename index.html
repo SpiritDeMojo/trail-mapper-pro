@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trail Mapper Pro — Lake District</title>
+    <meta name="description"
+        content="Create and explore walking routes in the Lake District with real trail routing, AI walk generation, and detailed step-by-step directions.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header id="app-header">
+        <div class="header-inner">
+            <div class="logo">
+                <span class="logo-icon">🥾</span>
+                <div>
+                    <h1>Trail Mapper Pro</h1>
+                    <span class="subtitle">Walk Creator & Route Library · Lake District</span>
+                </div>
+            </div>
+            <nav id="main-nav">
+                <button class="nav-btn active" data-view="library">
+                    <span class="nav-icon">📚</span> Library
+                </button>
+                <button class="nav-btn" data-view="creator">
+                    <span class="nav-icon">🗺️</span> Create
+                </button>
+                <button class="nav-btn" data-view="ai-studio">
+                    <span class="nav-icon">🤖</span> AI Studio
+                </button>
+                <button class="nav-btn" data-view="settings">
+                    <span class="nav-icon">⚙️</span>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="app-main">
+        <!-- Library View -->
+        <div id="view-library" class="view active">
+            <!-- Filters -->
+            <div class="filters-bar">
+                <div class="filter-group">
+                    <label>Difficulty</label>
+                    <div class="filter-pills" id="difficulty-filter">
+                        <button class="pill active" data-value="all">All</button>
+                        <button class="pill easy" data-value="Easy">Easy</button>
+                        <button class="pill moderate" data-value="Moderate">Moderate</button>
+                        <button class="pill challenging" data-value="Challenging">Challenging</button>
+                    </div>
+                </div>
+                <div class="filter-group">
+                    <label>Type</label>
+                    <div class="filter-pills" id="type-filter">
+                        <button class="pill active" data-value="all">All</button>
+                        <button class="pill" data-value="summit">⛰️ Summit</button>
+                        <button class="pill" data-value="lakeside">🌊 Lakeside</button>
+                        <button class="pill" data-value="waterfall">💧 Waterfall</button>
+                        <button class="pill" data-value="heritage">🏛️ Heritage</button>
+                        <button class="pill" data-value="woodland">🌲 Woodland</button>
+                        <button class="pill" data-value="ridge">🗻 Ridge</button>
+                        <button class="pill" data-value="village">🏘️ Village</button>
+                    </div>
+                </div>
+                <div class="filter-stats" id="filter-stats">0 walks</div>
+            </div>
+
+            <!-- Walk Grid -->
+            <div class="walk-grid" id="walk-grid"></div>
+        </div>
+
+        <!-- Walk Detail (overlay) -->
+        <div id="view-detail" class="view">
+            <div class="detail-header">
+                <button class="back-btn" id="back-btn">← Back to Library</button>
+                <div class="detail-title-bar">
+                    <h2 id="detail-name"></h2>
+                    <span class="detail-badge" id="detail-badge"></span>
+                </div>
+                <div class="detail-meta" id="detail-meta"></div>
+            </div>
+            <div class="detail-body">
+                <div class="detail-map-wrap">
+                    <div id="detail-map" class="detail-map"></div>
+                </div>
+                <div class="detail-info">
+                    <div class="detail-payoff" id="detail-payoff"></div>
+                    <div class="detail-desc" id="detail-desc"></div>
+                    <div class="detail-stats" id="detail-stats"></div>
+                    <div class="detail-parking" id="detail-parking"></div>
+                    <div class="detail-directions" id="detail-directions"></div>
+                    <div class="detail-export-bar">
+                        <button class="btn-export-detail" id="btn-export-detail">📋 Export Walk JSON</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Creator View -->
+        <div id="view-creator" class="view">
+            <div class="creator-layout">
+                <div class="creator-sidebar">
+                    <h2>Create a Walk</h2>
+                    <p class="creator-hint">Click the map to place pins. First click = 🅿️ Car Park, second click = 🏔️
+                        Point of Interest. Route will follow real hiking trails.</p>
+
+                    <div class="creator-pins">
+                        <div class="pin-row" id="pin-start">
+                            <span class="pin-label">🅿️ Car Park</span>
+                            <span class="pin-coords">Click map to set...</span>
+                        </div>
+                        <div class="pin-row" id="pin-end">
+                            <span class="pin-label">🏔️ Destination</span>
+                            <span class="pin-coords">Click map to set...</span>
+                        </div>
+                    </div>
+
+                    <div class="creator-route-type">
+                        <label>Route Type</label>
+                        <div class="filter-pills">
+                            <button class="pill active" data-route="circular" id="route-circular">🔄 Circular</button>
+                            <button class="pill" data-route="linear" id="route-linear">➡️ Linear</button>
+                        </div>
+                    </div>
+
+                    <button class="btn-generate" id="btn-generate" disabled>Generate Trail Route</button>
+                    <button class="btn-clear" id="btn-clear">Clear Pins</button>
+
+                    <div class="creator-form" id="creator-form" style="display:none;">
+                        <h3>Walk Details</h3>
+                        <label>Name <input type="text" id="wf-name" placeholder="e.g. Orrest Head"></label>
+                        <label>Difficulty
+                            <select id="wf-difficulty">
+                                <option value="Easy">Easy</option>
+                                <option value="Moderate">Moderate</option>
+                                <option value="Challenging">Challenging</option>
+                            </select>
+                        </label>
+                        <label>Distance <input type="text" id="wf-distance" placeholder="e.g. 3.5 km"></label>
+                        <label>Time <input type="text" id="wf-time" placeholder="e.g. 1.5 hours"></label>
+                        <label>Elevation <input type="text" id="wf-elevation" placeholder="e.g. 321m or N/A"></label>
+                        <label>Terrain <input type="text" id="wf-terrain" placeholder="e.g. Gravel paths"></label>
+                        <label>Walk Type
+                            <select id="wf-walktype">
+                                <option value="summit">Summit</option>
+                                <option value="lakeside">Lakeside</option>
+                                <option value="waterfall">Waterfall</option>
+                                <option value="heritage">Heritage</option>
+                                <option value="woodland">Woodland</option>
+                                <option value="ridge">Ridge</option>
+                                <option value="village">Village</option>
+                            </select>
+                        </label>
+                        <label>Description <textarea id="wf-desc" rows="3"
+                                placeholder="A short, evocative description..."></textarea></label>
+                        <label>Parking Detail <textarea id="wf-parking" rows="2"
+                                placeholder="Car park name, postcode, tips..."></textarea></label>
+                        <label>The Payoff <textarea id="wf-payoff" rows="2"
+                                placeholder="The wow moment of this walk..."></textarea></label>
+
+                        <button class="btn-export" id="btn-export">📋 Export as JSON</button>
+                        <button class="btn-add-library" id="btn-add-library">➕ Add to Library</button>
+                    </div>
+
+                    <pre class="json-output" id="json-output" style="display:none;"></pre>
+                </div>
+                <div class="creator-map-wrap">
+                    <div id="creator-map" class="creator-map"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- AI Studio View -->
+        <div id="view-ai-studio" class="view">
+            <div class="ai-layout">
+                <div class="ai-sidebar">
+                    <h2>🤖 AI Walk Generator</h2>
+                    <p class="ai-hint">Describe the walk you want and Gemini AI will create it with real trail routes.</p>
+
+                    <div class="ai-presets">
+                        <span class="preset-label">Quick prompts:</span>
+                        <button class="preset-btn" data-prompt="A gentle 1-hour lakeside walk suitable for families near Windermere">🌊 Easy lakeside</button>
+                        <button class="preset-btn" data-prompt="A challenging 4-hour summit walk with dramatic ridge views near Langdale">⛰️ Summit challenge</button>
+                        <button class="preset-btn" data-prompt="A moderate 2-hour woodland walk with waterfalls near Ambleside">💧 Waterfall walk</button>
+                        <button class="preset-btn" data-prompt="A short 45-minute walk perfect for sunset with panoramic views">🌅 Sunset stroll</button>
+                    </div>
+
+                    <div class="ai-input-wrap">
+                        <textarea id="ai-prompt" rows="4" placeholder="e.g. I want a 2-hour moderate walk with stunning lake views and a cosy pub stop near Ambleside..."></textarea>
+                        <button class="btn-ai-generate" id="btn-ai-generate">✨ Generate Walk</button>
+                    </div>
+
+                    <div class="ai-status" id="ai-status" style="display:none;"></div>
+
+                    <div class="ai-result" id="ai-result" style="display:none;">
+                        <h3>Generated Walk</h3>
+                        <div class="ai-walk-card" id="ai-walk-card"></div>
+                        <div class="ai-actions">
+                            <button class="btn-export" id="btn-ai-export">📋 Export JSON</button>
+                            <button class="btn-add-library" id="btn-ai-add-library">➕ Add to Library</button>
+                        </div>
+                    </div>
+
+                    <pre class="json-output" id="ai-json-output" style="display:none;"></pre>
+                </div>
+                <div class="ai-map-wrap">
+                    <div id="ai-map" class="ai-map"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Settings View -->
+        <div id="view-settings" class="view">
+            <div class="settings-panel">
+                <h2>⚙️ Settings</h2>
+
+                <div class="settings-section">
+                    <h3>API Keys</h3>
+                    <p class="settings-hint">Keys are stored locally in your browser. Never sent anywhere except to the respective API services.</p>
+
+                    <label class="settings-label">
+                        OpenRouteService API Key
+                        <input type="password" id="settings-ors-key" placeholder="Enter ORS API key...">
+                        <small>Get a free key at <a href="https://openrouteservice.org/dev/#/signup" target="_blank">openrouteservice.org</a></small>
+                    </label>
+
+                    <label class="settings-label">
+                        Google Gemini API Key
+                        <input type="password" id="settings-gemini-key" placeholder="Enter Gemini API key...">
+                        <small>Get a key at <a href="https://aistudio.google.com/apikey" target="_blank">aistudio.google.com</a></small>
+                    </label>
+
+                    <button class="btn-save-settings" id="btn-save-settings">💾 Save Settings</button>
+                </div>
+
+                <div class="settings-section">
+                    <h3>Route Audit Tool</h3>
+                    <p class="settings-hint">Re-route all walks using real trail data from OpenRouteService. Requires ORS API key.</p>
+                    <button class="btn-audit" id="btn-audit-routes">🔄 Re-Route All Walks (Real Trail Data)</button>
+                    <div class="audit-progress" id="audit-progress" style="display:none;"></div>
+                </div>
+
+                <div class="settings-section">
+                    <h3>Import Walk</h3>
+                    <p class="settings-hint">Paste a walk JSON to add it to the library.</p>
+                    <textarea id="import-json" rows="6" placeholder='Paste walk JSON here...'></textarea>
+                    <button class="btn-import" id="btn-import-walk">📥 Import Walk</button>
+                </div>
+
+                <div class="settings-section">
+                    <h3>Export All Walks</h3>
+                    <button class="btn-export" id="btn-export-all">📦 Export Full Library as JSON</button>
+                </div>
+
+                <div class="settings-section">
+                    <h3>Walk JSON Schema</h3>
+                    <p class="settings-hint">Use this format for importing walks or for AI tools to generate compatible files:</p>
+                    <pre class="schema-preview">{
+  "name": "Walk Name",
+  "distance": "3.5 km",
+  "time": "1.5 hours",
+  "difficulty": "Easy | Moderate | Challenging",
+  "desc": "Description of the walk...",
+  "start": "Car Park Name",
+  "lat": 54.38, "lon": -2.90,
+  "elevation": "238m",
+  "terrain": "Woodland and open fell",
+  "walkType": "summit | lakeside | waterfall | heritage | woodland | ridge | village",
+  "waypoints": [[54.38, -2.90], ...],
+  "directions": [{"step": 1, "instruction": "...", "landmark": "..."}],
+  "parkingDetail": "Car park details...",
+  "thePayoff": "The wow moment..."
+}</pre>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script type="module" src="/js/app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,6982 @@
+[
+  {
+    "name": "Orrest Head",
+    "distance": "1.9 km",
+    "time": "40 mins",
+    "difficulty": "Easy",
+    "desc": "A short climb rewarded with Wainwright's first Lake District view — the panorama that started it all.",
+    "start": "Windermere town centre",
+    "lat": 54.38025,
+    "lon": -2.90395,
+    "elevation": "238m",
+    "terrain": "Woodland and open fell",
+    "routeUrl": "",
+    "walkType": "summit",
+    "waypoints": [
+      [
+        54.38025,
+        -2.90395
+      ],
+      [
+        54.38034,
+        -2.90449
+      ],
+      [
+        54.38055,
+        -2.90507
+      ],
+      [
+        54.3808,
+        -2.90521
+      ],
+      [
+        54.38091,
+        -2.90463
+      ],
+      [
+        54.38094,
+        -2.90485
+      ],
+      [
+        54.38082,
+        -2.90532
+      ],
+      [
+        54.38117,
+        -2.90546
+      ],
+      [
+        54.3816,
+        -2.90585
+      ],
+      [
+        54.38216,
+        -2.90579
+      ],
+      [
+        54.38314,
+        -2.90694
+      ],
+      [
+        54.38351,
+        -2.90666
+      ],
+      [
+        54.38379,
+        -2.90679
+      ],
+      [
+        54.38467,
+        -2.90752
+      ],
+      [
+        54.38497,
+        -2.90765
+      ],
+      [
+        54.38512,
+        -2.90736
+      ],
+      [
+        54.3853,
+        -2.90738
+      ],
+      [
+        54.38558,
+        -2.90758
+      ],
+      [
+        54.38595,
+        -2.90765
+      ],
+      [
+        54.38594,
+        -2.90745
+      ],
+      [
+        54.38555,
+        -2.9073
+      ],
+      [
+        54.38531,
+        -2.90663
+      ],
+      [
+        54.38493,
+        -2.90629
+      ],
+      [
+        54.38477,
+        -2.90585
+      ],
+      [
+        54.38438,
+        -2.90554
+      ],
+      [
+        54.38411,
+        -2.90508
+      ],
+      [
+        54.38409,
+        -2.90485
+      ],
+      [
+        54.38415,
+        -2.90484
+      ],
+      [
+        54.38402,
+        -2.90505
+      ],
+      [
+        54.38361,
+        -2.90505
+      ],
+      [
+        54.38263,
+        -2.90413
+      ],
+      [
+        54.38219,
+        -2.90373
+      ],
+      [
+        54.3819,
+        -2.90386
+      ],
+      [
+        54.38157,
+        -2.90505
+      ],
+      [
+        54.38165,
+        -2.90545
+      ],
+      [
+        54.38146,
+        -2.90544
+      ],
+      [
+        54.38096,
+        -2.90548
+      ],
+      [
+        54.3808,
+        -2.90521
+      ],
+      [
+        54.38055,
+        -2.90507
+      ],
+      [
+        54.38034,
+        -2.90449
+      ],
+      [
+        54.38025,
+        -2.90395
+      ]
+    ],
+    "directions": [
+      {
+        "step": 1,
+        "instruction": "From Windermere town centre, cross the A591 main road. You'll see a brown sign for 'Orrest Head' pointing up a narrow lane.",
+        "landmark": "Orrest Head signpost"
+      },
+      {
+        "step": 2,
+        "instruction": "Follow the lane uphill for 100m, then go through the kissing gate on your left into the woodland. The path is clear and well-trodden.",
+        "landmark": "Kissing gate"
+      },
+      {
+        "step": 3,
+        "instruction": "Climb steadily through mixed woodland. The path zigzags — follow the main trail, ignoring smaller side paths.",
+        "landmark": "Woodland path"
+      },
+      {
+        "step": 4,
+        "instruction": "After about 15 minutes, you'll emerge from the trees onto open fell. The summit is the obvious high point ahead.",
+        "landmark": "Tree line"
+      },
+      {
+        "step": 5,
+        "instruction": "Reach the Orrest Head viewpoint (238m). This is where Wainwright first saw the Lakes aged 23 — there's a memorial plaque. Take in the panorama: Windermere stretches out below, with the Langdale Pikes and Coniston Old Man beyond.",
+        "landmark": "Summit viewpoint & Wainwright plaque"
+      },
+      {
+        "step": 6,
+        "instruction": "Continue north along the ridge for extended views, then loop back via the path heading east.",
+        "landmark": "Northern viewpoint"
+      },
+      {
+        "step": 7,
+        "instruction": "Descend through pasture and back into woodland. Follow signs back to the kissing gate and retrace your steps to town.",
+        "landmark": "Return path"
+      }
+    ],
+    "parkingDetail": "Windermere Library Car Park, Broad Street, LA23 2AB (free after 6pm). Or Lake District Visitor Centre, Glebe Road.",
+    "thePayoff": "A short climb rewarded with Wainwright's first Lake District view — the panorama that started it all.",
+    "endLat": 54.38025,
+    "endLon": -2.90395
+  },
+  {
+    "name": "Tarn Hows",
+    "distance": "2.8 km",
+    "time": "1 hour",
+    "difficulty": "Easy",
+    "desc": "A picture-perfect lake loop through one of the most photographed spots in England — gentle, stunning, and unforgettable.",
+    "start": "Tarn Hows Car Park",
+    "lat": 54.3833,
+    "lon": -3.0333,
+    "elevation": "210m",
+    "terrain": "Gravel paths",
+    "routeUrl": "",
+    "walkType": "lakeside",
+    "waypoints": [
+      [
+        54.3874,
+        -3.03636
+      ],
+      [
+        54.3878,
+        -3.03716
+      ],
+      [
+        54.3879,
+        -3.03734
+      ],
+      [
+        54.3879,
+        -3.0378
+      ],
+      [
+        54.38841,
+        -3.03805
+      ],
+      [
+        54.38879,
+        -3.03788
+      ],
+      [
+        54.38904,
+        -3.03772
+      ],
+      [
+        54.38979,
+        -3.03888
+      ],
+      [
+        54.39025,
+        -3.04044
+      ],
+      [
+        54.39038,
+        -3.04134
+      ],
+      [
+        54.39008,
+        -3.04203
+      ],
+      [
+        54.39018,
+        -3.04291
+      ],
+      [
+        54.39018,
+        -3.04414
+      ],
+      [
+        54.38979,
+        -3.04492
+      ],
+      [
+        54.39005,
+        -3.04598
+      ],
+      [
+        54.38996,
+        -3.04616
+      ],
+      [
+        54.38971,
+        -3.04643
+      ],
+      [
+        54.3894,
+        -3.04649
+      ],
+      [
+        54.38895,
+        -3.04601
+      ],
+      [
+        54.38843,
+        -3.04567
+      ],
+      [
+        54.38787,
+        -3.0455
+      ],
+      [
+        54.38674,
+        -3.04526
+      ],
+      [
+        54.38585,
+        -3.04561
+      ],
+      [
+        54.38529,
+        -3.04562
+      ],
+      [
+        54.38624,
+        -3.04462
+      ],
+      [
+        54.38661,
+        -3.04404
+      ],
+      [
+        54.38697,
+        -3.04304
+      ],
+      [
+        54.38771,
+        -3.04156
+      ],
+      [
+        54.38778,
+        -3.04109
+      ],
+      [
+        54.38728,
+        -3.04048
+      ],
+      [
+        54.38706,
+        -3.03988
+      ],
+      [
+        54.38702,
+        -3.03912
+      ],
+      [
+        54.38686,
+        -3.03906
+      ],
+      [
+        54.38716,
+        -3.03868
+      ],
+      [
+        54.38723,
+        -3.03824
+      ],
+      [
+        54.38659,
+        -3.03832
+      ],
+      [
+        54.3861,
+        -3.03825
+      ],
+      [
+        54.38659,
+        -3.03832
+      ],
+      [
+        54.38723,
+        -3.03824
+      ],
+      [
+        54.38744,
+        -3.03819
+      ],
+      [
+        54.38763,
+        -3.03792
+      ],
+      [
+        54.38756,
+        -3.03656
+      ],
+      [
+        54.3874,
+        -3.03636
+      ]
+    ],
+    "directions": [
+      {
+        "step": 1,
+        "instruction": "From the car park, follow the clear gravel path downhill towards the tarn. You'll see the water within 2 minutes.",
+        "landmark": "Car park exit"
+      },
+      {
+        "step": 2,
+        "instruction": "At the tarn, turn RIGHT to walk clockwise. The path is wide, flat, and accessible — perfect for all abilities.",
+        "landmark": "Tarn shore"
+      },
+      {
+        "step": 3,
+        "instruction": "Follow the north shore with stunning views across the water to the Langdale Pikes. Several benches here for photos.",
+        "landmark": "North shore viewpoint"
+      },
+      {
+        "step": 4,
+        "instruction": "Round the northwest corner — this is the classic Tarn Hows view you see on postcards. The bench here is the best seat in the house.",
+        "landmark": "Northwest bench (postcard view)"
+      },
+      {
+        "step": 5,
+        "instruction": "Continue along the west shore through tall conifers. The path dips slightly and the tarn feels more secluded here.",
+        "landmark": "Conifer woods"
+      },
+      {
+        "step": 6,
+        "instruction": "Pass the southwest bay — on still mornings, the reflections here are extraordinary.",
+        "landmark": "Southwest reflections"
+      },
+      {
+        "step": 7,
+        "instruction": "Cross the dam at the south end and continue along the southeast shore. A small wooden bridge crosses a stream.",
+        "landmark": "Dam and bridge"
+      },
+      {
+        "step": 8,
+        "instruction": "Follow the east shore back towards the car park. The path climbs gently back up to where you started.",
+        "landmark": "Return to car park"
+      }
+    ],
+    "parkingDetail": "National Trust Tarn Hows Car Park, LA22 0QF. £5 non-NT members (free for NT). Can be busy — arrive before 10am in summer.",
+    "thePayoff": "A picture-perfect lake loop through one of the most photographed spots in England — gentle, stunning, and unforgettable.",
+    "endLat": 54.3833,
+    "endLon": -3.0333
+  },
+  {
+    "name": "Aira Force",
+    "distance": "2.6 km",
+    "time": "1.5 hours",
+    "difficulty": "Moderate",
+    "desc": "A magical gorge walk to a 20-metre waterfall plunging through a stone bridge — Wordsworth wrote about this place.",
+    "start": "Aira Force Car Park",
+    "lat": 54.5743,
+    "lon": -2.92727,
+    "elevation": "190m",
+    "terrain": "Stone steps and wooded gorge",
+    "routeUrl": "",
+    "walkType": "waterfall",
+    "waypoints": [
+      [
+        54.5743,
+        -2.92727
+      ],
+      [
+        54.57409,
+        -2.92784
+      ],
+      [
+        54.57411,
+        -2.92847
+      ],
+      [
+        54.57419,
+        -2.92874
+      ],
+      [
+        54.57411,
+        -2.92935
+      ],
+      [
+        54.57331,
+        -2.92939
+      ],
+      [
+        54.57301,
+        -2.92959
+      ],
+      [
+        54.57254,
+        -2.92941
+      ],
+      [
+        54.57204,
+        -2.92922
+      ],
+      [
+        54.57151,
+        -2.92925
+      ],
+      [
+        54.57138,
+        -2.92999
+      ],
+      [
+        54.57114,
+        -2.93001
+      ],
+      [
+        54.57098,
+        -2.93096
+      ],
+      [
+        54.57156,
+        -2.9321
+      ],
+      [
+        54.57238,
+        -2.93316
+      ],
+      [
+        54.57202,
+        -2.93586
+      ],
+      [
+        54.57141,
+        -2.93668
+      ],
+      [
+        54.57164,
+        -2.93676
+      ],
+      [
+        54.57305,
+        -2.93506
+      ],
+      [
+        54.57203,
+        -2.93251
+      ],
+      [
+        54.57103,
+        -2.93138
+      ],
+      [
+        54.57108,
+        -2.93022
+      ],
+      [
+        54.57135,
+        -2.93003
+      ],
+      [
+        54.57149,
+        -2.92929
+      ],
+      [
+        54.57187,
+        -2.92917
+      ],
+      [
+        54.57242,
+        -2.92925
+      ],
+      [
+        54.57292,
+        -2.92973
+      ],
+      [
+        54.57316,
+        -2.92937
+      ],
+      [
+        54.5735,
+        -2.92951
+      ],
+      [
+        54.57417,
+        -2.92911
+      ],
+      [
+        54.57413,
+        -2.92855
+      ],
+      [
+        54.57397,
+        -2.92814
+      ],
+      [
+        54.57411,
+        -2.92755
+      ],
+      [
+        54.5743,
+        -2.92727
+      ]
+    ],
+    "directions": [
+      {
+        "step": 1,
+        "instruction": "From the car park, go through the gate and follow the wide path alongside Aira Beck. The sound of water guides you.",
+        "landmark": "Car park gate"
+      },
+      {
+        "step": 2,
+        "instruction": "After 5 minutes, the path enters a beautiful wooded gorge. It narrows and climbs stone steps — take care if wet.",
+        "landmark": "Gorge entrance"
+      },
+      {
+        "step": 3,
+        "instruction": "Reach the lower viewing platform. Aira Force crashes 20 metres through the rocks ahead — spectacular after rain.",
+        "landmark": "Lower waterfall view"
+      },
+      {
+        "step": 4,
+        "instruction": "Climb to the iconic stone bridge ABOVE the waterfall. Look down into the spray — this is the view Wordsworth loved.",
+        "landmark": "Stone bridge above falls"
+      },
+      {
+        "step": 5,
+        "instruction": "Continue uphill to see High Force, the upper waterfall — smaller but beautiful.",
+        "landmark": "High Force (upper falls)"
+      },
+      {
+        "step": 6,
+        "instruction": "Cross the bridge and descend the opposite bank of the gorge. Different angles of the falls appear through the trees.",
+        "landmark": "Return bridge"
+      },
+      {
+        "step": 7,
+        "instruction": "Follow the path back downstream on this side. It's quieter and gives a new perspective on the gorge.",
+        "landmark": "Return path"
+      },
+      {
+        "step": 8,
+        "instruction": "Rejoin the main path and return to the car park.",
+        "landmark": "Back to start"
+      }
+    ],
+    "parkingDetail": "National Trust Aira Force Car Park, A592, CA11 0JS. £7 non-NT members. Well-signed from A592.",
+    "thePayoff": "A magical gorge walk to a 20-metre waterfall plunging through a stone bridge — Wordsworth wrote about this place.",
+    "endLat": 54.5743,
+    "endLon": -2.92727
+  },
+  {
+    "name": "Catbells",
+    "distance": "3.1 km",
+    "time": "2 hours",
+    "difficulty": "Moderate",
+    "desc": "The most popular family summit in the Lakes — a thrilling ridge walk with Derwentwater sparkling below.",
+    "start": "Gutherscale roadside parking",
+    "lat": 54.581,
+    "lon": -3.1614,
+    "elevation": "451m",
+    "terrain": "Steep rocky path and ridge",
+    "routeUrl": "",
+    "walkType": "summit",
+    "waypoints": [
+      [
+        54.56339,
+        -3.17055
+      ],
+      [
+        54.56251,
+        -3.17016
+      ],
+      [
+        54.56231,
+        -3.1697
+      ],
+      [
+        54.56239,
+        -3.1694
+      ],
+      [
+        54.56248,
+        -3.16901
+      ],
+      [
+        54.56273,
+        -3.1688
+      ],
+      [
+        54.56255,
+        -3.16851
+      ],
+      [
+        54.56254,
+        -3.16824
+      ],
+      [
+        54.56169,
+        -3.16746
+      ],
+      [
+        54.56095,
+        -3.16615
+      ],
+      [
+        54.56019,
+        -3.16552
+      ],
+      [
+        54.55963,
+        -3.16514
+      ],
+      [
+        54.5594,
+        -3.16496
+      ],
+      [
+        54.55868,
+        -3.16433
+      ],
+      [
+        54.55821,
+        -3.16388
+      ],
+      [
+        54.55781,
+        -3.16285
+      ],
+      [
+        54.55748,
+        -3.16077
+      ],
+      [
+        54.55546,
+        -3.16211
+      ],
+      [
+        54.55479,
+        -3.1618
+      ],
+      [
+        54.55511,
+        -3.1617
+      ],
+      [
+        54.55627,
+        -3.16127
+      ],
+      [
+        54.55746,
+        -3.16143
+      ],
+      [
+        54.55801,
+        -3.16346
+      ],
+      [
+        54.55829,
+        -3.164
+      ],
+      [
+        54.55906,
+        -3.1647
+      ],
+      [
+        54.55954,
+        -3.16503
+      ],
+      [
+        54.55996,
+        -3.16543
+      ],
+      [
+        54.56064,
+        -3.16586
+      ],
+      [
+        54.56121,
+        -3.16657
+      ],
+      [
+        54.56223,
+        -3.16807
+      ],
+      [
+        54.56251,
+        -3.16847
+      ],
+      [
+        54.56264,
+        -3.16864
+      ],
+      [
+        54.56255,
+        -3.16899
+      ],
+      [
+        54.56232,
+        -3.16926
+      ],
+      [
+        54.56231,
+        -3.16966
+      ],
+      [
+        54.56242,
+        -3.17005
+      ],
+      [
+        54.56309,
+        -3.17038
+      ],
+      [
+        54.56339,
+        -3.17055
+      ]
+    ],
+    "directions": [
+      {
+        "step": 1,
+        "instruction": "From the roadside, find the obvious path heading steeply uphill. It starts immediately — no warm-up!",
+        "landmark": "Path start from road"
+      },
+      {
+        "step": 2,
+        "instruction": "The first 10 minutes are the steepest. The path narrows to a scramble over rocks — use your hands where needed. It's easier than it looks.",
+        "landmark": "Initial scramble"
+      },
+      {
+        "step": 3,
+        "instruction": "Reach the false summit. Don't be fooled — the real top is the next rise along the ridge ahead.",
+        "landmark": "False summit"
+      },
+      {
+        "step": 4,
+        "instruction": "A short walk along a beautiful ridge brings you to the Catbells summit (451m). The 360° panorama is extraordinary: Derwentwater below, Skiddaw ahead, Borrowdale to the south.",
+        "landmark": "Catbells summit (451m)"
+      },
+      {
+        "step": 5,
+        "instruction": "For the full experience, continue south along the undulating ridge towards Maiden Moor. The walking is glorious — airy and open.",
+        "landmark": "Ridge walk south"
+      },
+      {
+        "step": 6,
+        "instruction": "Turn around at the col before Maiden Moor (or continue if you're feeling strong). Return the same way over the summit.",
+        "landmark": "Turnaround point"
+      },
+      {
+        "step": 7,
+        "instruction": "Descend carefully — the scramble section is trickier going down. Take your time on the rocky sections.",
+        "landmark": "Descent"
+      }
+    ],
+    "parkingDetail": "Gutherscale roadside parking, Portinscale to Grange road (limited spaces). Or Hawes End NT landing — arrive by Keswick Launch boat (adds to the adventure!).",
+    "thePayoff": "The most popular family summit in the Lakes — a thrilling ridge walk with Derwentwater sparkling below.",
+    "endLat": 54.581,
+    "endLon": -3.1614
+  },
+  {
+    "name": "Helvellyn via Striding Edge",
+    "distance": "11.0 km",
+    "time": "6 hours",
+    "difficulty": "Challenging",
+    "desc": "England's most famous mountain ridge — a genuine scramble with 600m drops either side, ending at the third-highest peak in the Lakes.",
+    "start": "Glenridding main car park",
+    "lat": 54.5436,
+    "lon": -2.9506,
+    "elevation": "950m",
+    "terrain": "High mountain ridge and scramble",
+    "routeUrl": "",
+    "walkType": "ridge",
+    "waypoints": [
+      [
+        54.54402,
+        -2.94616
+      ],
+      [
+        54.54251,
+        -2.94812
+      ],
+      [
+        54.53901,
+        -2.94636
+      ],
+      [
+        54.53587,
+        -2.94452
+      ],
+      [
+        54.53335,
+        -2.93844
+      ],
+      [
+        54.53194,
+        -2.94037
+      ],
+      [
+        54.53054,
+        -2.93978
+      ],
+      [
+        54.53291,
+        -2.94071
+      ],
+      [
+        54.53118,
+        -2.94517
+      ],
+      [
+        54.52693,
+        -2.94712
+      ],
+      [
+        54.53042,
+        -2.94526
+      ],
+      [
+        54.53276,
+        -2.94921
+      ],
+      [
+        54.53104,
+        -2.95
+      ],
+      [
+        54.53,
+        -2.95099
+      ],
+      [
+        54.52945,
+        -2.95195
+      ],
+      [
+        54.52879,
+        -2.9518
+      ],
+      [
+        54.52735,
+        -2.9527
+      ],
+      [
+        54.52559,
+        -2.9535
+      ],
+      [
+        54.52694,
+        -2.95302
+      ],
+      [
+        54.5281,
+        -2.95265
+      ],
+      [
+        54.52729,
+        -2.95502
+      ],
+      [
+        54.52879,
+        -2.9518
+      ],
+      [
+        54.52945,
+        -2.95195
+      ],
+      [
+        54.53,
+        -2.95099
+      ],
+      [
+        54.53104,
+        -2.95
+      ],
+      [
+        54.53276,
+        -2.94921
+      ],
+      [
+        54.53112,
+        -2.95586
+      ],
+      [
+        54.53212,
+        -2.9557
+      ],
+      [
+        54.53436,
+        -2.94789
+      ],
+      [
+        54.53663,
+        -2.94367
+      ],
+      [
+        54.53918,
+        -2.94692
+      ],
+      [
+        54.54266,
+        -2.94822
+      ],
+      [
+        54.54402,
+        -2.94616
+      ]
+    ],
+    "directions": [
+      {
+        "step": 1,
+        "instruction": "From Glenridding car park, follow signs for 'Helvellyn via Striding Edge'. Cross the bridge and follow Mires Beck south.",
+        "landmark": "Glenridding bridge"
+      },
+      {
+        "step": 2,
+        "instruction": "Climb steadily onto Birkhouse Moor. The path is clear and well-cairned. You'll gain views of Ullswater behind you.",
+        "landmark": "Birkhouse Moor"
+      },
+      {
+        "step": 3,
+        "instruction": "Reach the 'Hole-in-the-Wall' — a gap in the stone wall. Go through and the terrain changes. Striding Edge is now visible ahead.",
+        "landmark": "Hole-in-the-Wall"
+      },
+      {
+        "step": 4,
+        "instruction": "The ridge begins. You have a choice: traverse the very crest (exposed, Grade 1 scramble) or take the bypass path slightly below on the left. The crest is the classic route.",
+        "landmark": "Striding Edge start"
+      },
+      {
+        "step": 5,
+        "instruction": "Follow the ridge, using hands where needed. The exposure is real — 200m drops on either side. Stay focused and move deliberately.",
+        "landmark": "Striding Edge scramble"
+      },
+      {
+        "step": 6,
+        "instruction": "After the final rocky tower, scramble up to the summit plateau. A short walk brings you to the Helvellyn summit shelter (950m). On a clear day you can see Scotland, the Isle of Man, and Wales.",
+        "landmark": "Helvellyn summit (950m)"
+      },
+      {
+        "step": 7,
+        "instruction": "Descend via Swirral Edge (northeast). This is steep and rocky but less exposed than Striding Edge. Loose scree — place feet carefully.",
+        "landmark": "Swirral Edge descent"
+      },
+      {
+        "step": 8,
+        "instruction": "Pass below Catstye Cam and follow the path down past Red Tarn. The walking eases as you rejoin Mires Beck.",
+        "landmark": "Red Tarn & Mires Beck"
+      },
+      {
+        "step": 9,
+        "instruction": "Follow Mires Beck north back to Glenridding. Celebrate with a pint at the Traveller's Rest.",
+        "landmark": "Return to Glenridding"
+      }
+    ],
+    "parkingDetail": "Glenridding main car park, CA11 0PD. Pay & display. Fills early in summer — arrive before 8am on weekends.",
+    "thePayoff": "England's most famous mountain ridge — a genuine scramble with 600m drops either side, ending at the third-highest peak in the Lakes.",
+    "endLat": 54.5436,
+    "endLon": -2.9506
+  },
+  {
+    "name": "Loughrigg Fell",
+    "distance": "6.5 km",
+    "time": "2.5 hours",
+    "difficulty": "Moderate",
+    "desc": "A stunning 360-degree panorama of Windermere, Rydal Water, and Grasmere from a relatively accessible summit.",
+    "start": "White Moss Car Park",
+    "lat": 54.4502,
+    "lon": -3.0066,
+    "elevation": "335m",
+    "terrain": "Rocky fell and stone paths",
+    "routeUrl": "",
+    "walkType": "summit",
+    "waypoints": [
+      [
+        54.4323,
+        -2.9642
+      ],
+      [
+        54.4332,
+        -2.9678
+      ],
+      [
+        54.432525,
+        -2.9708750000000004
+      ],
+      [
+        54.43185,
+        -2.9739500000000003
+      ],
+      [
+        54.431174999999996,
+        -2.9770250000000003
+      ],
+      [
+        54.4305,
+        -2.9801
+      ],
+      [
+        54.4307,
+        -2.983025
+      ],
+      [
+        54.4309,
+        -2.98595
+      ],
+      [
+        54.4311,
+        -2.988875
+      ],
+      [
+        54.4313,
+        -2.9918
+      ],
+      [
+        54.4315,
+        -2.994725
+      ],
+      [
+        54.4317,
+        -2.99765
+      ],
+      [
+        54.4319,
+        -3.000575
+      ],
+      [
+        54.4321,
+        -3.0035
+      ],
+      [
+        54.4341,
+        -3.00385
+      ],
+      [
+        54.4361,
+        -3.0042
+      ],
+      [
+        54.4382,
+        -3.0046749999999998
+      ],
+      [
+        54.4403,
+        -3.00515
+      ],
+      [
+        54.4424,
+        -3.005625
+      ],
+      [
+        54.4445,
+        -3.0061
+      ],
+      [
+        54.444675000000004,
+        -3.003775
+      ],
+      [
+        54.44485,
+        -3.00145
+      ],
+      [
+        54.445025,
+        -2.9991250000000003
+      ],
+      [
+        54.4452,
+        -2.9968
+      ],
+      [
+        54.4447,
+        -2.99445
+      ],
+      [
+        54.4442,
+        -2.9921
+      ],
+      [
+        54.44485,
+        -2.9897
+      ],
+      [
+        54.4455,
+        -2.9873000000000003
+      ],
+      [
+        54.44615,
+        -2.9849
+      ],
+      [
+        54.4468,
+        -2.9825
+      ],
+      [
+        54.44551250000001,
+        -2.9807125
+      ],
+      [
+        54.444225,
+        -2.978925
+      ],
+      [
+        54.4429375,
+        -2.9771374999999995
+      ],
+      [
+        54.44165,
+        -2.9753499999999997
+      ],
+      [
+        54.440362500000006,
+        -2.9735625
+      ],
+      [
+        54.439075,
+        -2.971775
+      ],
+      [
+        54.4377875,
+        -2.9699875000000002
+      ],
+      [
+        54.4365,
+        -2.9682
+      ],
+      [
+        54.4344,
+        -2.9661999999999997
+      ],
+      [
+        54.4323,
+        -2.9642
+      ]
+    ],
+    "directions": [
+      {
+        "step": 1,
+        "instruction": "Exit the car park, turn right and walk towards the town center, then follow the road left towards Rothay Park.",
+        "landmark": "Rydal Road Car Park"
+      },
+      {
+        "step": 2,
+        "instruction": "Cross the bridge over the river in Rothay Park and turn right onto the lane.",
+        "landmark": "Miller Bridge"
+      },
+      {
+        "step": 3,
+        "instruction": "Follow the 'Under Loughrigg' road until you see a signposted path for Loughrigg Fell on your right.",
+        "landmark": "Under Loughrigg Road"
+      },
+      {
+        "step": 4,
+        "instruction": "Climb the pitched stone path steeply until the gradient levels out onto the fell side.",
+        "landmark": "Stone Path"
+      },
+      {
+        "step": 5,
+        "instruction": "Follow the main track through the rocky outcrops to reach the trig point at the summit.",
+        "landmark": "Loughrigg Fell Summit"
+      },
+      {
+        "step": 6,
+        "instruction": "Descend northwards on the clear path towards Grasmere, then bear right to reach the level 'terrace' path.",
+        "landmark": "Loughrigg Terrace"
+      },
+      {
+        "step": 7,
+        "instruction": "Walk along the terrace, enjoying views of Rydal Water, until you reach the large cavern.",
+        "landmark": "Rydal Cave"
+      },
+      {
+        "step": 8,
+        "instruction": "Follow the path down to the road, cross Pelter Bridge, and turn right to follow the quiet lane back to Ambleside.",
+        "landmark": "Pelter Bridge"
+      }
+    ],
+    "parkingDetail": "White Moss Car Park, A591, near Grasmere, LA22 9SE. National Trust pay and display. Two car parks at White Moss — the main one is clearly signed from the A591.",
+    "thePayoff": "A stunning 360-degree panorama of Windermere, Rydal Water, and Grasmere from a relatively accessible summit.",
+    "endLat": 54.4502,
+    "endLon": -3.0066
+  },
+  {
+    "name": "Gummer's How",
+    "distance": "2.5 km",
+    "time": "1 hour",
+    "difficulty": "Easy",
+    "desc": "The best 'effort-to-view' ratio in the Lake District, offering a bird's-eye view of the entire length of Windermere.",
+    "start": "Gummer's How Car Park",
+    "lat": 54.2793,
+    "lon": -2.9385,
+    "elevation": "321m",
+    "terrain": "Woodland path and stone steps",
+    "routeUrl": "",
+    "walkType": "summit",
+    "waypoints": [
+      [
+        54.2793,
+        -2.9385
+      ],
+      [
+        54.277662500000005,
+        -2.9395
+      ],
+      [
+        54.276843750000005,
+        -2.94
+      ],
+      [
+        54.276025000000004,
+        -2.9405
+      ],
+      [
+        54.275206250000004,
+        -2.941
+      ],
+      [
+        54.2743875,
+        -2.9415
+      ],
+      [
+        54.27356875,
+        -2.942
+      ],
+      [
+        54.27275,
+        -2.9425
+      ],
+      [
+        54.27193125,
+        -2.9429999999999996
+      ],
+      [
+        54.2711125,
+        -2.9435
+      ],
+      [
+        54.27029375,
+        -2.944
+      ],
+      [
+        54.269475,
+        -2.9444999999999997
+      ],
+      [
+        54.26865625,
+        -2.945
+      ],
+      [
+        54.2678375,
+        -2.9455
+      ],
+      [
+        54.26701875,
+        -2.9459999999999997
+      ],
+      [
+        54.2662,
+        -2.9465
+      ],
+      [
+        54.26735,
+        -2.94585
+      ],
+      [
+        54.2685,
+        -2.9452
+      ],
+      [
+        54.269125,
+        -2.94365
+      ],
+      [
+        54.26975,
+        -2.9421
+      ],
+      [
+        54.270375,
+        -2.94055
+      ],
+      [
+        54.271,
+        -2.939
+      ],
+      [
+        54.271100000000004,
+        -2.94075
+      ],
+      [
+        54.2712,
+        -2.9425
+      ],
+      [
+        54.2702,
+        -2.9415
+      ],
+      [
+        54.2692,
+        -2.9405
+      ],
+      [
+        54.26845,
+        -2.942
+      ],
+      [
+        54.2677,
+        -2.9435000000000002
+      ],
+      [
+        54.266949999999994,
+        -2.9450000000000003
+      ],
+      [
+        54.2662,
+        -2.9465
+      ],
+      [
+        54.2678375,
+        -2.9455
+      ],
+      [
+        54.26865625,
+        -2.945
+      ],
+      [
+        54.269475,
+        -2.9444999999999997
+      ],
+      [
+        54.2711125,
+        -2.9435
+      ],
+      [
+        54.27275,
+        -2.9425
+      ],
+      [
+        54.2743875,
+        -2.9415
+      ],
+      [
+        54.276025000000004,
+        -2.9405
+      ],
+      [
+        54.276843750000005,
+        -2.94
+      ],
+      [
+        54.277662500000005,
+        -2.9395
+      ],
+      [
+        54.2793,
+        -2.9385
+      ]
+    ],
+    "directions": [
+      {
+        "step": 1,
+        "instruction": "Carefully cross the road from the car park and go through the wooden kissing gate.",
+        "landmark": "Kissing Gate"
+      },
+      {
+        "step": 2,
+        "instruction": "Follow the wide, well-maintained path through the woods and onto the open hillside.",
+        "landmark": "Woodland Path"
+      },
+      {
+        "step": 3,
+        "instruction": "When the path forks, take the stone steps for a direct climb or the grassy path to the right for a gentler ascent.",
+        "landmark": "Stone Steps"
+      },
+      {
+        "step": 4,
+        "instruction": "Reach the summit ridge and walk to the stone cairn to see the length of Windermere laid out below.",
+        "landmark": "Gummer's How Summit"
+      },
+      {
+        "step": 5,
+        "instruction": "Continue past the summit to the northern edge for views towards the high fells.",
+        "landmark": "Viewpoint"
+      },
+      {
+        "step": 6,
+        "instruction": "To return, follow the path that skirts the eastern side of the hill to avoid the steep steps.",
+        "landmark": "Grassy Path"
+      },
+      {
+        "step": 7,
+        "instruction": "Rejoin the main track and head back through the gate to the car park.",
+        "landmark": "Kissing Gate"
+      }
+    ],
+    "parkingDetail": "Gummer's How Car Park, FELL FOOT BROW, LA12 8NP. A large, free forestry car park on the hill above Fell Foot Park.",
+    "thePayoff": "The best 'effort-to-view' ratio in the Lake District, offering a bird's-eye view of the entire length of Windermere.",
+    "endLat": 54.2793,
+    "endLon": -2.9385
+  },
+  {
+    "name": "School Knott",
+    "distance": "4.0 km",
+    "time": "1.5 hours",
+    "difficulty": "Easy",
+    "desc": "A peaceful escape from the village crowds with a perfect reflection of the fells in the hidden School Knott Tarn.",
+    "start": "Windermere Railway Station",
+    "lat": 54.3802,
+    "lon": -2.9035,
+    "elevation": "160m",
+    "terrain": "Grassy slopes and fields",
+    "routeUrl": "",
+    "walkType": "summit",
+    "waypoints": [
+      [
+        54.3802,
+        -2.9035
+      ],
+      [
+        54.379675000000006,
+        -2.9026750000000003
+      ],
+      [
+        54.37915,
+        -2.90185
+      ],
+      [
+        54.378625,
+        -2.9010249999999997
+      ],
+      [
+        54.3781,
+        -2.9002
+      ],
+      [
+        54.3774,
+        -2.8999875
+      ],
+      [
+        54.3767,
+        -2.899775
+      ],
+      [
+        54.376000000000005,
+        -2.8995625
+      ],
+      [
+        54.3753,
+        -2.89935
+      ],
+      [
+        54.3746,
+        -2.8991375
+      ],
+      [
+        54.373900000000006,
+        -2.898925
+      ],
+      [
+        54.373200000000004,
+        -2.8987125000000002
+      ],
+      [
+        54.3725,
+        -2.8985
+      ],
+      [
+        54.3724,
+        -2.897425
+      ],
+      [
+        54.3723,
+        -2.89635
+      ],
+      [
+        54.37220000000001,
+        -2.895275
+      ],
+      [
+        54.3721,
+        -2.8942
+      ],
+      [
+        54.37245,
+        -2.893275
+      ],
+      [
+        54.3728,
+        -2.89235
+      ],
+      [
+        54.373149999999995,
+        -2.891425
+      ],
+      [
+        54.3735,
+        -2.8905
+      ],
+      [
+        54.373900000000006,
+        -2.889925
+      ],
+      [
+        54.374300000000005,
+        -2.88935
+      ],
+      [
+        54.3751,
+        -2.8882
+      ],
+      [
+        54.375525,
+        -2.8891124999999995
+      ],
+      [
+        54.37595,
+        -2.8900249999999996
+      ],
+      [
+        54.376375,
+        -2.8909374999999997
+      ],
+      [
+        54.3768,
+        -2.89185
+      ],
+      [
+        54.377225,
+        -2.8927625
+      ],
+      [
+        54.37765,
+        -2.893675
+      ],
+      [
+        54.378075,
+        -2.8945875
+      ],
+      [
+        54.3785,
+        -2.8955
+      ],
+      [
+        54.378712500000006,
+        -2.8965
+      ],
+      [
+        54.378925,
+        -2.8975
+      ],
+      [
+        54.3791375,
+        -2.8985000000000003
+      ],
+      [
+        54.37935,
+        -2.8995
+      ],
+      [
+        54.379562500000006,
+        -2.9005
+      ],
+      [
+        54.379775,
+        -2.9015000000000004
+      ],
+      [
+        54.3799875,
+        -2.9025000000000003
+      ],
+      [
+        54.3802,
+        -2.9035
+      ]
+    ],
+    "directions": [
+      {
+        "step": 1,
+        "instruction": "From the station, walk down the main street and turn left into the lane signposted for the Dales Way.",
+        "landmark": "Windermere Station"
+      },
+      {
+        "step": 2,
+        "instruction": "Follow the Dales Way path south through several fields and gates.",
+        "landmark": "Dales Way"
+      },
+      {
+        "step": 3,
+        "instruction": "Look for the signposted gate on your left that leads up onto the School Knott fellside.",
+        "landmark": "Gate"
+      },
+      {
+        "step": 4,
+        "instruction": "Climb the grassy slope directly to the summit, marked by a small stone cairn.",
+        "landmark": "School Knott Summit"
+      },
+      {
+        "step": 5,
+        "instruction": "Walk east from the summit to find the small, picturesque tarn nestled in the hollow.",
+        "landmark": "School Knott Tarn"
+      },
+      {
+        "step": 6,
+        "instruction": "Follow the path around the tarn and join the track that leads back towards the Dales Way.",
+        "landmark": "Tarn Path"
+      },
+      {
+        "step": 7,
+        "instruction": "Retrace your steps through the fields back into Windermere village.",
+        "landmark": "Dales Way"
+      }
+    ],
+    "parkingDetail": "Windermere Railway Station Car Park, WINDERMERE, LA23 1AH. Pay and display car park at the top of the village.",
+    "thePayoff": "A peaceful escape from the village crowds with a perfect reflection of the fells in the hidden School Knott Tarn.",
+    "endLat": 54.3802,
+    "endLon": -2.9035
+  },
+  {
+    "name": "Brant Fell",
+    "distance": "3.5 km",
+    "time": "1.5 hours",
+    "difficulty": "Easy",
+    "desc": "An incredible 'postcard' view over the islands of Windermere and the bustling Bowness bay.",
+    "start": "Braithwaite Fold Car Park, Bowness",
+    "lat": 54.3614,
+    "lon": -2.9272,
+    "elevation": "192m",
+    "terrain": "Steep road and grassy paths",
+    "routeUrl": "",
+    "walkType": "summit",
+    "waypoints": [
+      [
+        54.3605,
+        -2.9192
+      ],
+      [
+        54.361425,
+        -2.919025
+      ],
+      [
+        54.36235,
+        -2.91885
+      ],
+      [
+        54.363275,
+        -2.918675
+      ],
+      [
+        54.3642,
+        -2.9185
+      ],
+      [
+        54.364275,
+        -2.917675
+      ],
+      [
+        54.36435,
+        -2.91685
+      ],
+      [
+        54.364425,
+        -2.9160250000000003
+      ],
+      [
+        54.3645,
+        -2.9152
+      ],
+      [
+        54.3640875,
+        -2.9146124999999996
+      ],
+      [
+        54.363675,
+        -2.9140249999999996
+      ],
+      [
+        54.3632625,
+        -2.9134374999999997
+      ],
+      [
+        54.362849999999995,
+        -2.9128499999999997
+      ],
+      [
+        54.3624375,
+        -2.9122624999999998
+      ],
+      [
+        54.362024999999996,
+        -2.911675
+      ],
+      [
+        54.36161249999999,
+        -2.9110875
+      ],
+      [
+        54.3612,
+        -2.9105
+      ],
+      [
+        54.360775,
+        -2.9101749999999997
+      ],
+      [
+        54.36035,
+        -2.9098499999999996
+      ],
+      [
+        54.3595,
+        -2.9092
+      ],
+      [
+        54.358675,
+        -2.9090249999999997
+      ],
+      [
+        54.35785,
+        -2.90885
+      ],
+      [
+        54.357025,
+        -2.908675
+      ],
+      [
+        54.3562,
+        -2.9085
+      ],
+      [
+        54.35645,
+        -2.90925
+      ],
+      [
+        54.356700000000004,
+        -2.91
+      ],
+      [
+        54.35695,
+        -2.91075
+      ],
+      [
+        54.3572,
+        -2.9115
+      ],
+      [
+        54.35745,
+        -2.9122500000000002
+      ],
+      [
+        54.357699999999994,
+        -2.9130000000000003
+      ],
+      [
+        54.357949999999995,
+        -2.9137500000000003
+      ],
+      [
+        54.3582,
+        -2.9145
+      ],
+      [
+        54.358487499999995,
+        -2.9150875000000003
+      ],
+      [
+        54.358774999999994,
+        -2.9156750000000002
+      ],
+      [
+        54.35906249999999,
+        -2.9162625
+      ],
+      [
+        54.35935,
+        -2.91685
+      ],
+      [
+        54.359637500000005,
+        -2.9174375
+      ],
+      [
+        54.359925000000004,
+        -2.918025
+      ],
+      [
+        54.3602125,
+        -2.9186125
+      ],
+      [
+        54.3605,
+        -2.9192
+      ]
+    ],
+    "directions": [
+      {
+        "step": 1,
+        "instruction": "Walk from the car park towards Bowness bay and then head into the town center.",
+        "landmark": "Bowness Promenade"
+      },
+      {
+        "step": 2,
+        "instruction": "Between the chip shop and the clothing store, turn up the steep Brantfell Road.",
+        "landmark": "Brantfell Road"
+      },
+      {
+        "step": 3,
+        "instruction": "When the road ends, go through the gate into Post Office Wood and follow the track uphill.",
+        "landmark": "Post Office Wood"
+      },
+      {
+        "step": 4,
+        "instruction": "At the junction, follow the sign for the Dales Way/Brant Fell and climb the grassy path.",
+        "landmark": "Dales Way"
+      },
+      {
+        "step": 5,
+        "instruction": "Scramble up the short rocky outcrop to reach the summit and the best views of the lake.",
+        "landmark": "Brant Fell Summit"
+      },
+      {
+        "step": 6,
+        "instruction": "Descend towards the viewpoint seat and follow the path left through the fields of Matson Ground.",
+        "landmark": "Viewpoint Seat"
+      },
+      {
+        "step": 7,
+        "instruction": "Follow the lane back down into Bowness to return to the car park.",
+        "landmark": "Matson Ground"
+      }
+    ],
+    "parkingDetail": "Braithwaite Fold Car Park, BOWNESS-ON-WINDERMERE, LA23 3HB. Large pay and display car park near the lake shore.",
+    "thePayoff": "An incredible 'postcard' view over the islands of Windermere and the bustling Bowness bay.",
+    "endLat": 54.3614,
+    "endLon": -2.9272
+  },
+  {
+    "name": "Todd Crag",
+    "distance": "4.5 km",
+    "time": "2 hours",
+    "difficulty": "Moderate",
+    "desc": "A spectacular vista straight down the barrel of Lake Windermere from a high rocky perch.",
+    "start": "Miller Bridge Car Park, Ambleside",
+    "lat": 54.4292,
+    "lon": -2.9679,
+    "elevation": "220m",
+    "terrain": "Walled lane and rocky fell",
+    "routeUrl": "",
+    "walkType": "summit",
+    "waypoints": [
+      [
+        54.4285,
+        -2.9632
+      ],
+      [
+        54.42885,
+        -2.96435
+      ],
+      [
+        54.4292,
+        -2.9655
+      ],
+      [
+        54.4288625,
+        -2.9664625
+      ],
+      [
+        54.428525,
+        -2.967425
+      ],
+      [
+        54.4281875,
+        -2.9683875
+      ],
+      [
+        54.42785,
+        -2.96935
+      ],
+      [
+        54.4275125,
+        -2.9703125
+      ],
+      [
+        54.427175,
+        -2.971275
+      ],
+      [
+        54.4268375,
+        -2.9722375
+      ],
+      [
+        54.4265,
+        -2.9732
+      ],
+      [
+        54.426249999999996,
+        -2.974525
+      ],
+      [
+        54.426,
+        -2.97585
+      ],
+      [
+        54.42575,
+        -2.977175
+      ],
+      [
+        54.4255,
+        -2.9785
+      ],
+      [
+        54.425675,
+        -2.97965
+      ],
+      [
+        54.42585,
+        -2.9808
+      ],
+      [
+        54.426024999999996,
+        -2.98195
+      ],
+      [
+        54.4262,
+        -2.9831
+      ],
+      [
+        54.425650000000005,
+        -2.9846500000000002
+      ],
+      [
+        54.4251,
+        -2.9862
+      ],
+      [
+        54.426649999999995,
+        -2.98735
+      ],
+      [
+        54.427425,
+        -2.987925
+      ],
+      [
+        54.4282,
+        -2.9885
+      ],
+      [
+        54.4279875,
+        -2.9868375
+      ],
+      [
+        54.427775,
+        -2.985175
+      ],
+      [
+        54.42756249999999,
+        -2.9835125
+      ],
+      [
+        54.42735,
+        -2.98185
+      ],
+      [
+        54.4271375,
+        -2.9801875000000004
+      ],
+      [
+        54.426925,
+        -2.9785250000000003
+      ],
+      [
+        54.426712499999994,
+        -2.9768625
+      ],
+      [
+        54.4265,
+        -2.9752
+      ],
+      [
+        54.42675,
+        -2.9737
+      ],
+      [
+        54.42699999999999,
+        -2.9722
+      ],
+      [
+        54.427249999999994,
+        -2.9707
+      ],
+      [
+        54.427499999999995,
+        -2.9692
+      ],
+      [
+        54.427749999999996,
+        -2.9677
+      ],
+      [
+        54.428,
+        -2.9661999999999997
+      ],
+      [
+        54.42825,
+        -2.9646999999999997
+      ],
+      [
+        54.4285,
+        -2.9632
+      ]
+    ],
+    "directions": [
+      {
+        "step": 1,
+        "instruction": "Cross the bridge into Rothay Park and follow the path to the far side of the park.",
+        "landmark": "Rothay Park Bridge"
+      },
+      {
+        "step": 2,
+        "instruction": "Turn right then left onto the road, following signs for 'Under Loughrigg'.",
+        "landmark": "Vicarage Road"
+      },
+      {
+        "step": 3,
+        "instruction": "Turn into the narrow lane on the left marked for the footpath to Todd Crag.",
+        "landmark": "Todd Crag Lane"
+      },
+      {
+        "step": 4,
+        "instruction": "Climb steeply up the stone-walled lane until you emerge onto the open fell.",
+        "landmark": "Walled Lane"
+      },
+      {
+        "step": 5,
+        "instruction": "Pass the small Lily Tarn on your left and continue uphill towards the rocky outcrops.",
+        "landmark": "Lily Tarn"
+      },
+      {
+        "step": 6,
+        "instruction": "The summit is the highest crag on the right; climb up for the classic Windermere view.",
+        "landmark": "Todd Crag Summit"
+      },
+      {
+        "step": 7,
+        "instruction": "To return, follow the lower path that skirts the edge of the fell back towards Ambleside.",
+        "landmark": "Fell Path"
+      }
+    ],
+    "parkingDetail": "Miller Bridge Car Park, AMBLESIDE, LA22 0EE. Small pay and display car park conveniently located near Rothay Park.",
+    "thePayoff": "A spectacular vista straight down the barrel of Lake Windermere from a high rocky perch.",
+    "endLat": 54.4292,
+    "endLon": -2.9679
+  },
+  {
+    "name": "Wansfell Pike",
+    "distance": "9.5 km",
+    "time": "4 hours",
+    "difficulty": "Challenging",
+    "desc": "A true mountain experience with a dramatic ridge walk and a charming finish in the valley of Troutbeck.",
+    "start": "Ambleside Center",
+    "lat": 54.4325,
+    "lon": -2.9642,
+    "elevation": "482m",
+    "terrain": "Stone steps, ridge, and stony track",
+    "routeUrl": "",
+    "walkType": "summit",
+    "waypoints": [
+      [
+        54.4325,
+        -2.9642
+      ],
+      [
+        54.433,
+        -2.9617
+      ],
+      [
+        54.4335,
+        -2.9592
+      ],
+      [
+        54.433462500000005,
+        -2.9571875
+      ],
+      [
+        54.433425,
+        -2.955175
+      ],
+      [
+        54.4333875,
+        -2.9531625000000004
+      ],
+      [
+        54.433350000000004,
+        -2.95115
+      ],
+      [
+        54.4333125,
+        -2.9491375
+      ],
+      [
+        54.433275,
+        -2.9471249999999998
+      ],
+      [
+        54.433237500000004,
+        -2.9451124999999996
+      ],
+      [
+        54.4332,
+        -2.9431
+      ],
+      [
+        54.434525,
+        -2.9403749999999995
+      ],
+      [
+        54.43585,
+        -2.9376499999999997
+      ],
+      [
+        54.437174999999996,
+        -2.934925
+      ],
+      [
+        54.4385,
+        -2.9322
+      ],
+      [
+        54.439750000000004,
+        -2.930025
+      ],
+      [
+        54.441,
+        -2.9278500000000003
+      ],
+      [
+        54.44225,
+        -2.925675
+      ],
+      [
+        54.4435,
+        -2.9235
+      ],
+      [
+        54.442350000000005,
+        -2.9210000000000003
+      ],
+      [
+        54.4412,
+        -2.9185
+      ],
+      [
+        54.439862500000004,
+        -2.9205875
+      ],
+      [
+        54.438525,
+        -2.922675
+      ],
+      [
+        54.4371875,
+        -2.9247625
+      ],
+      [
+        54.43585,
+        -2.92685
+      ],
+      [
+        54.434512500000004,
+        -2.9289375
+      ],
+      [
+        54.433175000000006,
+        -2.931025
+      ],
+      [
+        54.4318375,
+        -2.9331125
+      ],
+      [
+        54.4305,
+        -2.9352
+      ],
+      [
+        54.429675,
+        -2.937925
+      ],
+      [
+        54.42885,
+        -2.9406499999999998
+      ],
+      [
+        54.428025,
+        -2.9433749999999996
+      ],
+      [
+        54.4272,
+        -2.9461
+      ],
+      [
+        54.4277,
+        -2.9478625000000003
+      ],
+      [
+        54.4282,
+        -2.949625
+      ],
+      [
+        54.429199999999994,
+        -2.95315
+      ],
+      [
+        54.4297,
+        -2.9549125
+      ],
+      [
+        54.4302,
+        -2.9566749999999997
+      ],
+      [
+        54.4307,
+        -2.9584374999999996
+      ],
+      [
+        54.4312,
+        -2.9602
+      ]
+    ],
+    "directions": [
+      {
+        "step": 1,
+        "instruction": "Walk up from the town center towards Stock Ghyll Force waterfall park.",
+        "landmark": "Stock Ghyll Lane"
+      },
+      {
+        "step": 2,
+        "instruction": "Follow the signposted path for Wansfell Pike, which starts as a series of steep stone steps.",
+        "landmark": "Stone Steps"
+      },
+      {
+        "step": 3,
+        "instruction": "Continue the long, steady climb until you reach the rocky summit of the Pike.",
+        "landmark": "Wansfell Pike Summit"
+      },
+      {
+        "step": 4,
+        "instruction": "Follow the ridge path northeast to reach the true (but less prominent) summit of Wansfell.",
+        "landmark": "The Ridge"
+      },
+      {
+        "step": 5,
+        "instruction": "Pass through the wall at the summit and follow Nanny Lane, a stony track, down into Troutbeck.",
+        "landmark": "Nanny Lane"
+      },
+      {
+        "step": 6,
+        "instruction": "In Troutbeck, turn right onto the road and then take the footpath for Jenkin Crag/Ambleside.",
+        "landmark": "Troutbeck"
+      },
+      {
+        "step": 7,
+        "instruction": "Follow the woodland path through Skelghyll Wood, stopping at Jenkin Crag for a final view.",
+        "landmark": "Jenkin Crag"
+      },
+      {
+        "step": 8,
+        "instruction": "The path descends back into the southern end of Ambleside.",
+        "landmark": "Skelghyll Wood"
+      }
+    ],
+    "parkingDetail": "King Street Car Park, AMBLESIDE, LA22 9AN. Central Ambleside parking. Be aware of the short-stay limits in some sections.",
+    "thePayoff": "A true mountain experience with a dramatic ridge walk and a charming finish in the valley of Troutbeck.",
+    "endLat": 54.4312,
+    "endLon": -2.9602
+  },
+  {
+    "name": "Helm Crag",
+    "distance": "8.0 km",
+    "time": "3.5 hours",
+    "difficulty": "Challenging",
+    "desc": "Getting up close to the iconic 'Lion and the Lamb' rock formation and peering down into the hidden Easedale valley.",
+    "start": "Broadgate Meadow Car Park, Grasmere",
+    "lat": 54.4612,
+    "lon": -3.0274,
+    "elevation": "405m",
+    "terrain": "Woodland, zig-zag path, and ridge",
+    "routeUrl": "",
+    "walkType": "summit",
+    "waypoints": [
+      [
+        54.4595,
+        -3.0232
+      ],
+      [
+        54.459675000000004,
+        -3.024525
+      ],
+      [
+        54.45985,
+        -3.02585
+      ],
+      [
+        54.460025,
+        -3.027175
+      ],
+      [
+        54.4602,
+        -3.0285
+      ],
+      [
+        54.461275,
+        -3.029675
+      ],
+      [
+        54.46235,
+        -3.03085
+      ],
+      [
+        54.463425,
+        -3.032025
+      ],
+      [
+        54.4645,
+        -3.0332
+      ],
+      [
+        54.46585,
+        -3.03535
+      ],
+      [
+        54.4672,
+        -3.0375
+      ],
+      [
+        54.468275,
+        -3.039175
+      ],
+      [
+        54.46935,
+        -3.04085
+      ],
+      [
+        54.470425,
+        -3.042525
+      ],
+      [
+        54.4715,
+        -3.0442
+      ],
+      [
+        54.4712,
+        -3.0455
+      ],
+      [
+        54.4722,
+        -3.047925
+      ],
+      [
+        54.473200000000006,
+        -3.05035
+      ],
+      [
+        54.4742,
+        -3.052775
+      ],
+      [
+        54.4752,
+        -3.0552
+      ],
+      [
+        54.47345,
+        -3.05395
+      ],
+      [
+        54.4717,
+        -3.0526999999999997
+      ],
+      [
+        54.46995,
+        -3.05145
+      ],
+      [
+        54.4682,
+        -3.0502
+      ],
+      [
+        54.467656250000005,
+        -3.0485125
+      ],
+      [
+        54.4671125,
+        -3.046825
+      ],
+      [
+        54.46656875,
+        -3.0451375
+      ],
+      [
+        54.466025,
+        -3.04345
+      ],
+      [
+        54.46548125,
+        -3.0417625
+      ],
+      [
+        54.464937500000005,
+        -3.040075
+      ],
+      [
+        54.46439375,
+        -3.0383875
+      ],
+      [
+        54.46385,
+        -3.0366999999999997
+      ],
+      [
+        54.46330625,
+        -3.0350124999999997
+      ],
+      [
+        54.4627625,
+        -3.0333249999999996
+      ],
+      [
+        54.46221875,
+        -3.0316374999999995
+      ],
+      [
+        54.461675,
+        -3.02995
+      ],
+      [
+        54.46113125,
+        -3.0282625000000003
+      ],
+      [
+        54.4605875,
+        -3.0265750000000002
+      ],
+      [
+        54.46004375,
+        -3.0248875
+      ],
+      [
+        54.4595,
+        -3.0232
+      ]
+    ],
+    "directions": [
+      {
+        "step": 1,
+        "instruction": "Walk from the car park towards the center of Grasmere and turn onto Easedale Road.",
+        "landmark": "Easedale Road"
+      },
+      {
+        "step": 2,
+        "instruction": "Follow the road past the houses until you see a sign for Helm Crag via Lancrigg.",
+        "landmark": "Lancrigg Lane"
+      },
+      {
+        "step": 3,
+        "instruction": "Follow the path through the beautiful Lancrigg woods and out onto the fellside.",
+        "landmark": "Lancrigg Woods"
+      },
+      {
+        "step": 4,
+        "instruction": "Climb the well-constructed zig-zag path that leads directly to the summit ridge.",
+        "landmark": "Zig-zag Path"
+      },
+      {
+        "step": 5,
+        "instruction": "Explore the summit ridge to find the Lion and the Lamb rocks on the southern end.",
+        "landmark": "The Lion and the Lamb"
+      },
+      {
+        "step": 6,
+        "instruction": "Walk to the highest point to see the formidable Howitzer rock.",
+        "landmark": "The Howitzer"
+      },
+      {
+        "step": 7,
+        "instruction": "Continue along the ridge and then drop down into Far Easedale to follow the valley path back.",
+        "landmark": "Far Easedale"
+      },
+      {
+        "step": 8,
+        "instruction": "The valley path brings you back to Easedale Road and into Grasmere.",
+        "landmark": "Easedale Road"
+      }
+    ],
+    "parkingDetail": "Broadgate Meadow Car Park, GRASMERE, LA22 9TA. Located on the northern edge of the village near the play area.",
+    "thePayoff": "Getting up close to the iconic 'Lion and the Lamb' rock formation and peering down into the hidden Easedale valley.",
+    "endLat": 54.4612,
+    "endLon": -3.0274
+  },
+  {
+    "name": "Latterbarrow",
+    "distance": "6.0 km",
+    "time": "2.5 hours",
+    "difficulty": "Moderate",
+    "desc": "The massive stone obelisk at the summit feels like a secret monument with views of the entire Fairfield Horseshoe.",
+    "start": "Hawkshead Car Park",
+    "lat": 54.3755,
+    "lon": -2.9972,
+    "elevation": "244m",
+    "terrain": "Village lanes, grassy slopes, and forest paths",
+    "routeUrl": "",
+    "walkType": "summit",
+    "waypoints": [
+      [
+        54.3755,
+        -2.9972
+      ],
+      [
+        54.377,
+        -2.9968500000000002
+      ],
+      [
+        54.3785,
+        -2.9965
+      ],
+      [
+        54.379425,
+        -2.9949250000000003
+      ],
+      [
+        54.379887499999995,
+        -2.9941375000000003
+      ],
+      [
+        54.38035,
+        -2.9933500000000004
+      ],
+      [
+        54.380812500000005,
+        -2.9925625000000005
+      ],
+      [
+        54.381275,
+        -2.9917750000000005
+      ],
+      [
+        54.3822,
+        -2.9902
+      ],
+      [
+        54.382949999999994,
+        -2.989025
+      ],
+      [
+        54.3837,
+        -2.98785
+      ],
+      [
+        54.38445,
+        -2.986675
+      ],
+      [
+        54.3852,
+        -2.9855
+      ],
+      [
+        54.3852375,
+        -2.9845875
+      ],
+      [
+        54.385275,
+        -2.983675
+      ],
+      [
+        54.3853125,
+        -2.9827624999999998
+      ],
+      [
+        54.38535,
+        -2.98185
+      ],
+      [
+        54.385425,
+        -2.9800250000000004
+      ],
+      [
+        54.3854625,
+        -2.9791125000000003
+      ],
+      [
+        54.3855,
+        -2.9782
+      ],
+      [
+        54.386425,
+        -2.977525
+      ],
+      [
+        54.38735,
+        -2.9768499999999998
+      ],
+      [
+        54.388275,
+        -2.9761749999999996
+      ],
+      [
+        54.3892,
+        -2.9755
+      ],
+      [
+        54.3887,
+        -2.977125
+      ],
+      [
+        54.3882,
+        -2.97875
+      ],
+      [
+        54.387699999999995,
+        -2.980375
+      ],
+      [
+        54.3872,
+        -2.982
+      ],
+      [
+        54.386700000000005,
+        -2.983625
+      ],
+      [
+        54.3862,
+        -2.98525
+      ],
+      [
+        54.3857,
+        -2.9868750000000004
+      ],
+      [
+        54.3852,
+        -2.9885
+      ],
+      [
+        54.383987499999996,
+        -2.9895875
+      ],
+      [
+        54.382774999999995,
+        -2.990675
+      ],
+      [
+        54.3815625,
+        -2.9917625
+      ],
+      [
+        54.38035,
+        -2.99285
+      ],
+      [
+        54.3791375,
+        -2.9939375
+      ],
+      [
+        54.377925000000005,
+        -2.995025
+      ],
+      [
+        54.376712500000004,
+        -2.9961124999999997
+      ],
+      [
+        54.3755,
+        -2.9972
+      ]
+    ],
+    "directions": [
+      {
+        "step": 1,
+        "instruction": "Exit the car park and walk north through the village to the main road bypass.",
+        "landmark": "Hawkshead Village"
+      },
+      {
+        "step": 2,
+        "instruction": "Turn left on the road, then right into Loanthwaite Lane towards the hamlet.",
+        "landmark": "Loanthwaite Lane"
+      },
+      {
+        "step": 3,
+        "instruction": "Follow the signs for Latterbarrow and head through the gate onto the open grass.",
+        "landmark": "Fell Gate"
+      },
+      {
+        "step": 4,
+        "instruction": "Climb the broad, grassy slope directly towards the large stone obelisk on the skyline.",
+        "landmark": "Grassy Slope"
+      },
+      {
+        "step": 5,
+        "instruction": "Touch the obelisk and take in the 360-degree views, especially north towards Ambleside.",
+        "landmark": "The Obelisk"
+      },
+      {
+        "step": 6,
+        "instruction": "Descend northwards on a clear path towards the woods of Sawrey Ground.",
+        "landmark": "Forest Path"
+      },
+      {
+        "step": 7,
+        "instruction": "Follow the track through the woods and fields back to the village of Hawkshead.",
+        "landmark": "Keen Ground"
+      }
+    ],
+    "parkingDetail": "Hawkshead Main Car Park, HAWKSHEAD, LA22 0NT. Large pay and display car park. Machines take cards and cash.",
+    "thePayoff": "The massive stone obelisk at the summit feels like a secret monument with views of the entire Fairfield Horseshoe.",
+    "endLat": 54.3755,
+    "endLon": -2.9972
+  },
+  {
+    "name": "Silver How",
+    "distance": "5.5 km",
+    "time": "2.5 hours",
+    "difficulty": "Moderate",
+    "desc": "A front-row seat to the beauty of Grasmere Lake, often cited as the loveliest view in the Lake District.",
+    "start": "Red Bank Road Car Park, Grasmere",
+    "lat": 54.4576,
+    "lon": -3.0257,
+    "elevation": "395m",
+    "terrain": "Woodland and rocky fell paths",
+    "routeUrl": "",
+    "walkType": "summit",
+    "waypoints": [
+      [
+        54.4582,
+        -3.0225
+      ],
+      [
+        54.458349999999996,
+        -3.024
+      ],
+      [
+        54.4585,
+        -3.0255
+      ],
+      [
+        54.458175,
+        -3.026675
+      ],
+      [
+        54.45785,
+        -3.02785
+      ],
+      [
+        54.457525000000004,
+        -3.029025
+      ],
+      [
+        54.4572,
+        -3.0302
+      ],
+      [
+        54.45695,
+        -3.0314875
+      ],
+      [
+        54.4567,
+        -3.032775
+      ],
+      [
+        54.45645,
+        -3.0340625
+      ],
+      [
+        54.456199999999995,
+        -3.03535
+      ],
+      [
+        54.455949999999994,
+        -3.0366375000000003
+      ],
+      [
+        54.45569999999999,
+        -3.0379250000000004
+      ],
+      [
+        54.45545,
+        -3.0392125000000005
+      ],
+      [
+        54.4552,
+        -3.0405
+      ],
+      [
+        54.455775,
+        -3.041675
+      ],
+      [
+        54.45635,
+        -3.04285
+      ],
+      [
+        54.456925,
+        -3.044025
+      ],
+      [
+        54.4575,
+        -3.0452
+      ],
+      [
+        54.45625,
+        -3.04595
+      ],
+      [
+        54.455,
+        -3.0467
+      ],
+      [
+        54.45375,
+        -3.04745
+      ],
+      [
+        54.4525,
+        -3.0482
+      ],
+      [
+        54.452712500000004,
+        -3.0466125
+      ],
+      [
+        54.452925,
+        -3.045025
+      ],
+      [
+        54.4531375,
+        -3.0434375
+      ],
+      [
+        54.45335,
+        -3.04185
+      ],
+      [
+        54.453562500000004,
+        -3.0402625
+      ],
+      [
+        54.453775,
+        -3.038675
+      ],
+      [
+        54.4539875,
+        -3.0370875
+      ],
+      [
+        54.4542,
+        -3.0355
+      ],
+      [
+        54.4547,
+        -3.033875
+      ],
+      [
+        54.4552,
+        -3.03225
+      ],
+      [
+        54.45569999999999,
+        -3.0306249999999997
+      ],
+      [
+        54.456199999999995,
+        -3.029
+      ],
+      [
+        54.4567,
+        -3.027375
+      ],
+      [
+        54.45695,
+        -3.0265625
+      ],
+      [
+        54.4572,
+        -3.02575
+      ],
+      [
+        54.4577,
+        -3.0241249999999997
+      ],
+      [
+        54.4582,
+        -3.0225
+      ]
+    ],
+    "directions": [
+      {
+        "step": 1,
+        "instruction": "Walk from the car park through the village towards the National Trust property, Allan Bank.",
+        "landmark": "Allan Bank"
+      },
+      {
+        "step": 2,
+        "instruction": "Follow the private road past the house and continue onto the signposted fell path.",
+        "landmark": "Allan Bank Lane"
+      },
+      {
+        "step": 3,
+        "instruction": "Climb through the woods and onto the open hillside, following the main path uphill.",
+        "landmark": "Fell Path"
+      },
+      {
+        "step": 4,
+        "instruction": "The path levels out before a final rocky climb to the cairn at the summit of Silver How.",
+        "landmark": "Silver How Summit"
+      },
+      {
+        "step": 5,
+        "instruction": "From the summit, look down directly at the island in Grasmere Lake.",
+        "landmark": "Lake View"
+      },
+      {
+        "step": 6,
+        "instruction": "Descend south towards Dow Bank, then take the sharp left path to return along the base of the fell.",
+        "landmark": "Dow Bank"
+      },
+      {
+        "step": 7,
+        "instruction": "Follow the level path back to Allan Bank and retrace your steps to the village.",
+        "landmark": "Allan Bank"
+      }
+    ],
+    "parkingDetail": "Red Bank Road Car Park, GRASMERE, LA22 9SW. Pay and display car park near the church and the gingerbread shop.",
+    "thePayoff": "A front-row seat to the beauty of Grasmere Lake, often cited as the loveliest view in the Lake District.",
+    "endLat": 54.4576,
+    "endLon": -3.0257
+  },
+  {
+    "name": "Claife Heights",
+    "distance": "8.0 km",
+    "time": "3 hours",
+    "difficulty": "Moderate",
+    "desc": "Two magical tarns — Moss Eccles and Wise Een — sit in open moorland with Coniston Old Man on the horizon, a landscape Beatrix Potter loved and helped preserve for the nation.",
+    "start": "Far Sawrey village",
+    "lat": 54.3541,
+    "lon": -2.9367,
+    "elevation": "270m",
+    "terrain": "Open moorland and conifer plantation",
+    "routeUrl": "",
+    "walkType": "woodland",
+    "waypoints": [
+      [
+        54.3693,
+        -2.962
+      ],
+      [
+        54.368325,
+        -2.9637000000000002
+      ],
+      [
+        54.36735,
+        -2.9654
+      ],
+      [
+        54.366375000000005,
+        -2.9671
+      ],
+      [
+        54.3654,
+        -2.9688
+      ],
+      [
+        54.364562500000005,
+        -2.9704625
+      ],
+      [
+        54.363725,
+        -2.972125
+      ],
+      [
+        54.3628875,
+        -2.9737875000000003
+      ],
+      [
+        54.362049999999996,
+        -2.97545
+      ],
+      [
+        54.360375,
+        -2.9787749999999997
+      ],
+      [
+        54.3595375,
+        -2.9804375
+      ],
+      [
+        54.3587,
+        -2.9821
+      ],
+      [
+        54.35785,
+        -2.9853
+      ],
+      [
+        54.357,
+        -2.9885
+      ],
+      [
+        54.356,
+        -2.9903750000000002
+      ],
+      [
+        54.355000000000004,
+        -2.9922500000000003
+      ],
+      [
+        54.354,
+        -2.9941250000000004
+      ],
+      [
+        54.353,
+        -2.996
+      ],
+      [
+        54.352500000000006,
+        -2.9982499999999996
+      ],
+      [
+        54.352000000000004,
+        -3.0004999999999997
+      ],
+      [
+        54.3515,
+        -3.00275
+      ],
+      [
+        54.351,
+        -3.005
+      ],
+      [
+        54.3535,
+        -3.003
+      ],
+      [
+        54.356,
+        -3.001
+      ],
+      [
+        54.357124999999996,
+        -2.9989999999999997
+      ],
+      [
+        54.35825,
+        -2.997
+      ],
+      [
+        54.359375,
+        -2.995
+      ],
+      [
+        54.3605,
+        -2.993
+      ],
+      [
+        54.361625000000004,
+        -2.9909999999999997
+      ],
+      [
+        54.362750000000005,
+        -2.989
+      ],
+      [
+        54.36387500000001,
+        -2.987
+      ],
+      [
+        54.365,
+        -2.985
+      ],
+      [
+        54.3655375,
+        -2.982125
+      ],
+      [
+        54.366075,
+        -2.97925
+      ],
+      [
+        54.3666125,
+        -2.976375
+      ],
+      [
+        54.36715,
+        -2.9735
+      ],
+      [
+        54.3676875,
+        -2.970625
+      ],
+      [
+        54.368225,
+        -2.96775
+      ],
+      [
+        54.3687625,
+        -2.964875
+      ],
+      [
+        54.3693,
+        -2.962
+      ]
+    ],
+    "directions": [
+      {
+        "step": 1,
+        "instruction": "From Braithwaite Hall car park (or Harrowslack), walk through Far Sawrey village past the Cuckoo Brow Inn and continue along the lane heading southwest out of the village.",
+        "landmark": "Cuckoo Brow Inn, Far Sawrey"
+      },
+      {
+        "step": 2,
+        "instruction": "As the lane bends, join a signposted track heading southwest across open farmland with the rolling hills of Claife Heights gradually opening ahead. Pass through several field gates, keeping to the main track.",
+        "landmark": "Track junction southwest of village"
+      },
+      {
+        "step": 3,
+        "instruction": "Follow signs to Moss Eccles Tarn — a beautiful, reedy tarn bought by Beatrix Potter in 1913 and left to the National Trust. Take a moment here; this is one of the finest spots on the walk.",
+        "landmark": "Moss Eccles Tarn"
+      },
+      {
+        "step": 4,
+        "instruction": "Continue southwest to the smaller Wise Een Tarn, with sweeping views to the Coniston Fells. Pass a small unnamed tarn before reaching the open moorland of Highs Moss.",
+        "landmark": "Wise Een Tarn"
+      },
+      {
+        "step": 5,
+        "instruction": "At Highs Moss the route turns east and enters the conifer plantation. The path becomes a forestry track — follow it north and northeast through the trees. Navigation note: stick to the main tracks and look for OS waymarkers.",
+        "landmark": "Highs Moss / woodland entrance"
+      },
+      {
+        "step": 6,
+        "instruction": "Pass through the woodland section, with occasional breaks giving views of Windermere through the trees to the east. The path eventually emerges from the trees into open fields above Far Sawrey.",
+        "landmark": "Woodland exit above Far Sawrey"
+      },
+      {
+        "step": 7,
+        "instruction": "Follow the clear path northeast back down through the fields into Far Sawrey, finishing back at the car park. The Cuckoo Brow Inn is a welcome stop at the end.",
+        "landmark": "Far Sawrey / car park"
+      }
+    ],
+    "parkingDetail": "Harrowslack National Trust Car Park, LA22 0LR. Pay & Display (NT members free); 24 spaces. Alternative: Ash Landing car park nearby. Single-track lane from Far Sawrey village. Or park at Braithwaite Hall, Far Sawrey (honesty box donation, ~£2). For the full Heights loop, Far Sawrey village is the best starting point.",
+    "thePayoff": "Two magical tarns — Moss Eccles and Wise Een — sit in open moorland with Coniston Old Man on the horizon, a landscape Beatrix Potter loved and helped preserve for the nation.",
+    "endLat": 54.3541,
+    "endLon": -2.9367
+  },
+  {
+    "name": "Fairfield Horseshoe",
+    "distance": "16.0 km",
+    "time": "7 hours",
+    "difficulty": "Challenging",
+    "desc": "A magnificent high-level ridge walk bagging eight Wainwrights in one sweep, with 360-degree panoramas from Fairfield summit (873m) stretching from the Helvellyn range to the sea.",
+    "start": "Rydal Road Car Park, Ambleside",
+    "lat": 54.4321,
+    "lon": -2.965,
+    "elevation": "873m",
+    "terrain": "High mountain ridges and steep descent",
+    "routeUrl": "",
+    "walkType": "ridge",
+    "waypoints": [
+      [
+        54.4294,
+        -2.9615
+      ],
+      [
+        54.432500000000005,
+        -2.95875
+      ],
+      [
+        54.4356,
+        -2.956
+      ],
+      [
+        54.43985,
+        -2.9549000000000003
+      ],
+      [
+        54.441975,
+        -2.9543500000000003
+      ],
+      [
+        54.4441,
+        -2.9538
+      ],
+      [
+        54.44655,
+        -2.9527
+      ],
+      [
+        54.449,
+        -2.9516
+      ],
+      [
+        54.451899999999995,
+        -2.95175
+      ],
+      [
+        54.4548,
+        -2.9519
+      ],
+      [
+        54.45755,
+        -2.9537
+      ],
+      [
+        54.4603,
+        -2.9555
+      ],
+      [
+        54.4621375,
+        -2.9575625
+      ],
+      [
+        54.463975,
+        -2.959625
+      ],
+      [
+        54.4658125,
+        -2.9616875
+      ],
+      [
+        54.46765,
+        -2.96375
+      ],
+      [
+        54.4694875,
+        -2.9658125
+      ],
+      [
+        54.471325,
+        -2.9678750000000003
+      ],
+      [
+        54.4731625,
+        -2.9699375000000003
+      ],
+      [
+        54.475,
+        -2.972
+      ],
+      [
+        54.47325000000001,
+        -2.974
+      ],
+      [
+        54.471500000000006,
+        -2.976
+      ],
+      [
+        54.469750000000005,
+        -2.9779999999999998
+      ],
+      [
+        54.468,
+        -2.98
+      ],
+      [
+        54.465,
+        -2.979
+      ],
+      [
+        54.462,
+        -2.9779999999999998
+      ],
+      [
+        54.459,
+        -2.977
+      ],
+      [
+        54.456,
+        -2.976
+      ],
+      [
+        54.45355,
+        -2.97575
+      ],
+      [
+        54.4511,
+        -2.9755000000000003
+      ],
+      [
+        54.44865,
+        -2.97525
+      ],
+      [
+        54.4462,
+        -2.975
+      ],
+      [
+        54.444649999999996,
+        -2.9725
+      ],
+      [
+        54.4431,
+        -2.9699999999999998
+      ],
+      [
+        54.44155,
+        -2.9675
+      ],
+      [
+        54.44,
+        -2.965
+      ],
+      [
+        54.437349999999995,
+        -2.964125
+      ],
+      [
+        54.4347,
+        -2.96325
+      ],
+      [
+        54.432050000000004,
+        -2.9623749999999998
+      ],
+      [
+        54.4294,
+        -2.9615
+      ]
+    ],
+    "directions": [
+      {
+        "step": 1,
+        "instruction": "From Rydal Road car park, turn right and at the mini-roundabout bear left into Kirkstone Road. In just 50m turn left into Nook Lane and bear left again. Follow the lane north past Nook End Farm, go through the farmyard and the gate beyond.",
+        "landmark": "Nook Lane / Nook End Farm"
+      },
+      {
+        "step": 2,
+        "instruction": "On the track, bear left then left again to descend to Low Sweden Bridge. Cross the bridge and follow the track back right and up the hillside. Go through the next gateway and bear left — you'll now have a wall on your left that guides you up the ridge.",
+        "landmark": "Low Sweden Bridge"
+      },
+      {
+        "step": 3,
+        "instruction": "Keep close to the wall as you climb steadily north. There is a short scramble at Low Brock Crags (the 'bad step') — an easier path avoids this to the east. Continue up past Low Pike (508m) to High Pike (656m) with the wall still on your left.",
+        "landmark": "Low Pike → High Pike"
+      },
+      {
+        "step": 4,
+        "instruction": "From High Pike the wall falls away. Follow the clear ridge path north to Dove Crag (792m), then bear slightly left to reach rocky Hart Crag (822m). Drop down to Link Hause then climb the east ridge of Fairfield, finally bearing right to the summit cairn.",
+        "landmark": "Dove Crag → Hart Crag → Fairfield Summit"
+      },
+      {
+        "step": 5,
+        "instruction": "From Fairfield's summit (873m) turn due south — use a compass here as the plateau is featureless in cloud. Pick up the cairned path to Great Rigg (766m). At Great Rigg's summit cairn, bear left to follow the ridge south to Heron Pike.",
+        "landmark": "Fairfield Summit → Great Rigg → Heron Pike"
+      },
+      {
+        "step": 6,
+        "instruction": "Continue south from Heron Pike, descending steeply down Nab Scar. At the bottom of the scar, turn left just above Rydal Hall onto the signposted footpath for Ambleside. Weave through the grounds of Rydal Hall following public footpath signs.",
+        "landmark": "Nab Scar → Rydal Hall"
+      },
+      {
+        "step": 7,
+        "instruction": "Bear left onto the track signposted Ambleside. Reach the road at Scandale Bridge, bear left and cross to the pavement. It's now under 1km back to the car park along the A591.",
+        "landmark": "Scandale Bridge → Ambleside"
+      }
+    ],
+    "parkingDetail": "Rydal Road Car Park, Ambleside, LA22 9AN. Large pay & display car park off the A591. Pay by phone code 9917. Chargeable 8am–8pm daily. This is the main car park for Ambleside town centre and the standard starting point for the Horseshoe.",
+    "thePayoff": "A magnificent high-level ridge walk bagging eight Wainwrights in one sweep, with 360-degree panoramas from Fairfield summit (873m) stretching from the Helvellyn range to the sea.",
+    "endLat": 54.4321,
+    "endLon": -2.965
+  },
+  {
+    "name": "Scout Scar",
+    "distance": "6.0 km",
+    "time": "2 hours",
+    "difficulty": "Easy",
+    "desc": "A spectacular limestone escarpment with a 'mushroom' shelter on the summit offering one of the finest all-round panoramas in the southern Lake District — from the Lakeland fells to Morecambe Bay.",
+    "start": "Scout Scar car park",
+    "lat": 54.324,
+    "lon": -2.7873,
+    "elevation": "235m",
+    "terrain": "Limestone escarpment and open ridge",
+    "routeUrl": "",
+    "walkType": "summit",
+    "waypoints": [
+      [
+        54.324,
+        -2.7873
+      ],
+      [
+        54.3249375,
+        -2.78515625
+      ],
+      [
+        54.325874999999996,
+        -2.7830125
+      ],
+      [
+        54.326812499999996,
+        -2.78086875
+      ],
+      [
+        54.327749999999995,
+        -2.778725
+      ],
+      [
+        54.328687499999994,
+        -2.7765812500000004
+      ],
+      [
+        54.32962499999999,
+        -2.7744375000000003
+      ],
+      [
+        54.3305625,
+        -2.7722937500000002
+      ],
+      [
+        54.3315,
+        -2.77015
+      ],
+      [
+        54.3324375,
+        -2.76800625
+      ],
+      [
+        54.333375000000004,
+        -2.7658625
+      ],
+      [
+        54.3343125,
+        -2.76371875
+      ],
+      [
+        54.33525,
+        -2.761575
+      ],
+      [
+        54.3361875,
+        -2.7594312500000004
+      ],
+      [
+        54.337125,
+        -2.7572875000000003
+      ],
+      [
+        54.3380625,
+        -2.7551437500000002
+      ],
+      [
+        54.339,
+        -2.753
+      ],
+      [
+        54.33725,
+        -2.752625
+      ],
+      [
+        54.335499999999996,
+        -2.75225
+      ],
+      [
+        54.333749999999995,
+        -2.751875
+      ],
+      [
+        54.332,
+        -2.7515
+      ],
+      [
+        54.329,
+        -2.7502500000000003
+      ],
+      [
+        54.326,
+        -2.749
+      ],
+      [
+        54.326125000000005,
+        -2.7506250000000003
+      ],
+      [
+        54.32625,
+        -2.75225
+      ],
+      [
+        54.326499999999996,
+        -2.7555
+      ],
+      [
+        54.32675,
+        -2.75875
+      ],
+      [
+        54.327,
+        -2.762
+      ],
+      [
+        54.32925,
+        -2.7634999999999996
+      ],
+      [
+        54.3315,
+        -2.7649999999999997
+      ],
+      [
+        54.333749999999995,
+        -2.7664999999999997
+      ],
+      [
+        54.336,
+        -2.768
+      ],
+      [
+        54.3345,
+        -2.7704125
+      ],
+      [
+        54.333,
+        -2.772825
+      ],
+      [
+        54.3315,
+        -2.7752375000000002
+      ],
+      [
+        54.33,
+        -2.77765
+      ],
+      [
+        54.3285,
+        -2.7800624999999997
+      ],
+      [
+        54.327,
+        -2.782475
+      ],
+      [
+        54.3255,
+        -2.7848875
+      ],
+      [
+        54.324,
+        -2.7873
+      ]
+    ],
+    "directions": [
+      {
+        "step": 1,
+        "instruction": "From the car park in the old quarry on Underbarrow Road, cross the road and go through the gate to join the clear path heading south along the top of Scout Scar escarpment.",
+        "landmark": "Scout Scar car park"
+      },
+      {
+        "step": 2,
+        "instruction": "Follow the escarpment path south with the dramatic limestone edge on your right and views opening up over Kendal and the Kent Valley. The path is well-worn and clear.",
+        "landmark": "Scout Scar escarpment"
+      },
+      {
+        "step": 3,
+        "instruction": "Reach the 'mushroom' viewpoint shelter at the highest point of Scout Scar (235m). From here the panorama takes in the Lakeland fells to the north, Morecambe Bay to the south, and the Pennines to the east. This is the summit — enjoy it!",
+        "landmark": "Mushroom shelter / Scout Scar summit"
+      },
+      {
+        "step": 4,
+        "instruction": "Continue south along the ridge to the southern end of Scout Scar, then descend slightly west to join the path swinging around to Cunswick Scar.",
+        "landmark": "Southern end of Scout Scar"
+      },
+      {
+        "step": 5,
+        "instruction": "Follow the path north across to Cunswick Scar, another limestone escarpment with fine views. Cross the trig point area and continue northeast, descending gradually back toward Underbarrow Road.",
+        "landmark": "Cunswick Scar"
+      },
+      {
+        "step": 6,
+        "instruction": "Follow the path northeast back to the Underbarrow Road and turn right along the road for a short distance back to the car park.",
+        "landmark": "Underbarrow Road / car park"
+      }
+    ],
+    "parkingDetail": "Scout Scar Car Park (free), Underbarrow Road, Kendal, LA8 8HB. This is the SECOND car park on the right after leaving Kendal and crossing the A591 — do not stop at the first car park (by the mast). The car park sits in an old quarry. Postcode covers a wide area so ignore satnav if it takes you past — the quarry car park is approximately 1.5 miles out of Kendal on the Underbarrow Road.",
+    "thePayoff": "A spectacular limestone escarpment with a 'mushroom' shelter on the summit offering one of the finest all-round panoramas in the southern Lake District — from the Lakeland fells to Morecambe Bay.",
+    "endLat": 54.324,
+    "endLon": -2.7873
+  },
+  {
+    "name": "Easedale Tarn",
+    "distance": "7.5 km",
+    "time": "3 hours",
+    "difficulty": "Moderate",
+    "desc": "Sourmilk Gill — a magnificent cascade of white water tumbling down a rocky gorge — leads dramatically to a remote, perfectly still tarn cradled between Tarn Crag and Blea Rigg.",
+    "start": "Broadgate Meadow Car Park, Grasmere",
+    "lat": 54.4592,
+    "lon": -3.0218,
+    "elevation": "280m",
+    "terrain": "Steep rocky path and tarn shore",
+    "routeUrl": "",
+    "walkType": "lakeside",
+    "waypoints": [
+      [
+        54.4592,
+        -3.0218
+      ],
+      [
+        54.459450000000004,
+        -3.0252
+      ],
+      [
+        54.4597,
+        -3.0286
+      ],
+      [
+        54.459224999999996,
+        -3.03195
+      ],
+      [
+        54.458749999999995,
+        -3.0353
+      ],
+      [
+        54.458275,
+        -3.0386499999999996
+      ],
+      [
+        54.4578,
+        -3.042
+      ],
+      [
+        54.457049999999995,
+        -3.0454999999999997
+      ],
+      [
+        54.4563,
+        -3.049
+      ],
+      [
+        54.45555,
+        -3.053
+      ],
+      [
+        54.4548,
+        -3.057
+      ],
+      [
+        54.4546,
+        -3.0592499999999996
+      ],
+      [
+        54.4544,
+        -3.0614999999999997
+      ],
+      [
+        54.4542,
+        -3.0637499999999998
+      ],
+      [
+        54.454,
+        -3.066
+      ],
+      [
+        54.45332500000001,
+        -3.06825
+      ],
+      [
+        54.452650000000006,
+        -3.0705
+      ],
+      [
+        54.451975000000004,
+        -3.07275
+      ],
+      [
+        54.4513,
+        -3.075
+      ],
+      [
+        54.45215,
+        -3.0785
+      ],
+      [
+        54.453,
+        -3.082
+      ],
+      [
+        54.454,
+        -3.0785
+      ],
+      [
+        54.455,
+        -3.075
+      ],
+      [
+        54.456,
+        -3.0715000000000003
+      ],
+      [
+        54.457,
+        -3.068
+      ],
+      [
+        54.457274999999996,
+        -3.0638750000000003
+      ],
+      [
+        54.4574125,
+        -3.0618125000000003
+      ],
+      [
+        54.45755,
+        -3.05975
+      ],
+      [
+        54.4576875,
+        -3.0576875
+      ],
+      [
+        54.457825,
+        -3.055625
+      ],
+      [
+        54.4579625,
+        -3.0535625
+      ],
+      [
+        54.4581,
+        -3.0515
+      ],
+      [
+        54.458375000000004,
+        -3.0473749999999997
+      ],
+      [
+        54.458650000000006,
+        -3.04325
+      ],
+      [
+        54.45892500000001,
+        -3.0391250000000003
+      ],
+      [
+        54.4592,
+        -3.035
+      ],
+      [
+        54.4592,
+        -3.0317
+      ],
+      [
+        54.4592,
+        -3.0284
+      ],
+      [
+        54.4592,
+        -3.0251
+      ],
+      [
+        54.4592,
+        -3.0218
+      ]
+    ],
+    "directions": [
+      {
+        "step": 1,
+        "instruction": "From Broadgate Meadow car park, turn left onto the main road and walk through the village, passing the Co-op. Turn right into Easedale Road at the slate sign painted 'Easedale Tarn' on the wall outside Cunningham's Outdoor shop.",
+        "landmark": "Easedale Road sign, Grasmere village"
+      },
+      {
+        "step": 2,
+        "instruction": "Follow Easedale Road past the Youth Hostel and holiday cottages. Where the road curves right, cross the slate footbridge on the left (opposite the post box set in the wall) over Easedale Beck and onto the rough cobbled track beyond.",
+        "landmark": "Slate footbridge over Easedale Beck"
+      },
+      {
+        "step": 3,
+        "instruction": "Go through the gate and continue on the track with the beck on your right. Pass through a second gate into a field — note: cattle may be present. Bear right then left, following the Public Bridleway sign through a kissing gate and onto the open fell.",
+        "landmark": "Kissing gate onto open fell"
+      },
+      {
+        "step": 4,
+        "instruction": "The track climbs with a wall on the right, then bears left to ascend alongside the spectacular Sourmilk Gill waterfall — white water tumbling over dark rocks. Stay on the main path beside the gill and don't be tempted onto the slippery rocks.",
+        "landmark": "Sourmilk Gill waterfall"
+      },
+      {
+        "step": 5,
+        "instruction": "At the top of the gill the landscape suddenly opens and Easedale Tarn is revealed — a beautiful, dark mountain tarn cradled between crags. Walk to the shore for the full effect.",
+        "landmark": "Easedale Tarn"
+      },
+      {
+        "step": 6,
+        "instruction": "For the circular return, cross the stepping stones at the far (western) end of the tarn and head right (northeast) on the rougher path through Far Easedale. This wilder valley path brings you back down to Stythwaite Steps — cross the beck and turn right.",
+        "landmark": "Far Easedale / Stythwaite Steps"
+      },
+      {
+        "step": 7,
+        "instruction": "Follow the bridleway southeast back down to Easedale Road, passing the Lancrigg Hotel. Turn right along Easedale Road and walk back through Grasmere to the car park.",
+        "landmark": "Easedale Road / Grasmere village"
+      }
+    ],
+    "parkingDetail": "Broadgate Meadow Car Park (north of village), Grasmere, LA22 9RQ. Pay & display, 81 spaces, open daily. Alternatively Stock Lane Car Park (south approach), LA22 9SJ. Grasmere village centre car parks fill quickly in summer — arrive before 10am.",
+    "thePayoff": "Sourmilk Gill — a magnificent cascade of white water tumbling down a rocky gorge — leads dramatically to a remote, perfectly still tarn cradled between Tarn Crag and Blea Rigg.",
+    "endLat": 54.4592,
+    "endLon": -3.0218
+  },
+  {
+    "name": "Rydal Water & Caves",
+    "distance": "5.0 km",
+    "time": "2 hours",
+    "difficulty": "Moderate",
+    "desc": "Rydal Cave — a vast, cathedral-like abandoned slate quarry with a luminous turquoise pool inside — is one of the Lake District's most dramatic and unexpected hidden gems.",
+    "start": "White Moss Car Park",
+    "lat": 54.4502,
+    "lon": -3.0066,
+    "elevation": "105m",
+    "terrain": "Woodland path and loose scree",
+    "routeUrl": "",
+    "walkType": "heritage",
+    "waypoints": [
+      [
+        54.452,
+        -3.006
+      ],
+      [
+        54.451,
+        -3.008
+      ],
+      [
+        54.4498,
+        -3.01
+      ],
+      [
+        54.44935,
+        -3.01125
+      ],
+      [
+        54.4489,
+        -3.0125
+      ],
+      [
+        54.44845,
+        -3.01375
+      ],
+      [
+        54.448,
+        -3.015
+      ],
+      [
+        54.4471,
+        -3.016
+      ],
+      [
+        54.4462,
+        -3.017
+      ],
+      [
+        54.44605,
+        -3.01825
+      ],
+      [
+        54.445899999999995,
+        -3.0195
+      ],
+      [
+        54.44575,
+        -3.0207499999999996
+      ],
+      [
+        54.4456,
+        -3.022
+      ],
+      [
+        54.4448,
+        -3.02425
+      ],
+      [
+        54.444,
+        -3.0265
+      ],
+      [
+        54.4432,
+        -3.028
+      ],
+      [
+        54.444,
+        -3.029
+      ],
+      [
+        54.4448,
+        -3.03
+      ],
+      [
+        54.4463,
+        -3.0317499999999997
+      ],
+      [
+        54.4478,
+        -3.0335
+      ],
+      [
+        54.4481,
+        -3.031625
+      ],
+      [
+        54.4484,
+        -3.02975
+      ],
+      [
+        54.4487,
+        -3.027875
+      ],
+      [
+        54.449,
+        -3.026
+      ],
+      [
+        54.449187499999994,
+        -3.02475
+      ],
+      [
+        54.449374999999996,
+        -3.0235
+      ],
+      [
+        54.4495625,
+        -3.0222499999999997
+      ],
+      [
+        54.449749999999995,
+        -3.021
+      ],
+      [
+        54.4499375,
+        -3.01975
+      ],
+      [
+        54.450125,
+        -3.0185
+      ],
+      [
+        54.450312499999995,
+        -3.0172499999999998
+      ],
+      [
+        54.4505,
+        -3.016
+      ],
+      [
+        54.4506875,
+        -3.0147500000000003
+      ],
+      [
+        54.450874999999996,
+        -3.0135
+      ],
+      [
+        54.4510625,
+        -3.01225
+      ],
+      [
+        54.45125,
+        -3.011
+      ],
+      [
+        54.4514375,
+        -3.00975
+      ],
+      [
+        54.451625,
+        -3.0084999999999997
+      ],
+      [
+        54.4518125,
+        -3.00725
+      ],
+      [
+        54.452,
+        -3.006
+      ]
+    ],
+    "directions": [
+      {
+        "step": 1,
+        "instruction": "From the south White Moss car park, take the left-hand path (not the one to the toilet block) which leads away through woodland alongside the River Rothay. There are picnic benches here and paddling spots.",
+        "landmark": "White Moss Car Park (South)"
+      },
+      {
+        "step": 2,
+        "instruction": "You reach a wheelchair-accessible bridge. Cross it and take the path straight ahead, clearly signposted 'Woodland Walk To Viewpoints On Loughrigg Terrace.' Follow this wide path through White Moss Wood.",
+        "landmark": "Wheelchair bridge / Loughrigg Terrace signpost"
+      },
+      {
+        "step": 3,
+        "instruction": "At the fork in the woodland, take the left fork. Go through the gate in the stone wall, out of the woodland, and turn left. The path descends along the field wall to Rydal Water. Cross the small streams via stepping stones (boots make this easy) and walk along the beautiful lake shore.",
+        "landmark": "Rydal Water shore"
+      },
+      {
+        "step": 4,
+        "instruction": "The path leaves the lake shore and ascends. At the junction with a gate on the left, take the path up to the right signposted for Rydal Caves. The path rises steeply with loose scree — take your time. Pass a wishing tree (coins wedged in bark) and some small caves on your left.",
+        "landmark": "Path up to Rydal Caves (signposted)"
+      },
+      {
+        "step": 5,
+        "instruction": "At the crossroads near the top, go straight over to reach Rydal Cave — a vast, cathedral-like quarry chamber with a deep turquoise pool inside glowing with reflected light. Look but don't stand under the ceiling overhangs. Look out for small fish in the pool.",
+        "landmark": "Rydal Cave"
+      },
+      {
+        "step": 6,
+        "instruction": "Leaving the cave, return to the crossroads and take the left turn. After a short level section it becomes steep and rocky again — take the right fork at the next fork. At the end of the path you'll reach another junction; turn left toward Grasmere.",
+        "landmark": "Path towards Grasmere"
+      },
+      {
+        "step": 7,
+        "instruction": "Descend to Grasmere lake shore and enjoy the view. Then follow the River Rothay back to the bridge near the weir. Cross the bridge and turn right, following the path back through the woodland to the car park.",
+        "landmark": "Grasmere shore → River Rothay → car park"
+      }
+    ],
+    "parkingDetail": "White Moss Car Park (South), A591, near Grasmere, LA22 9SE. Pay & display, National Trust. Two car parks at White Moss: the south car park is the correct one for this route (if coming from Grasmere direction, it's on the right after the north car park on the left). Toilets with baby-changing facilities on site.",
+    "thePayoff": "Rydal Cave — a vast, cathedral-like abandoned slate quarry with a luminous turquoise pool inside — is one of the Lake District's most dramatic and unexpected hidden gems.",
+    "endLat": 54.4502,
+    "endLon": -3.0066
+  },
+  {
+    "name": "Buttermere Shoreline",
+    "distance": "7.5 km",
+    "time": "2.5 hours",
+    "difficulty": "Easy",
+    "desc": "A perfect lake circuit with dramatic fell reflections, a secret rock tunnel carved through the cliff face, and Haystacks — Wainwright's favourite mountain — watching over every step.",
+    "start": "Buttermere village",
+    "lat": 54.5385,
+    "lon": -3.2784,
+    "elevation": "100m",
+    "terrain": "Flat lakeside paths and rock tunnel",
+    "routeUrl": "",
+    "walkType": "lakeside",
+    "waypoints": [
+      [
+        54.5427,
+        -3.2693
+      ],
+      [
+        54.540850000000006,
+        -3.27065
+      ],
+      [
+        54.539,
+        -3.272
+      ],
+      [
+        54.537400000000005,
+        -3.2737499999999997
+      ],
+      [
+        54.5358,
+        -3.2755
+      ],
+      [
+        54.53535,
+        -3.278625
+      ],
+      [
+        54.5349,
+        -3.2817499999999997
+      ],
+      [
+        54.53445,
+        -3.2848749999999995
+      ],
+      [
+        54.534,
+        -3.288
+      ],
+      [
+        54.533699999999996,
+        -3.2909999999999995
+      ],
+      [
+        54.5334,
+        -3.2939999999999996
+      ],
+      [
+        54.533100000000005,
+        -3.2969999999999997
+      ],
+      [
+        54.5328,
+        -3.3
+      ],
+      [
+        54.5313,
+        -3.3025
+      ],
+      [
+        54.5298,
+        -3.305
+      ],
+      [
+        54.529425,
+        -3.303375
+      ],
+      [
+        54.52905,
+        -3.30175
+      ],
+      [
+        54.528675,
+        -3.300125
+      ],
+      [
+        54.5283,
+        -3.2984999999999998
+      ],
+      [
+        54.527550000000005,
+        -3.29525
+      ],
+      [
+        54.527175,
+        -3.2936249999999996
+      ],
+      [
+        54.5268,
+        -3.292
+      ],
+      [
+        54.5269,
+        -3.28875
+      ],
+      [
+        54.527,
+        -3.2855
+      ],
+      [
+        54.527100000000004,
+        -3.28225
+      ],
+      [
+        54.5272,
+        -3.279
+      ],
+      [
+        54.527699999999996,
+        -3.2773125
+      ],
+      [
+        54.5282,
+        -3.275625
+      ],
+      [
+        54.5287,
+        -3.2739374999999997
+      ],
+      [
+        54.5292,
+        -3.2722499999999997
+      ],
+      [
+        54.529700000000005,
+        -3.2705624999999996
+      ],
+      [
+        54.5302,
+        -3.2688749999999995
+      ],
+      [
+        54.530699999999996,
+        -3.2671874999999995
+      ],
+      [
+        54.5312,
+        -3.2655
+      ],
+      [
+        54.53385,
+        -3.26375
+      ],
+      [
+        54.5365,
+        -3.262
+      ],
+      [
+        54.53805,
+        -3.2638249999999998
+      ],
+      [
+        54.5396,
+        -3.26565
+      ],
+      [
+        54.54115,
+        -3.267475
+      ],
+      [
+        54.5427,
+        -3.2693
+      ]
+    ],
+    "directions": [
+      {
+        "step": 1,
+        "instruction": "From the village car park, walk south through the village. Pass the Fish Hotel on your left and St James's Church. Continue south on the lane and take the signed path right toward the lake shore.",
+        "landmark": "Buttermere village / Fish Hotel"
+      },
+      {
+        "step": 2,
+        "instruction": "Reach the northwestern shore of Buttermere and turn left (southeast) along the lake shore path. The views across the water to Fleetwith Pike and Haystacks open up immediately — the fell scree is perfectly reflected in calm conditions.",
+        "landmark": "Northwest shore of Buttermere"
+      },
+      {
+        "step": 3,
+        "instruction": "Continue along the northwest shore. You will reach a remarkable rock tunnel cut through a cliff face — duck through it carefully as the floor is uneven and wet. This short tunnel bypasses a section of cliff that juts into the lake.",
+        "landmark": "Rock tunnel through cliff"
+      },
+      {
+        "step": 4,
+        "instruction": "Emerge from the tunnel and continue southeast along the shore past Hassness House. The path reaches the road briefly near Warnscale Beck at the head of the lake.",
+        "landmark": "Hassness House / lake head"
+      },
+      {
+        "step": 5,
+        "instruction": "Cross Warnscale Beck and walk along the lane briefly to Peggy's Bridge at the foot (eastern end) of the lake. Cross the bridge — this is the most scenic part of the walk with Fleetwith Pike towering above you.",
+        "landmark": "Peggy's Bridge"
+      },
+      {
+        "step": 6,
+        "instruction": "From Peggy's Bridge continue west (right) past Gatesgarth Farm, keeping to the southern lakeshore path. This south shore is quieter and gives lovely views back toward Buttermere village and the High Stile range.",
+        "landmark": "Gatesgarth Farm / south shore"
+      },
+      {
+        "step": 7,
+        "instruction": "Follow the southern shore path all the way back west to the footbridge over Buttermere Dubs (the stream linking Buttermere and Crummock Water). Cross it and follow the path north back up into Buttermere village.",
+        "landmark": "Buttermere Dubs footbridge → village"
+      }
+    ],
+    "parkingDetail": "Buttermere Village Car Park (LDNPA), Buttermere, CA13 9UZ. Pay & display. Alternative: National Trust Car Park, CA13 9XA (same village). Both are in Buttermere village. The lake is a short walk south from the village. Arrive early in summer as both fill quickly. The Fish Hotel (CA13 9XA) is nearby for post-walk refreshments.",
+    "thePayoff": "A perfect lake circuit with dramatic fell reflections, a secret rock tunnel carved through the cliff face, and Haystacks — Wainwright's favourite mountain — watching over every step.",
+    "endLat": 54.5385,
+    "endLon": -3.2784
+  },
+  {
+    "name": "Great Langdale Valley",
+    "distance": "10.0 km",
+    "time": "3 hours",
+    "difficulty": "Easy",
+    "desc": "The dramatic Langdale Pikes — Pike O'Stickle, Harrison Stickle, Pavey Ark — dominate the skyline as you stroll the ancient glacial valley floor, where Neolithic axe-makers once worked the same fells.",
+    "start": "Old Dungeon Ghyll Car Park",
+    "lat": 54.447,
+    "lon": -3.0905,
+    "elevation": "95m",
+    "terrain": "Glacial valley floor, stony tracks and fields",
+    "routeUrl": "",
+    "walkType": "village",
+    "waypoints": [
+      [
+        54.4574,
+        -3.0765
+      ],
+      [
+        54.4578,
+        -3.075
+      ],
+      [
+        54.4584,
+        -3.0785
+      ],
+      [
+        54.459,
+        -3.082
+      ],
+      [
+        54.45975,
+        -3.086
+      ],
+      [
+        54.460125000000005,
+        -3.088
+      ],
+      [
+        54.4605,
+        -3.09
+      ],
+      [
+        54.460875,
+        -3.0919999999999996
+      ],
+      [
+        54.46125000000001,
+        -3.094
+      ],
+      [
+        54.462,
+        -3.098
+      ],
+      [
+        54.46125000000001,
+        -3.1014999999999997
+      ],
+      [
+        54.4605,
+        -3.105
+      ],
+      [
+        54.46028750000001,
+        -3.102875
+      ],
+      [
+        54.460075,
+        -3.1007499999999997
+      ],
+      [
+        54.4598625,
+        -3.0986249999999997
+      ],
+      [
+        54.459649999999996,
+        -3.0965
+      ],
+      [
+        54.45943749999999,
+        -3.094375
+      ],
+      [
+        54.459224999999996,
+        -3.09225
+      ],
+      [
+        54.4590125,
+        -3.090125
+      ],
+      [
+        54.4588,
+        -3.088
+      ],
+      [
+        54.45858749999999,
+        -3.0845000000000002
+      ],
+      [
+        54.458375,
+        -3.081
+      ],
+      [
+        54.4581625,
+        -3.0774999999999997
+      ],
+      [
+        54.45795,
+        -3.074
+      ],
+      [
+        54.45773749999999,
+        -3.0705
+      ],
+      [
+        54.457525,
+        -3.067
+      ],
+      [
+        54.4573125,
+        -3.0635000000000003
+      ],
+      [
+        54.4571,
+        -3.06
+      ],
+      [
+        54.456775,
+        -3.0577500000000004
+      ],
+      [
+        54.456450000000004,
+        -3.0555000000000003
+      ],
+      [
+        54.456125,
+        -3.0532500000000002
+      ],
+      [
+        54.4558,
+        -3.051
+      ],
+      [
+        54.455975,
+        -3.0545
+      ],
+      [
+        54.45615,
+        -3.058
+      ],
+      [
+        54.456325,
+        -3.0614999999999997
+      ],
+      [
+        54.4565,
+        -3.065
+      ],
+      [
+        54.456725,
+        -3.067875
+      ],
+      [
+        54.45695,
+        -3.07075
+      ],
+      [
+        54.457175,
+        -3.073625
+      ],
+      [
+        54.4574,
+        -3.0765
+      ]
+    ],
+    "directions": [
+      {
+        "step": 1,
+        "instruction": "Leave the ODG car park and walk behind the Old Dungeon Ghyll Hotel, through the gate and onto the stony track heading left (east) along the valley floor. Look up to Raven Crag on the right and the dramatic spires of the Langdale Pikes ahead.",
+        "landmark": "Old Dungeon Ghyll Hotel"
+      },
+      {
+        "step": 2,
+        "instruction": "Pass Stool End Farm on your left — when the road bends sharply left toward Blea Tarn, look for the red post box and the farm entrance. Go through the farm following the public footpath signs onto the valley floor track.",
+        "landmark": "Stool End Farm"
+      },
+      {
+        "step": 3,
+        "instruction": "Continue along the wide stony track through Mickleden — this ancient valley was used by Neolithic workers who quarried stone for axes on the slopes of Pike O'Stickle. Keep straight on, ignoring side paths climbing the fells. The Langdale Pikes tower above you.",
+        "landmark": "Mickleden / Langdale Pikes views"
+      },
+      {
+        "step": 4,
+        "instruction": "Near the head of the valley, look for strange lumpy mounds on the valley floor — these are glacial moraines left by the retreating ice sheet. Continue to the wooden bridge across the stream by the walled sheep pen. This is the far point of the walk.",
+        "landmark": "Wooden bridge / glacial moraines"
+      },
+      {
+        "step": 5,
+        "instruction": "Return along the same path (or take the south-side path variation) back toward the New Dungeon Ghyll Hotel and Sticklebarn, which has a large beer garden with superb fell views. This is a good halfway refreshment stop.",
+        "landmark": "New Dungeon Ghyll / Sticklebarn"
+      },
+      {
+        "step": 6,
+        "instruction": "From Sticklebarn continue east (down valley) on the path or road to Chapel Stile village. Cross the road and pick up the footpath on the north side of the valley through oak woodland, signed for Oak Howe and Langdale.",
+        "landmark": "Chapel Stile village"
+      },
+      {
+        "step": 7,
+        "instruction": "Follow the footpath west along the north side of the valley through fields and woodland back toward the Old Dungeon Ghyll. The path returns you to the ODG car park after passing through several field gates.",
+        "landmark": "North-side path back to ODG"
+      }
+    ],
+    "parkingDetail": "Old Dungeon Ghyll National Trust Car Park, Great Langdale, LA22 9JU. Pay & display (NT members free). At the very head of the valley, adjacent to the Old Dungeon Ghyll Hotel. Grid reference NY286061. Alternatively, use the New Dungeon Ghyll (Sticklebarn) NT car park, LA22 9JX, 1 mile east. Both are well-signed from the B5343.",
+    "thePayoff": "The dramatic Langdale Pikes — Pike O'Stickle, Harrison Stickle, Pavey Ark — dominate the skyline as you stroll the ancient glacial valley floor, where Neolithic axe-makers once worked the same fells.",
+    "endLat": 54.447,
+    "endLon": -3.0905
+  },
+  {
+    "name": "Cathedral Cavern - Tilberthwaite",
+    "distance": "6.5 km",
+    "time": "2.5 hours",
+    "difficulty": "Moderate",
+    "desc": "Cathedral Cavern — a 40-foot-high cathedral of volcanic rock hewn by Victorian quarrymen — is entered through a dramatic tunnel and dwarfs all who stand inside, with light filtering through a natural 'window' in the rock above.",
+    "start": "Tilberthwaite Ghyll Car Park",
+    "lat": 54.4178,
+    "lon": -3.0766,
+    "elevation": "280m",
+    "terrain": "Rough tracks, dark tunnels and quarry spoil heaps",
+    "routeUrl": "",
+    "walkType": "heritage",
+    "waypoints": [
+      [
+        54.414,
+        -3.061
+      ],
+      [
+        54.4145,
+        -3.0598
+      ],
+      [
+        54.415499999999994,
+        -3.0579
+      ],
+      [
+        54.4165,
+        -3.056
+      ],
+      [
+        54.417249999999996,
+        -3.0547500000000003
+      ],
+      [
+        54.418,
+        -3.0535
+      ],
+      [
+        54.41875,
+        -3.05225
+      ],
+      [
+        54.4195,
+        -3.051
+      ],
+      [
+        54.420649999999995,
+        -3.05
+      ],
+      [
+        54.4218,
+        -3.049
+      ],
+      [
+        54.4225,
+        -3.048
+      ],
+      [
+        54.421875,
+        -3.049
+      ],
+      [
+        54.42125,
+        -3.05
+      ],
+      [
+        54.420625,
+        -3.051
+      ],
+      [
+        54.42,
+        -3.052
+      ],
+      [
+        54.420125,
+        -3.05075
+      ],
+      [
+        54.42025,
+        -3.0495
+      ],
+      [
+        54.42037500000001,
+        -3.04825
+      ],
+      [
+        54.420500000000004,
+        -3.0469999999999997
+      ],
+      [
+        54.420625,
+        -3.04575
+      ],
+      [
+        54.42075,
+        -3.0444999999999998
+      ],
+      [
+        54.420874999999995,
+        -3.0432499999999996
+      ],
+      [
+        54.421,
+        -3.042
+      ],
+      [
+        54.420125,
+        -3.04125
+      ],
+      [
+        54.41925,
+        -3.0404999999999998
+      ],
+      [
+        54.418375,
+        -3.0397499999999997
+      ],
+      [
+        54.4175,
+        -3.039
+      ],
+      [
+        54.416425000000004,
+        -3.0409500000000005
+      ],
+      [
+        54.415887500000004,
+        -3.0419250000000004
+      ],
+      [
+        54.415350000000004,
+        -3.0429000000000004
+      ],
+      [
+        54.414275,
+        -3.0448500000000003
+      ],
+      [
+        54.4132,
+        -3.0468
+      ],
+      [
+        54.41330000000001,
+        -3.048575
+      ],
+      [
+        54.4134,
+        -3.05035
+      ],
+      [
+        54.4135,
+        -3.052125
+      ],
+      [
+        54.4136,
+        -3.0539
+      ],
+      [
+        54.413700000000006,
+        -3.055675
+      ],
+      [
+        54.4138,
+        -3.0574500000000002
+      ],
+      [
+        54.4139,
+        -3.059225
+      ],
+      [
+        54.414,
+        -3.061
+      ]
+    ],
+    "directions": [
+      {
+        "step": 1,
+        "instruction": "From the car park, turn left back along the road (away from the direction you arrived) and continue to High Tilberthwaite Farm. Go through the farmyard keeping right — ignore the steep track on the left. Bear right through the gate onto the hard-surfaced track.",
+        "landmark": "High Tilberthwaite Farm"
+      },
+      {
+        "step": 2,
+        "instruction": "Follow the bridleway generally northeast. The spoil heaps of Hodge Close quarries are visible on your right across Pierce How Beck. Keep right on the obvious track, continuing through the gate beside Moss Rigg Wood.",
+        "landmark": "Bridleway past Moss Rigg Wood"
+      },
+      {
+        "step": 3,
+        "instruction": "Just past the isolated Brooklands Cottage, go through the gap stile in the wall on the left (note the small sign). Follow the rough path up through trees, swinging left, then in 30m bear left into a clearing at the top of a spoil heap. The long tunnel entrance is on your right — GET YOUR TORCH OUT here.",
+        "landmark": "Wall gap stile / tunnel entrance"
+      },
+      {
+        "step": 4,
+        "instruction": "Walk through the dark tunnel (it's not long). At the far end, keep right and clamber over rocks. Find the gap in the fence to look through the 'window' — a sheer drop to the emerald quarry lagoon below. Then descend right over rocks into Cathedral Cavern via a short tunnel. The pool inside shelves gently then drops sharply — stay on the rocks.",
+        "landmark": "Cathedral Cavern"
+      },
+      {
+        "step": 5,
+        "instruction": "Exit through the tunnel on the other side of the pillar. Bear left down to the gate and stile, onto the track. Bear left again. Slater Bridge is visible to your right — a beautiful ancient packhorse bridge worth the 50m detour.",
+        "landmark": "Exit / Slater Bridge (optional detour)"
+      },
+      {
+        "step": 6,
+        "instruction": "Continue south on the track past Low Hall Garth Hut. At the junction and signpost among open ground, turn sharp left signposted 'Tilberthwaite 1 mile'. The track climbs steadily past more old quarries through the area known as Knotts.",
+        "landmark": "Junction 'Tilberthwaite 1 mile' signpost"
+      },
+      {
+        "step": 7,
+        "instruction": "The track descends back into High Tilberthwaite Farm yard at the left gate. Bear right through the yard and back down the road to the car park.",
+        "landmark": "High Tilberthwaite Farm → car park"
+      }
+    ],
+    "parkingDetail": "Tilberthwaite Ghyll Car Park, Tilberthwaite, near Coniston, LA21 8DG. Grid reference NY306009. Large layby/car park on the left, accessed via a single-track road signposted 'Tilberthwaite' from the A593 between Ambleside and Coniston. Cashless parking via RingGo app. Limited spaces — arrive early in summer. The road can be icy in winter.",
+    "thePayoff": "Cathedral Cavern — a 40-foot-high cathedral of volcanic rock hewn by Victorian quarrymen — is entered through a dramatic tunnel and dwarfs all who stand inside, with light filtering through a natural 'window' in the rock above.",
+    "endLat": 54.4178,
+    "endLon": -3.0766
+  },
+  {
+    "name": "Skelwith Bridge to Elterwater",
+    "distance": "12.0 km",
+    "time": "4.5 hours",
+    "difficulty": "Challenging",
+    "desc": "Three contrasting waterfalls — Skelwith Force, Colwith Force, and the photogenic Slater Bridge over the River Brathay — all linked by a winding path through some of the most secluded and picturesque farmland in Langdale.",
+    "start": "Elterwater car park",
+    "lat": 54.4224,
+    "lon": -3.0134,
+    "elevation": "80m",
+    "terrain": "Gravel paths, woodland and farmland",
+    "routeUrl": "",
+    "walkType": "village",
+    "waypoints": [
+      [
+        54.4173,
+        -3.0012
+      ],
+      [
+        54.4190375,
+        -3.006525
+      ],
+      [
+        54.420775,
+        -3.01185
+      ],
+      [
+        54.422512499999996,
+        -3.017175
+      ],
+      [
+        54.42425,
+        -3.0225
+      ],
+      [
+        54.4259875,
+        -3.027825
+      ],
+      [
+        54.427724999999995,
+        -3.03315
+      ],
+      [
+        54.4294625,
+        -3.038475
+      ],
+      [
+        54.4312,
+        -3.0438
+      ],
+      [
+        54.4295,
+        -3.0495
+      ],
+      [
+        54.42865,
+        -3.0547500000000003
+      ],
+      [
+        54.4278,
+        -3.06
+      ],
+      [
+        54.4268,
+        -3.0648
+      ],
+      [
+        54.426,
+        -3.0684
+      ],
+      [
+        54.4252,
+        -3.072
+      ],
+      [
+        54.4231,
+        -3.0775
+      ],
+      [
+        54.421,
+        -3.083
+      ],
+      [
+        54.4199,
+        -3.0865
+      ],
+      [
+        54.4188,
+        -3.09
+      ],
+      [
+        54.4175,
+        -3.096
+      ],
+      [
+        54.4165,
+        -3.0905
+      ],
+      [
+        54.4155,
+        -3.085
+      ],
+      [
+        54.416250000000005,
+        -3.08125
+      ],
+      [
+        54.417,
+        -3.0774999999999997
+      ],
+      [
+        54.41775,
+        -3.0737499999999995
+      ],
+      [
+        54.4185,
+        -3.07
+      ],
+      [
+        54.419875000000005,
+        -3.0655
+      ],
+      [
+        54.42125,
+        -3.061
+      ],
+      [
+        54.422625,
+        -3.0564999999999998
+      ],
+      [
+        54.424,
+        -3.052
+      ],
+      [
+        54.423162500000004,
+        -3.04565
+      ],
+      [
+        54.42274375,
+        -3.042475
+      ],
+      [
+        54.422325,
+        -3.0393
+      ],
+      [
+        54.4214875,
+        -3.03295
+      ],
+      [
+        54.420649999999995,
+        -3.0266
+      ],
+      [
+        54.42023124999999,
+        -3.023425
+      ],
+      [
+        54.41981249999999,
+        -3.02025
+      ],
+      [
+        54.418974999999996,
+        -3.0139
+      ],
+      [
+        54.4181375,
+        -3.00755
+      ],
+      [
+        54.4173,
+        -3.0012
+      ]
+    ],
+    "directions": [
+      {
+        "step": 1,
+        "instruction": "From the NT car park in Elterwater, take the footpath signed 'Skelwith Bridge', leaving through the wooden gate in the corner by Great Langdale Beck. Follow the gravelled Cumbria Way path alongside the beck, with fine views back to the Langdale Pikes.",
+        "landmark": "Elterwater car park / Great Langdale Beck"
+      },
+      {
+        "step": 2,
+        "instruction": "Cross a small wooden footbridge and continue alongside Elter Water lake itself. At the fork, take the RIGHT fork (not the left which goes uphill) to stay along the water's edge. Pass through a wooden gate to a stunning view back across Elter Water to the Langdale Pikes.",
+        "landmark": "Elter Water shore"
+      },
+      {
+        "step": 3,
+        "instruction": "Continue through the open parkland. Take a short diversion down right to the viewpoint of Skelwith Force — the River Brathay forces through a narrow gorge in a powerful cascade. Return to the main path and pass through the Kirkstone Green Slate buildings onto the road.",
+        "landmark": "Skelwith Force (short diversion)"
+      },
+      {
+        "step": 4,
+        "instruction": "At Skelwith Bridge cross the A593 and turn right over the bridge, then follow the road briefly. Take the right turn signed 'Colwith Bridge' (green footpath sign), through a wooden kissing gate and along the well-defined path that climbs gently through woodland.",
+        "landmark": "Skelwith Bridge / path to Colwith"
+      },
+      {
+        "step": 5,
+        "instruction": "Follow the path past Park Farm and continue through fields. Eventually reach Colwith Force — a dramatic multi-tier waterfall hidden in secluded woodland. This is one of the least-visited but most beautiful waterfalls in the Lake District.",
+        "landmark": "Colwith Force waterfall"
+      },
+      {
+        "step": 6,
+        "instruction": "Continue on the path to Stang End where you reach a tarmacked road at some white cottages. Turn left and follow the road downhill over a small bridge. At the staggered crossroads (signed Tilberthwaite), continue straight on along the track following the river.",
+        "landmark": "Stang End / staggered crossroads"
+      },
+      {
+        "step": 7,
+        "instruction": "Look out for the turning on the left — the old Slater Bridge is here, a beautiful medieval single-arch packhorse bridge. Cross it for photographs and to admire the view of Little Langdale Tarn and Lingmoor Fell beyond.",
+        "landmark": "Slater Bridge"
+      },
+      {
+        "step": 8,
+        "instruction": "From Slater Bridge, follow the track northeast back up through Little Langdale. The path descends gradually back to Elterwater village, emerging near the Britannia Inn. Turn left back to the car park.",
+        "landmark": "Return to Elterwater / Britannia Inn"
+      }
+    ],
+    "parkingDetail": "Elterwater National Trust Car Park, Elterwater village, LA22 9HU. Pay & display (NT members free). Grid reference NY328047. In the centre of Elterwater village by the bridge over Great Langdale Beck. Turn right off the A593 (Ambleside–Coniston road) onto the B5343, then after a couple of miles turn left into Elterwater. The Britannia Inn is steps from the car park.",
+    "thePayoff": "Three contrasting waterfalls — Skelwith Force, Colwith Force, and the photogenic Slater Bridge over the River Brathay — all linked by a winding path through some of the most secluded and picturesque farmland in Langdale.",
+    "endLat": 54.4224,
+    "endLon": -3.0134
+  },
+  {
+    "name": "Tom Ghyll Waterfalls",
+    "distance": "5.0 km",
+    "time": "2 hours",
+    "difficulty": "Moderate",
+    "desc": "A dramatic series of cascading waterfalls leading to the picturesque Tarn Hows, one of the most photographed spots in the Lake District.",
+    "start": "Glen Mary Bridge Car Park",
+    "lat": 54.3858,
+    "lon": -3.0482,
+    "elevation": "250m",
+    "terrain": "Steep waterfall path and woodland track",
+    "routeUrl": "",
+    "walkType": "waterfall",
+    "waypoints": [
+      [
+        54.3891,
+        -3.045
+      ],
+      [
+        54.38935,
+        -3.0445
+      ],
+      [
+        54.3896,
+        -3.044
+      ],
+      [
+        54.389825,
+        -3.043375
+      ],
+      [
+        54.39005,
+        -3.04275
+      ],
+      [
+        54.390275,
+        -3.042125
+      ],
+      [
+        54.3905,
+        -3.0415
+      ],
+      [
+        54.39085,
+        -3.04075
+      ],
+      [
+        54.3912,
+        -3.04
+      ],
+      [
+        54.3915,
+        -3.03925
+      ],
+      [
+        54.3918,
+        -3.0385
+      ],
+      [
+        54.391575,
+        -3.0380625
+      ],
+      [
+        54.39135,
+        -3.0376250000000002
+      ],
+      [
+        54.391125,
+        -3.0371875
+      ],
+      [
+        54.3909,
+        -3.03675
+      ],
+      [
+        54.390675,
+        -3.0363125
+      ],
+      [
+        54.39045,
+        -3.035875
+      ],
+      [
+        54.390225,
+        -3.0354375
+      ],
+      [
+        54.39,
+        -3.035
+      ],
+      [
+        54.3895,
+        -3.035125
+      ],
+      [
+        54.389,
+        -3.03525
+      ],
+      [
+        54.38850000000001,
+        -3.035375
+      ],
+      [
+        54.388000000000005,
+        -3.0355
+      ],
+      [
+        54.3875,
+        -3.035625
+      ],
+      [
+        54.387,
+        -3.03575
+      ],
+      [
+        54.3865,
+        -3.035875
+      ],
+      [
+        54.386,
+        -3.036
+      ],
+      [
+        54.38612500000001,
+        -3.0364375
+      ],
+      [
+        54.386250000000004,
+        -3.036875
+      ],
+      [
+        54.3865,
+        -3.03775
+      ],
+      [
+        54.38675,
+        -3.0386249999999997
+      ],
+      [
+        54.387,
+        -3.0395
+      ],
+      [
+        54.387375,
+        -3.04025
+      ],
+      [
+        54.38775,
+        -3.041
+      ],
+      [
+        54.388125,
+        -3.04175
+      ],
+      [
+        54.3885,
+        -3.0425
+      ],
+      [
+        54.38865,
+        -3.043125
+      ],
+      [
+        54.3888,
+        -3.04375
+      ],
+      [
+        54.38895,
+        -3.044375
+      ],
+      [
+        54.3891,
+        -3.045
+      ]
+    ],
+    "directions": [
+      {
+        "step": 1,
+        "instruction": "Exit the Glen Mary car park and follow the path marked for Tom Gill and Tarn Hows.",
+        "landmark": "Glen Mary Car Park"
+      },
+      {
+        "step": 2,
+        "instruction": "Follow the trail uphill, keeping the stream (Tom Gill) on your right.",
+        "landmark": "Tom Gill Stream"
+      },
+      {
+        "step": 3,
+        "instruction": "Pass the series of cascading waterfalls; take care as the spray can make the rocks slippery.",
+        "landmark": "Tom Ghyll Waterfalls"
+      },
+      {
+        "step": 4,
+        "instruction": "Continue climbing until you emerge from the trees at the edge of Tarn Hows.",
+        "landmark": "Tarn Hows Edge"
+      },
+      {
+        "step": 5,
+        "instruction": "Turn left to follow the accessible circular path around the tarn clockwise.",
+        "landmark": "Circular Path"
+      },
+      {
+        "step": 6,
+        "instruction": "Enjoy the views of the Langdale Pikes in the distance as you round the southern end.",
+        "landmark": "Southern Viewpoint"
+      },
+      {
+        "step": 7,
+        "instruction": "Continue until you return to the entry point at the head of Tom Gill.",
+        "landmark": "Path Junction"
+      },
+      {
+        "step": 8,
+        "instruction": "Descend back down the same waterfall path or follow the adjacent woodland track to the car park.",
+        "landmark": "Glen Mary Car Park"
+      }
+    ],
+    "parkingDetail": "Glen Mary Bridge National Trust car park, LA21 8DP. Pay and display (free for NT members). Located on the A593 between Coniston and Skelwith Bridge.",
+    "thePayoff": "A dramatic series of cascading waterfalls leading to the picturesque Tarn Hows, one of the most photographed spots in the Lake District.",
+    "endLat": 54.3858,
+    "endLon": -3.0482
+  },
+  {
+    "name": "Hodge Close Quarry",
+    "distance": "6.5 km",
+    "time": "2.5 hours",
+    "difficulty": "Moderate",
+    "desc": "The dramatic 'Skull' reflection in the deep blue waters of the massive slate quarry and the incredible Cathedral Cavern.",
+    "start": "Hodge Close Car Park",
+    "lat": 54.4059,
+    "lon": -3.0556,
+    "elevation": "220m",
+    "terrain": "Woodland path and rocky tracks",
+    "routeUrl": "",
+    "walkType": "heritage",
+    "waypoints": [
+      [
+        54.4059,
+        -3.0556
+      ],
+      [
+        54.4062,
+        -3.05605
+      ],
+      [
+        54.4065,
+        -3.0565
+      ],
+      [
+        54.407,
+        -3.056
+      ],
+      [
+        54.4075,
+        -3.0555000000000003
+      ],
+      [
+        54.408,
+        -3.055
+      ],
+      [
+        54.4085,
+        -3.0545
+      ],
+      [
+        54.40899999999999,
+        -3.054125
+      ],
+      [
+        54.409499999999994,
+        -3.05375
+      ],
+      [
+        54.41,
+        -3.053375
+      ],
+      [
+        54.4105,
+        -3.053
+      ],
+      [
+        54.4104375,
+        -3.0524375
+      ],
+      [
+        54.410375,
+        -3.051875
+      ],
+      [
+        54.4103125,
+        -3.0513125
+      ],
+      [
+        54.41025,
+        -3.05075
+      ],
+      [
+        54.41018749999999,
+        -3.0501875
+      ],
+      [
+        54.410124999999994,
+        -3.049625
+      ],
+      [
+        54.410062499999995,
+        -3.0490625
+      ],
+      [
+        54.41,
+        -3.0485
+      ],
+      [
+        54.4094,
+        -3.048
+      ],
+      [
+        54.4088,
+        -3.0475
+      ],
+      [
+        54.408474999999996,
+        -3.047125
+      ],
+      [
+        54.40815,
+        -3.04675
+      ],
+      [
+        54.4075,
+        -3.046
+      ],
+      [
+        54.407,
+        -3.0465
+      ],
+      [
+        54.4065,
+        -3.0469999999999997
+      ],
+      [
+        54.406000000000006,
+        -3.0475
+      ],
+      [
+        54.4055,
+        -3.048
+      ],
+      [
+        54.405437500000005,
+        -3.0484999999999998
+      ],
+      [
+        54.40537500000001,
+        -3.049
+      ],
+      [
+        54.40531250000001,
+        -3.0495
+      ],
+      [
+        54.40525,
+        -3.05
+      ],
+      [
+        54.4051875,
+        -3.0505
+      ],
+      [
+        54.405125,
+        -3.051
+      ],
+      [
+        54.4050625,
+        -3.0515
+      ],
+      [
+        54.405,
+        -3.052
+      ],
+      [
+        54.405225,
+        -3.0529
+      ],
+      [
+        54.40545,
+        -3.0538
+      ],
+      [
+        54.405675,
+        -3.0547
+      ],
+      [
+        54.4059,
+        -3.0556
+      ]
+    ],
+    "directions": [
+      {
+        "step": 1,
+        "instruction": "From the car park, walk the short distance to the edge of the massive Hodge Close Quarry.",
+        "landmark": "Hodge Close Quarry"
+      },
+      {
+        "step": 2,
+        "instruction": "Look for the 'Skull' shape formed by the reflection of the caves in the still water.",
+        "landmark": "The Skull Reflection"
+      },
+      {
+        "step": 3,
+        "instruction": "Follow the main track north through the woods, heading towards Little Langdale.",
+        "landmark": "Woodland Path"
+      },
+      {
+        "step": 4,
+        "instruction": "Descend the slope towards the River Brathay and look for the tunnel entrance.",
+        "landmark": "River Brathay"
+      },
+      {
+        "step": 5,
+        "instruction": "Use your torch to walk through the tunnel into the massive 'Cathedral Cavern'.",
+        "landmark": "Cathedral Cavern"
+      },
+      {
+        "step": 6,
+        "instruction": "Exit the cavern and follow the path to the iconic stone packhorse bridge.",
+        "landmark": "Slater's Bridge"
+      },
+      {
+        "step": 7,
+        "instruction": "Cross the bridge and follow the path uphill and back towards the south.",
+        "landmark": "Stone Walls"
+      },
+      {
+        "step": 8,
+        "instruction": "Follow the quiet lane past Parrock Quarry to return to the Hodge Close car park.",
+        "landmark": "Hodge Close Car Park"
+      }
+    ],
+    "parkingDetail": "Hodge Close Quarry parking area, LA21 8DJ. Small free car park; additional parking often available at nearby Parrock Quarry or local farms (£5 fee).",
+    "thePayoff": "The dramatic 'Skull' reflection in the deep blue waters of the massive slate quarry and the incredible Cathedral Cavern.",
+    "endLat": 54.4059,
+    "endLon": -3.0556
+  },
+  {
+    "name": "Blea Tarn Langdale",
+    "distance": "3.5 km",
+    "time": "1.5 hours",
+    "difficulty": "Easy",
+    "desc": "One of the most iconic views in England, with the Langdale Pikes perfectly reflected in the still waters of the tarn.",
+    "start": "Blea Tarn Car Park",
+    "lat": 54.428,
+    "lon": -3.083,
+    "elevation": "190m",
+    "terrain": "Larch plantation and tarn shore",
+    "routeUrl": "",
+    "walkType": "lakeside",
+    "waypoints": [
+      [
+        54.4285,
+        -3.078
+      ],
+      [
+        54.42825,
+        -3.0782499999999997
+      ],
+      [
+        54.428,
+        -3.0785
+      ],
+      [
+        54.42775,
+        -3.0789999999999997
+      ],
+      [
+        54.4275,
+        -3.0795
+      ],
+      [
+        54.42725,
+        -3.079875
+      ],
+      [
+        54.427,
+        -3.08025
+      ],
+      [
+        54.42675,
+        -3.080625
+      ],
+      [
+        54.4265,
+        -3.081
+      ],
+      [
+        54.426249999999996,
+        -3.081375
+      ],
+      [
+        54.426,
+        -3.08175
+      ],
+      [
+        54.42575,
+        -3.082125
+      ],
+      [
+        54.4255,
+        -3.0825
+      ],
+      [
+        54.42525,
+        -3.082375
+      ],
+      [
+        54.425,
+        -3.08225
+      ],
+      [
+        54.424749999999996,
+        -3.082125
+      ],
+      [
+        54.424499999999995,
+        -3.082
+      ],
+      [
+        54.424249999999994,
+        -3.081875
+      ],
+      [
+        54.42399999999999,
+        -3.08175
+      ],
+      [
+        54.4235,
+        -3.0815
+      ],
+      [
+        54.423625,
+        -3.0811875000000004
+      ],
+      [
+        54.42375,
+        -3.0808750000000003
+      ],
+      [
+        54.423874999999995,
+        -3.0805625
+      ],
+      [
+        54.424,
+        -3.0802500000000004
+      ],
+      [
+        54.424125000000004,
+        -3.0799375
+      ],
+      [
+        54.42425,
+        -3.079625
+      ],
+      [
+        54.424375,
+        -3.0793125000000003
+      ],
+      [
+        54.4245,
+        -3.079
+      ],
+      [
+        54.4248125,
+        -3.0788125
+      ],
+      [
+        54.425125,
+        -3.078625
+      ],
+      [
+        54.4254375,
+        -3.0784375
+      ],
+      [
+        54.42575,
+        -3.07825
+      ],
+      [
+        54.4260625,
+        -3.0780625
+      ],
+      [
+        54.426375,
+        -3.077875
+      ],
+      [
+        54.4266875,
+        -3.0776875
+      ],
+      [
+        54.427,
+        -3.0775
+      ],
+      [
+        54.427375,
+        -3.0776250000000003
+      ],
+      [
+        54.42775,
+        -3.07775
+      ],
+      [
+        54.428125,
+        -3.0778749999999997
+      ],
+      [
+        54.4285,
+        -3.078
+      ]
+    ],
+    "directions": [
+      {
+        "step": 1,
+        "instruction": "Cross the road from the car park and go through the wooden gate marked for Blea Tarn.",
+        "landmark": "Car Park Gate"
+      },
+      {
+        "step": 2,
+        "instruction": "Follow the wide, well-maintained path through the small larch plantation.",
+        "landmark": "Woodland"
+      },
+      {
+        "step": 3,
+        "instruction": "Continue until you reach the shore of the tarn for the classic view of the Pikes.",
+        "landmark": "Blea Tarn Shore"
+      },
+      {
+        "step": 4,
+        "instruction": "Follow the path as it skirts the western side of the water.",
+        "landmark": "Western Path"
+      },
+      {
+        "step": 5,
+        "instruction": "Cross the small footbridge at the southern end of the tarn.",
+        "landmark": "Footbridge"
+      },
+      {
+        "step": 6,
+        "instruction": "Turn left to follow the path back along the eastern side through the heather.",
+        "landmark": "Heather Slopes"
+      },
+      {
+        "step": 7,
+        "instruction": "Pause at the viewpoint overlooking the Great Langdale valley before reaching the road.",
+        "landmark": "Great Langdale Viewpoint"
+      },
+      {
+        "step": 8,
+        "instruction": "Follow the path parallel to the road for a short distance to return to the car park.",
+        "landmark": "Blea Tarn Car Park"
+      }
+    ],
+    "parkingDetail": "Blea Tarn National Trust car park, LA22 9PG. Pay and display (free for NT members). Access is via a narrow, steep mountain road.",
+    "thePayoff": "One of the most iconic views in England, with the Langdale Pikes perfectly reflected in the still waters of the tarn.",
+    "endLat": 54.428,
+    "endLon": -3.083
+  },
+  {
+    "name": "Coniston Old Man",
+    "distance": "11.0 km",
+    "time": "5 hours",
+    "difficulty": "Challenging",
+    "desc": "Breathtaking 360-degree views across the Lake District and out to Morecambe Bay, combined with fascinating industrial ruins.",
+    "start": "Old Station Car Park, Coniston",
+    "lat": 54.3821,
+    "lon": -3.1092,
+    "elevation": "803m",
+    "terrain": "Steep rocky mountain and slate works",
+    "routeUrl": "",
+    "walkType": "summit",
+    "waypoints": [
+      [
+        54.3705,
+        -3.075
+      ],
+      [
+        54.372,
+        -3.078
+      ],
+      [
+        54.373000000000005,
+        -3.0805
+      ],
+      [
+        54.374,
+        -3.083
+      ],
+      [
+        54.3745,
+        -3.084625
+      ],
+      [
+        54.375,
+        -3.08625
+      ],
+      [
+        54.3755,
+        -3.0878750000000004
+      ],
+      [
+        54.376,
+        -3.0895
+      ],
+      [
+        54.3775,
+        -3.090875
+      ],
+      [
+        54.379,
+        -3.09225
+      ],
+      [
+        54.3805,
+        -3.0936250000000003
+      ],
+      [
+        54.382,
+        -3.095
+      ],
+      [
+        54.383375,
+        -3.0973750000000004
+      ],
+      [
+        54.38475,
+        -3.0997500000000002
+      ],
+      [
+        54.386125,
+        -3.102125
+      ],
+      [
+        54.3875,
+        -3.1045
+      ],
+      [
+        54.387,
+        -3.106125
+      ],
+      [
+        54.3865,
+        -3.1077500000000002
+      ],
+      [
+        54.385999999999996,
+        -3.109375
+      ],
+      [
+        54.3855,
+        -3.111
+      ],
+      [
+        54.38275,
+        -3.11175
+      ],
+      [
+        54.38,
+        -3.1125
+      ],
+      [
+        54.378937500000006,
+        -3.1111874999999998
+      ],
+      [
+        54.377875,
+        -3.1098749999999997
+      ],
+      [
+        54.3768125,
+        -3.1085624999999997
+      ],
+      [
+        54.37575,
+        -3.1072499999999996
+      ],
+      [
+        54.373625,
+        -3.1046249999999995
+      ],
+      [
+        54.3715,
+        -3.102
+      ],
+      [
+        54.371125,
+        -3.099875
+      ],
+      [
+        54.37075,
+        -3.0977499999999996
+      ],
+      [
+        54.370374999999996,
+        -3.0956249999999996
+      ],
+      [
+        54.37,
+        -3.0934999999999997
+      ],
+      [
+        54.369625,
+        -3.0913749999999998
+      ],
+      [
+        54.369249999999994,
+        -3.08925
+      ],
+      [
+        54.368874999999996,
+        -3.087125
+      ],
+      [
+        54.3685,
+        -3.085
+      ],
+      [
+        54.369,
+        -3.0825
+      ],
+      [
+        54.3695,
+        -3.08
+      ],
+      [
+        54.370000000000005,
+        -3.0775
+      ],
+      [
+        54.3705,
+        -3.075
+      ]
+    ],
+    "directions": [
+      {
+        "step": 1,
+        "instruction": "From the car park, walk up Station Road and turn left past the Sun Hotel.",
+        "landmark": "Sun Hotel"
+      },
+      {
+        "step": 2,
+        "instruction": "Follow the track uphill beside Church Beck, heading into the fells.",
+        "landmark": "Church Beck"
+      },
+      {
+        "step": 3,
+        "instruction": "Cross the Miner's Bridge and follow the steep path up through the old slate works.",
+        "landmark": "Miner's Bridge"
+      },
+      {
+        "step": 4,
+        "instruction": "Ascend the Coppermines Valley, passing dramatic industrial ruins and waterfalls.",
+        "landmark": "Coppermines Valley"
+      },
+      {
+        "step": 5,
+        "instruction": "Reach the peaceful mountain tarn of Low Water, a great spot for a rest.",
+        "landmark": "Low Water"
+      },
+      {
+        "step": 6,
+        "instruction": "Follow the steep, zig-zagging path up the final slope to the summit cairn.",
+        "landmark": "The Summit"
+      },
+      {
+        "step": 7,
+        "instruction": "Descend via the south ridge path, enjoying views down to Goats Water.",
+        "landmark": "South Ridge"
+      },
+      {
+        "step": 8,
+        "instruction": "Join the Walna Scar Road track and follow it all the way back down to Coniston village.",
+        "landmark": "Walna Scar Road"
+      }
+    ],
+    "parkingDetail": "Old Station Car Park, Coniston, LA21 8HU. Large pay and display car park in the village center.",
+    "thePayoff": "Breathtaking 360-degree views across the Lake District and out to Morecambe Bay, combined with fascinating industrial ruins.",
+    "endLat": 54.3821,
+    "endLon": -3.1092
+  },
+  {
+    "name": "Langdale Pikes",
+    "distance": "9.5 km",
+    "time": "4.5 hours",
+    "difficulty": "Challenging",
+    "desc": "Reaching the iconic summits of Harrison Stickle and Pike of Stickle, offering a dizzying view straight down into Great Langdale.",
+    "start": "New Dungeon Ghyll Car Park",
+    "lat": 54.4489,
+    "lon": -3.0885,
+    "elevation": "736m",
+    "terrain": "Stone paths, rocky waterfalls and high mountain plateau",
+    "routeUrl": "",
+    "walkType": "summit",
+    "waypoints": [
+      [
+        54.4445,
+        -3.095
+      ],
+      [
+        54.4455,
+        -3.097
+      ],
+      [
+        54.446375,
+        -3.0985
+      ],
+      [
+        54.44725,
+        -3.1
+      ],
+      [
+        54.448125,
+        -3.1015
+      ],
+      [
+        54.449,
+        -3.103
+      ],
+      [
+        54.45,
+        -3.1038750000000004
+      ],
+      [
+        54.451,
+        -3.10475
+      ],
+      [
+        54.452,
+        -3.105625
+      ],
+      [
+        54.453,
+        -3.1065
+      ],
+      [
+        54.453500000000005,
+        -3.108625
+      ],
+      [
+        54.454,
+        -3.1107500000000003
+      ],
+      [
+        54.454499999999996,
+        -3.1128750000000003
+      ],
+      [
+        54.455,
+        -3.115
+      ],
+      [
+        54.45425,
+        -3.11675
+      ],
+      [
+        54.4535,
+        -3.1185
+      ],
+      [
+        54.45425,
+        -3.12075
+      ],
+      [
+        54.455,
+        -3.123
+      ],
+      [
+        54.455749999999995,
+        -3.1252500000000003
+      ],
+      [
+        54.4565,
+        -3.1275
+      ],
+      [
+        54.45525,
+        -3.1254999999999997
+      ],
+      [
+        54.454,
+        -3.1235
+      ],
+      [
+        54.45275,
+        -3.1215
+      ],
+      [
+        54.4515,
+        -3.1195
+      ],
+      [
+        54.451125000000005,
+        -3.1183125
+      ],
+      [
+        54.45075,
+        -3.1171249999999997
+      ],
+      [
+        54.450375,
+        -3.1159375
+      ],
+      [
+        54.45,
+        -3.11475
+      ],
+      [
+        54.449625000000005,
+        -3.1135625
+      ],
+      [
+        54.449250000000006,
+        -3.112375
+      ],
+      [
+        54.448875,
+        -3.1111874999999998
+      ],
+      [
+        54.4485,
+        -3.11
+      ],
+      [
+        54.44800000000001,
+        -3.1081250000000002
+      ],
+      [
+        54.447500000000005,
+        -3.10625
+      ],
+      [
+        54.447,
+        -3.104375
+      ],
+      [
+        54.4465,
+        -3.1025
+      ],
+      [
+        54.446,
+        -3.100625
+      ],
+      [
+        54.445499999999996,
+        -3.09875
+      ],
+      [
+        54.44499999999999,
+        -3.096875
+      ],
+      [
+        54.4445,
+        -3.095
+      ]
+    ],
+    "directions": [
+      {
+        "step": 1,
+        "instruction": "Start from the car park and follow the well-built stone path up the right side of the stream.",
+        "landmark": "Stickle Ghyll"
+      },
+      {
+        "step": 2,
+        "instruction": "Climb the 'giant's staircase' of stone steps alongside the waterfalls.",
+        "landmark": "Stone Steps"
+      },
+      {
+        "step": 3,
+        "instruction": "Arrive at Stickle Tarn, nestled beneath the towering cliffs of Pavey Ark.",
+        "landmark": "Stickle Tarn"
+      },
+      {
+        "step": 4,
+        "instruction": "Take the path to the left (west) of the tarn to begin the climb to the summit.",
+        "landmark": "Tarn Shore"
+      },
+      {
+        "step": 5,
+        "instruction": "Reach the top of Harrison Stickle for the most famous view in the valley.",
+        "landmark": "Harrison Stickle"
+      },
+      {
+        "step": 6,
+        "instruction": "Follow the high plateau west to the distinctive domed summit of Pike of Stickle.",
+        "landmark": "Pike of Stickle"
+      },
+      {
+        "step": 7,
+        "instruction": "Retrace your steps slightly and head south towards the edge of Loft Crag.",
+        "landmark": "Loft Crag"
+      },
+      {
+        "step": 8,
+        "instruction": "Descend via the steep and winding path of Dungeon Ghyll back to the valley floor.",
+        "landmark": "Dungeon Ghyll"
+      }
+    ],
+    "parkingDetail": "Sticklebarn and New Dungeon Ghyll National Trust car park, LA22 9HJ. Pay and display (free for NT members).",
+    "thePayoff": "Reaching the iconic summits of Harrison Stickle and Pike of Stickle, offering a dizzying view straight down into Great Langdale.",
+    "endLat": 54.4489,
+    "endLon": -3.0885
+  },
+  {
+    "name": "Staveley Riverside & Woodlands",
+    "distance": "6.5 km",
+    "time": "2 hours",
+    "difficulty": "Easy",
+    "desc": "A charming loop that combines the tranquil River Kent with the ancient, bluebell-filled Craggy Wood and local artisan shops.",
+    "start": "Staveley Mill Yard",
+    "lat": 54.3734,
+    "lon": -2.8142,
+    "elevation": "85m",
+    "terrain": "Riverside paths, lanes and ancient woodland",
+    "routeUrl": "",
+    "walkType": "woodland",
+    "waypoints": [
+      [
+        54.376,
+        -2.8185
+      ],
+      [
+        54.376374999999996,
+        -2.819
+      ],
+      [
+        54.37675,
+        -2.8194999999999997
+      ],
+      [
+        54.3775,
+        -2.8205
+      ],
+      [
+        54.378,
+        -2.8209999999999997
+      ],
+      [
+        54.3785,
+        -2.8215
+      ],
+      [
+        54.379375,
+        -2.820875
+      ],
+      [
+        54.380250000000004,
+        -2.8202499999999997
+      ],
+      [
+        54.381125,
+        -2.819625
+      ],
+      [
+        54.382,
+        -2.819
+      ],
+      [
+        54.382875,
+        -2.818625
+      ],
+      [
+        54.38375,
+        -2.81825
+      ],
+      [
+        54.384625,
+        -2.817875
+      ],
+      [
+        54.3855,
+        -2.8175
+      ],
+      [
+        54.385875,
+        -2.816875
+      ],
+      [
+        54.386250000000004,
+        -2.81625
+      ],
+      [
+        54.386625,
+        -2.815625
+      ],
+      [
+        54.387,
+        -2.815
+      ],
+      [
+        54.386625,
+        -2.8144375000000004
+      ],
+      [
+        54.386250000000004,
+        -2.8138750000000003
+      ],
+      [
+        54.385875,
+        -2.8133125000000003
+      ],
+      [
+        54.3855,
+        -2.8127500000000003
+      ],
+      [
+        54.385125,
+        -2.8121875000000003
+      ],
+      [
+        54.38475,
+        -2.8116250000000003
+      ],
+      [
+        54.384375,
+        -2.8110625000000002
+      ],
+      [
+        54.384,
+        -2.8105
+      ],
+      [
+        54.3835,
+        -2.8109375
+      ],
+      [
+        54.383,
+        -2.811375
+      ],
+      [
+        54.38250000000001,
+        -2.8118125000000003
+      ],
+      [
+        54.382000000000005,
+        -2.81225
+      ],
+      [
+        54.3815,
+        -2.8126875
+      ],
+      [
+        54.381,
+        -2.8131250000000003
+      ],
+      [
+        54.3805,
+        -2.8135625
+      ],
+      [
+        54.38,
+        -2.814
+      ],
+      [
+        54.37925,
+        -2.81475
+      ],
+      [
+        54.3785,
+        -2.8155
+      ],
+      [
+        54.377750000000006,
+        -2.81625
+      ],
+      [
+        54.377,
+        -2.817
+      ],
+      [
+        54.3765,
+        -2.81775
+      ],
+      [
+        54.376,
+        -2.8185
+      ]
+    ],
+    "directions": [
+      {
+        "step": 1,
+        "instruction": "From Staveley Mill Yard, walk out to the main road and turn right towards the church.",
+        "landmark": "Staveley Mill Yard"
+      },
+      {
+        "step": 2,
+        "instruction": "Follow the road signed for Kentmere until you reach the picturesque Barley Bridge.",
+        "landmark": "Barley Bridge"
+      },
+      {
+        "step": 3,
+        "instruction": "Cross the bridge and turn right, then follow the lane as it climbs gently uphill.",
+        "landmark": "River Kent"
+      },
+      {
+        "step": 4,
+        "instruction": "Enter Craggy Wood through the gate on your left and follow the main circular trail.",
+        "landmark": "Craggy Wood Gate"
+      },
+      {
+        "step": 5,
+        "instruction": "Climb to the high point of the wood for views over the village and towards the fells.",
+        "landmark": "Woodland Viewpoint"
+      },
+      {
+        "step": 6,
+        "instruction": "Follow the path out of the wood and through the fields heading south.",
+        "landmark": "Field Path"
+      },
+      {
+        "step": 7,
+        "instruction": "Emerge onto the quiet Scroggs Lane and follow it back down into the village.",
+        "landmark": "Scroggs Lane"
+      },
+      {
+        "step": 8,
+        "instruction": "Pass the Eagle & Child pub and return to the Mill Yard for a local brew.",
+        "landmark": "Eagle & Child Inn"
+      }
+    ],
+    "parkingDetail": "Staveley Mill Yard, LA8 9LR. Free parking (please respect business spaces). Closest train station is Staveley.",
+    "thePayoff": "A charming loop that combines the tranquil River Kent with the ancient, bluebell-filled Craggy Wood and local artisan shops.",
+    "endLat": 54.3734,
+    "endLon": -2.8142
+  },
+  {
+    "name": "Troutbeck Tongue",
+    "distance": "8.5 km",
+    "time": "3.5 hours",
+    "difficulty": "Moderate",
+    "desc": "A fantastic 'valley-center' vantage point offering unique 360-degree views of the surrounding high fells without a massive climb.",
+    "start": "Jesus Church Lay-by",
+    "lat": 54.426,
+    "lon": -2.912,
+    "elevation": "364m",
+    "terrain": "Village lanes, farm tracks and steep grassy ascent",
+    "routeUrl": "",
+    "walkType": "summit",
+    "waypoints": [
+      [
+        54.402,
+        -2.9105
+      ],
+      [
+        54.402625,
+        -2.911625
+      ],
+      [
+        54.40325,
+        -2.91275
+      ],
+      [
+        54.403875,
+        -2.913875
+      ],
+      [
+        54.4045,
+        -2.915
+      ],
+      [
+        54.4055,
+        -2.91575
+      ],
+      [
+        54.4065,
+        -2.9165
+      ],
+      [
+        54.40875,
+        -2.917
+      ],
+      [
+        54.411,
+        -2.9175
+      ],
+      [
+        54.4125,
+        -2.917875
+      ],
+      [
+        54.414,
+        -2.91825
+      ],
+      [
+        54.4155,
+        -2.918625
+      ],
+      [
+        54.417,
+        -2.919
+      ],
+      [
+        54.418125,
+        -2.919625
+      ],
+      [
+        54.419250000000005,
+        -2.9202500000000002
+      ],
+      [
+        54.42037500000001,
+        -2.920875
+      ],
+      [
+        54.4215,
+        -2.9215
+      ],
+      [
+        54.423500000000004,
+        -2.92225
+      ],
+      [
+        54.4255,
+        -2.923
+      ],
+      [
+        54.426625,
+        -2.9234999999999998
+      ],
+      [
+        54.42775,
+        -2.924
+      ],
+      [
+        54.428875000000005,
+        -2.9245
+      ],
+      [
+        54.43,
+        -2.925
+      ],
+      [
+        54.4290625,
+        -2.9243125
+      ],
+      [
+        54.428124999999994,
+        -2.923625
+      ],
+      [
+        54.426249999999996,
+        -2.92225
+      ],
+      [
+        54.424375,
+        -2.920875
+      ],
+      [
+        54.4225,
+        -2.9195
+      ],
+      [
+        54.420625,
+        -2.9181250000000003
+      ],
+      [
+        54.41875,
+        -2.9167500000000004
+      ],
+      [
+        54.416875000000005,
+        -2.915375
+      ],
+      [
+        54.415,
+        -2.914
+      ],
+      [
+        54.413375,
+        -2.9135625000000003
+      ],
+      [
+        54.41175,
+        -2.913125
+      ],
+      [
+        54.410125,
+        -2.9126875
+      ],
+      [
+        54.408500000000004,
+        -2.9122500000000002
+      ],
+      [
+        54.406875,
+        -2.9118125
+      ],
+      [
+        54.40525,
+        -2.911375
+      ],
+      [
+        54.403625000000005,
+        -2.9109375
+      ],
+      [
+        54.402,
+        -2.9105
+      ]
+    ],
+    "directions": [
+      {
+        "step": 1,
+        "instruction": "From the lay-by near Jesus Church, walk north into the historic village of Troutbeck.",
+        "landmark": "Jesus Church"
+      },
+      {
+        "step": 2,
+        "instruction": "At the northern end of the village (Town Head), turn right down the narrow Ing Lane.",
+        "landmark": "Ing Lane"
+      },
+      {
+        "step": 3,
+        "instruction": "Cross Hagg Bridge over the Trout Beck and follow the track towards the fells.",
+        "landmark": "Hagg Bridge"
+      },
+      {
+        "step": 4,
+        "instruction": "Continue along the track as it passes through the fields of Troutbeck Park Farm.",
+        "landmark": "Park Farm"
+      },
+      {
+        "step": 5,
+        "instruction": "Look for the path on the left that strikes steeply up the front of the Tongue.",
+        "landmark": "The Tongue Nose"
+      },
+      {
+        "step": 6,
+        "instruction": "Reach the summit cairn for a grandstand view of the High Street mountain range.",
+        "landmark": "The Summit"
+      },
+      {
+        "step": 7,
+        "instruction": "Descend the gentler slopes to the north before picking up the valley floor path.",
+        "landmark": "Northern Slope"
+      },
+      {
+        "step": 8,
+        "instruction": "Follow the riverside path south through the valley to return to Hagg Bridge.",
+        "landmark": "Valley Path"
+      }
+    ],
+    "parkingDetail": "Parking lay-by on the A592 near Jesus Church, LA23 1PG. Limited spaces; additional parking in Troutbeck village.",
+    "thePayoff": "A fantastic 'valley-center' vantage point offering unique 360-degree views of the surrounding high fells without a massive climb.",
+    "endLat": 54.426,
+    "endLon": -2.912
+  },
+  {
+    "name": "South to Winster",
+    "distance": "6.5 km",
+    "time": "2.5 hours",
+    "difficulty": "Easy",
+    "desc": "A peaceful escape into the undulating 'hidden' Winster Valley, featuring lush rolling hills and ancient dry stone walls.",
+    "start": "Gilpin Hotel & Lake House",
+    "lat": 54.3553,
+    "lon": -2.8805,
+    "elevation": "155m",
+    "terrain": "Field paths, country lanes and woodland",
+    "routeUrl": "",
+    "walkType": "village",
+    "waypoints": [
+      [
+        54.3863,
+        -2.8984
+      ],
+      [
+        54.385724999999994,
+        -2.897925
+      ],
+      [
+        54.385149999999996,
+        -2.89745
+      ],
+      [
+        54.384575,
+        -2.8969750000000003
+      ],
+      [
+        54.384,
+        -2.8965
+      ],
+      [
+        54.383250000000004,
+        -2.896
+      ],
+      [
+        54.3825,
+        -2.8955
+      ],
+      [
+        54.38175,
+        -2.895
+      ],
+      [
+        54.381,
+        -2.8945
+      ],
+      [
+        54.380125,
+        -2.894125
+      ],
+      [
+        54.37925,
+        -2.89375
+      ],
+      [
+        54.378375,
+        -2.893375
+      ],
+      [
+        54.3775,
+        -2.893
+      ],
+      [
+        54.376374999999996,
+        -2.89275
+      ],
+      [
+        54.375249999999994,
+        -2.8925
+      ],
+      [
+        54.37412499999999,
+        -2.8922499999999998
+      ],
+      [
+        54.373,
+        -2.892
+      ],
+      [
+        54.372,
+        -2.8925
+      ],
+      [
+        54.370999999999995,
+        -2.893
+      ],
+      [
+        54.37,
+        -2.8935
+      ],
+      [
+        54.369,
+        -2.894
+      ],
+      [
+        54.369749999999996,
+        -2.895
+      ],
+      [
+        54.3705,
+        -2.896
+      ],
+      [
+        54.37125,
+        -2.8970000000000002
+      ],
+      [
+        54.372,
+        -2.898
+      ],
+      [
+        54.37325,
+        -2.8987499999999997
+      ],
+      [
+        54.373875,
+        -2.8991249999999997
+      ],
+      [
+        54.3745,
+        -2.8994999999999997
+      ],
+      [
+        54.375125,
+        -2.8998749999999998
+      ],
+      [
+        54.37575,
+        -2.9002499999999998
+      ],
+      [
+        54.376374999999996,
+        -2.900625
+      ],
+      [
+        54.377,
+        -2.901
+      ],
+      [
+        54.37825,
+        -2.90075
+      ],
+      [
+        54.3795,
+        -2.9005
+      ],
+      [
+        54.38075,
+        -2.9002499999999998
+      ],
+      [
+        54.382,
+        -2.9
+      ],
+      [
+        54.383075,
+        -2.8996
+      ],
+      [
+        54.38415,
+        -2.8992
+      ],
+      [
+        54.385225,
+        -2.8988
+      ],
+      [
+        54.3863,
+        -2.8984
+      ]
+    ],
+    "directions": [
+      {
+        "step": 1,
+        "instruction": "Cross the Crook Road from the hotel entrance and enter the field via the public footpath gate.",
+        "landmark": "Hotel Entrance"
+      },
+      {
+        "step": 2,
+        "instruction": "Follow the path south across the fields, keeping the hedge on your left.",
+        "landmark": "Field Gate"
+      },
+      {
+        "step": 3,
+        "instruction": "Pass through Gilpin Farm and continue onto the quiet 'Back Lane'.",
+        "landmark": "Gilpin Farm"
+      },
+      {
+        "step": 4,
+        "instruction": "Follow the signs for Winster, winding through the rolling Cumbrian countryside.",
+        "landmark": "Country Lanes"
+      },
+      {
+        "step": 5,
+        "instruction": "Arrive at the tiny village of Winster; the Brown Horse Inn is perfect for a mid-walk break.",
+        "landmark": "Brown Horse Inn"
+      },
+      {
+        "step": 6,
+        "instruction": "Take the bridleway heading west/north towards the hidden Knipe Tarn.",
+        "landmark": "Bridleway"
+      },
+      {
+        "step": 7,
+        "instruction": "Continue north through the hamlet of Mitchelland on the quiet lanes.",
+        "landmark": "Mitchelland"
+      },
+      {
+        "step": 8,
+        "instruction": "Follow the lane back to the B5284 and turn right to return to the hotel.",
+        "landmark": "Crook Road"
+      }
+    ],
+    "parkingDetail": "Gilpin Hotel & Lake House, LA23 3NE. Private guest parking available on-site.",
+    "thePayoff": "A peaceful escape into the undulating 'hidden' Winster Valley, featuring lush rolling hills and ancient dry stone walls.",
+    "endLat": 54.3553,
+    "endLon": -2.8805
+  },
+  {
+    "name": "St Catherine's Church",
+    "distance": "5.0 km",
+    "time": "2 hours",
+    "difficulty": "Easy",
+    "desc": "A tranquil discovery of the 'new' St Catherine's Church and the lonely, evocative tower of the medieval old church.",
+    "start": "Gilpin Hotel & Lake House",
+    "lat": 54.3553,
+    "lon": -2.8805,
+    "elevation": "120m",
+    "terrain": "Road verges, field paths and woodland",
+    "routeUrl": "",
+    "walkType": "heritage",
+    "waypoints": [
+      [
+        54.3863,
+        -2.8984
+      ],
+      [
+        54.385975,
+        -2.8988
+      ],
+      [
+        54.38565,
+        -2.8992
+      ],
+      [
+        54.385324999999995,
+        -2.8996
+      ],
+      [
+        54.385,
+        -2.9
+      ],
+      [
+        54.384812499999995,
+        -2.9003125
+      ],
+      [
+        54.384625,
+        -2.900625
+      ],
+      [
+        54.3844375,
+        -2.9009375
+      ],
+      [
+        54.384249999999994,
+        -2.90125
+      ],
+      [
+        54.383874999999996,
+        -2.901875
+      ],
+      [
+        54.3835,
+        -2.9025
+      ],
+      [
+        54.383125,
+        -2.9031249999999997
+      ],
+      [
+        54.38275,
+        -2.9037499999999996
+      ],
+      [
+        54.3825625,
+        -2.9040624999999998
+      ],
+      [
+        54.382374999999996,
+        -2.904375
+      ],
+      [
+        54.382,
+        -2.905
+      ],
+      [
+        54.381625,
+        -2.905375
+      ],
+      [
+        54.381249999999994,
+        -2.90575
+      ],
+      [
+        54.380874999999996,
+        -2.906125
+      ],
+      [
+        54.3805,
+        -2.9065
+      ],
+      [
+        54.38075,
+        -2.905875
+      ],
+      [
+        54.381,
+        -2.9052499999999997
+      ],
+      [
+        54.38125,
+        -2.904625
+      ],
+      [
+        54.3815,
+        -2.904
+      ],
+      [
+        54.381875,
+        -2.9035
+      ],
+      [
+        54.38225,
+        -2.903
+      ],
+      [
+        54.382625000000004,
+        -2.9025
+      ],
+      [
+        54.383,
+        -2.902
+      ],
+      [
+        54.383250000000004,
+        -2.9016875000000004
+      ],
+      [
+        54.3835,
+        -2.9013750000000003
+      ],
+      [
+        54.38375,
+        -2.9010625
+      ],
+      [
+        54.384,
+        -2.9007500000000004
+      ],
+      [
+        54.38425,
+        -2.9004375000000002
+      ],
+      [
+        54.3845,
+        -2.900125
+      ],
+      [
+        54.38475,
+        -2.8998125000000003
+      ],
+      [
+        54.385,
+        -2.8995
+      ],
+      [
+        54.385324999999995,
+        -2.8992250000000004
+      ],
+      [
+        54.38565,
+        -2.89895
+      ],
+      [
+        54.385975,
+        -2.898675
+      ],
+      [
+        54.3863,
+        -2.8984
+      ]
+    ],
+    "directions": [
+      {
+        "step": 1,
+        "instruction": "From the Gilpin Hotel, walk east along the B5284 (Crook Road) towards Kendal.",
+        "landmark": "Hotel Entrance"
+      },
+      {
+        "step": 2,
+        "instruction": "Follow the road for about half a mile, using the wide grass verges where available.",
+        "landmark": "Crook Road"
+      },
+      {
+        "step": 3,
+        "instruction": "Turn left into the driveway of St Catherine's Church and explore the peaceful grounds.",
+        "landmark": "St Catherine's Church"
+      },
+      {
+        "step": 4,
+        "instruction": "Continue a little further east to see the 16th-century Crook Old Church Tower standing alone in a field.",
+        "landmark": "Old Church Tower"
+      },
+      {
+        "step": 5,
+        "instruction": "Take the signposted footpath heading north through the fields towards Sunnyside.",
+        "landmark": "Sunnyside Path"
+      },
+      {
+        "step": 6,
+        "instruction": "Follow the path as it enters a small belt of woodland, heading back towards the west.",
+        "landmark": "Woodland"
+      },
+      {
+        "step": 7,
+        "instruction": "Cross the fields at High Lindeth, enjoying the views across the Winster Valley.",
+        "landmark": "High Lindeth"
+      },
+      {
+        "step": 8,
+        "instruction": "Follow the path that leads back down to the B5284, emerging just opposite the hotel entrance.",
+        "landmark": "Gilpin Hotel"
+      }
+    ],
+    "parkingDetail": "Gilpin Hotel & Lake House, LA23 3NE. Private guest parking. The church is a short walk from the hotel.",
+    "thePayoff": "A tranquil discovery of the 'new' St Catherine's Church and the lonely, evocative tower of the medieval old church.",
+    "endLat": 54.3553,
+    "endLon": -2.8805
+  }
+]
