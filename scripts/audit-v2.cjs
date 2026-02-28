@@ -207,22 +207,20 @@ const ROUTES = {
     'Great Langdale Valley': {
         carPark: [54.4338, -3.0588], // ODNB car park
         loop: [
-            [54.4360, -3.0620], // Path north
-            [54.4390, -3.0680], // Through valley
-            [54.4420, -3.0750], // Mickleden
-            [54.4450, -3.0800], // Head of valley
-            [54.4420, -3.0850], // Oxendale loop
-            [54.4380, -3.0750], // Return south
-            [54.4350, -3.0650], // Back to car park
+            [54.4350, -3.0610], // Path north along road
+            [54.4370, -3.0650], // Valley path by river
+            [54.4400, -3.0690], // Old Dungeon Ghyll area
+            [54.4390, -3.0720], // Oxendale bridge
+            [54.4365, -3.0670], // Return path south
         ]
     },
     'Blea Tarn Langdale': {
-        carPark: [54.4260, -3.0770], // Blea Tarn car park
+        carPark: [54.4225, -3.0717], // Road parking near Blea Tarn
         loop: [
-            [54.4270, -3.0780], // Path to tarn
-            [54.4290, -3.0790], // Blea Tarn north shore
-            [54.4285, -3.0810], // West side
-            [54.4270, -3.0800], // South side loop
+            [54.4235, -3.0730], // Path to tarn edge
+            [54.4250, -3.0740], // North shore path
+            [54.4255, -3.0760], // West viewpoint
+            [54.4240, -3.0750], // South shore return
         ]
     },
 
@@ -352,14 +350,13 @@ const ROUTES = {
         ]
     },
     'Troutbeck Tongue': {
-        carPark: [54.4310, -2.9260], // Church Bridge, Troutbeck
+        carPark: [54.4260, -2.9300], // Troutbeck village road parking
         loop: [
-            [54.4330, -2.9240], // Path north
-            [54.4350, -2.9200], // Up Troutbeck Tongue
-            [54.4370, -2.9160], // Summit/ridge
-            [54.4360, -2.9120], // East side descent
-            [54.4340, -2.9170], // Through valley
-            [54.4320, -2.9230], // Back to bridge
+            [54.4280, -2.9290], // Path north along Troutbeck Road
+            [54.4300, -2.9270], // Approaching Tongue area
+            [54.4320, -2.9250], // Higher viewpoint
+            [54.4310, -2.9280], // Descent east side
+            [54.4290, -2.9290], // Return south
         ]
     },
     'South to Winster': {
