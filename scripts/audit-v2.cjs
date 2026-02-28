@@ -215,12 +215,14 @@ const ROUTES = {
         ]
     },
     'Blea Tarn Langdale': {
-        carPark: [54.4225, -3.0717], // Road parking near Blea Tarn
+        carPark: [54.4210, -3.0700], // Layby on B5343 pass road
         loop: [
-            [54.4235, -3.0730], // Path to tarn edge
-            [54.4250, -3.0740], // North shore path
-            [54.4255, -3.0760], // West viewpoint
-            [54.4240, -3.0750], // South shore return
+            [54.4230, -3.0720], // Path north to tarn
+            [54.4260, -3.0750], // Tarn north shore
+            [54.4270, -3.0810], // West end of tarn
+            [54.4250, -3.0830], // South west shore
+            [54.4230, -3.0790], // South shore path
+            [54.4220, -3.0740], // Back towards road
         ]
     },
 
