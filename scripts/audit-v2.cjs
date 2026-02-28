@@ -1,152 +1,122 @@
 /**
- * Deep Audit v2 — CommonJS version (avoids dotenv v17 ESM interference)
- * Run: node scripts/audit-v2.cjs
+ * ORS Route Fix — Re-routes ALL walks through OpenRouteService foot-hiking
+ * Replaces interpolated waypoints with REAL trail paths
+ * Run: node scripts/fix-routes.cjs
  */
 const fs = require('fs');
 const path = require('path');
 
-// Read .env.local manually
-const envPath = path.join(__dirname, '..', '.env.local');
-const envFile = fs.readFileSync(envPath, 'utf8');
-const GEMINI_KEY = envFile.match(/VITE_GEMINI_KEY=(.+)/)?.[1]?.trim();
-if (!GEMINI_KEY) { console.error('No VITE_GEMINI_KEY in .env.local'); process.exit(1); }
-console.log('Gemini key loaded OK\n');
+const envFile = fs.readFileSync(path.join(__dirname, '..', '.env.local'), 'utf8');
+const ORS_KEY = envFile.match(/VITE_ORS_KEY=(.+)/)?.[1]?.trim();
+if (!ORS_KEY) { console.error('No VITE_ORS_KEY'); process.exit(1); }
 
-const ENDPOINT = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${GEMINI_KEY}`;
+const ORS_URL = 'https://api.openrouteservice.org/v2/directions/foot-hiking/geojson';
+
+// Car park fixes — these coords are known to be wrong
+const FIXES = {
+    'Catbells': { lat: 54.5735, lon: -3.1710 },
+    'Helvellyn via Striding Edge': { lat: 54.5310, lon: -2.9525 },
+    'Claife Heights': { lat: 54.3770, lon: -2.9590 },
+};
+
+// Destination summit/feature for circular walks
+const DEST = {
+    'Orrest Head': [54.3860, -2.9076],
+    'Tarn Hows': [54.3890, -3.0420],
+    'Aira Force': [54.5714, -2.9367],
+    'Catbells': [54.5554, -3.1618],
+    'Helvellyn via Striding Edge': [54.5310, -2.9770],
+    'Loughrigg Fell': [54.4367, -2.9950],
+    "Gummer's How": [54.3060, -2.9350],
+    'School Knott': [54.3720, -2.9190],
+    'Brant Fell': [54.3650, -2.9190],
+    'Todd Crag': [54.4250, -2.9890],
+    'Wansfell Pike': [54.4310, -2.9540],
+    'Helm Crag': [54.4660, -3.0280],
+    'Latterbarrow': [54.3730, -2.9670],
+    'Silver How': [54.4450, -3.0370],
+    'Claife Heights': [54.3670, -2.9570],
+    'Fairfield Horseshoe': [54.4660, -2.9880],
+    'Scout Scar': [54.3240, -2.7680],
+    'Easedale Tarn': [54.4600, -3.0500],
+    'Rydal Water & Caves': [54.4410, -3.0070],
+    'Buttermere Shoreline': [54.5430, -3.2810],
+    'Great Langdale Valley': [54.4520, -3.0800],
+    'Cathedral Cavern - Tilberthwaite': [54.4020, -3.0680],
+    'Tom Ghyll Waterfalls': [54.3870, -3.0420],
+    'Hodge Close Quarry': [54.4080, -3.0580],
+    'Blea Tarn Langdale': [54.4290, -3.0790],
+    'Coniston Old Man': [54.3767, -3.0850],
+    'Langdale Pikes': [54.4560, -3.0920],
+    'Staveley Riverside & Woodlands': [54.3790, -2.8190],
+    'Troutbeck Tongue': [54.4360, -2.9160],
+    'South to Winster': [54.3420, -2.8750],
+    "St Catherine's Church": [54.3450, -2.8800],
+    'Skelwith Bridge to Elterwater': [54.4285, -3.0438],
+};
+
 const walksPath = path.join(__dirname, '..', 'public', 'data', 'walks.json');
 const walks = JSON.parse(fs.readFileSync(walksPath, 'utf8'));
 
-async function callGemini(prompt) {
-    const res = await fetch(ENDPOINT, {
+async function fetchORS(coords) {
+    const res = await fetch(ORS_URL, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-            contents: [{ role: 'user', parts: [{ text: prompt }] }],
-            generationConfig: { temperature: 0.2, maxOutputTokens: 8192, responseMimeType: 'application/json' }
-        })
+        headers: { 'Content-Type': 'application/json', 'Authorization': ORS_KEY },
+        body: JSON.stringify({ coordinates: coords, preference: 'recommended' })
     });
-    if (!res.ok) throw new Error(`Gemini ${res.status}: ${(await res.text()).substring(0, 200)}`);
+    if (!res.ok) throw new Error(`ORS ${res.status}: ${(await res.text()).substring(0, 150)}`);
     const data = await res.json();
-    const parts = data.candidates?.[0]?.content?.parts;
-    if (!parts) throw new Error('Empty response');
-    for (let i = parts.length - 1; i >= 0; i--) {
-        if (parts[i].text) return parts[i].text.replace(/```json\n?/g, '').replace(/```\n?/g, '').trim();
-    }
-    throw new Error('No text in response');
-}
-
-async function auditWalk(walk) {
-    const isCircular = walk.endLat === walk.lat && walk.endLon === walk.lon;
-    const prompt = `You are a Lake District walking expert with deep knowledge of AllTrails, Ordnance Survey maps, Wainwright guides, and local walking forums.
-
-DEEP VERIFY this walk. Cross-reference with AllTrails and established walking guides.
-
-WALK DATA:
-Name: ${walk.name}
-Start/Car Park: ${walk.start}
-Car Park Coords: lat=${walk.lat}, lon=${walk.lon}
-End Coords: endLat=${walk.endLat || 'MISSING'}, endLon=${walk.endLon || 'MISSING'}
-Currently classified as: ${isCircular ? 'CIRCULAR' : 'LINEAR'}
-Distance: ${walk.distance}
-Time: ${walk.time}
-Difficulty: ${walk.difficulty}
-Elevation: ${walk.elevation}
-Terrain: ${walk.terrain}
-Walk Type: ${walk.walkType}
-Parking: ${walk.parkingDetail || 'MISSING'}
-The Payoff: ${walk.thePayoff || 'MISSING'}
-Desc: ${walk.desc}
-Has Directions: ${walk.directions ? walk.directions.length + ' steps' : 'NONE'}
-${walk.directions ? 'Direction summary: ' + walk.directions.map(d => d.instruction.substring(0, 60)).join(' | ') : ''}
-
-VERIFICATION CHECKLIST:
-1. CIRCULAR vs LINEAR: Is this walk actually circular (returns to start) or linear (one-way)? 
-   - If CIRCULAR: endLat/endLon MUST equal lat/lon
-   - If LINEAR: endLat/endLon MUST be different from lat/lon
-2. CAR PARK: Is "${walk.start}" the real car park name at these coordinates?
-3. CAR PARK COORDS: Do lat=${walk.lat}, lon=${walk.lon} point to an actual car park/lay-by?
-4. DISTANCE: What does AllTrails/OS say for this route? Must match the described route.
-5. TIME: Apply Naismith's rule (4 km/h walking + 1 min per 10m ascent). Is it realistic?
-6. ELEVATION: Is this TOTAL ASCENT (not summit height)? Verify against AllTrails.
-7. PARKING: Include real postcode, fees, NT membership info, grid reference if known.
-8. DIRECTIONS: Are they accurate for the ACTUAL walking route? Do they match what a walker would really follow? If missing or inaccurate, provide 6-8 detailed, followable steps.
-9. ROUTE ACCURACY: Would the described directions match the highlighted path on a map?
-
-Return JSON:
-{
-    "needsUpdate": true/false,
-    "isCircular": true/false,
-    "updates": {
-        "start": "only if wrong",
-        "lat": number,
-        "lon": number,
-        "endLat": number,
-        "endLon": number,
-        "distance": "X.X km",
-        "time": "X hours/mins",
-        "difficulty": "Easy/Moderate/Challenging",
-        "elevation": "Xm",
-        "terrain": "description",
-        "parkingDetail": "full detail with postcode",
-        "thePayoff": "evocative sentence",
-        "desc": "2-3 sentence description",
-        "directions": [{"step":1,"instruction":"...","landmark":"..."}]
-    },
-    "notes": "what was wrong and what sources confirm the correction"
-}
-
-ONLY include fields in "updates" that ACTUALLY need changing. If directions exist and accurately describe a real walkable route, do NOT replace them.`;
-
-    return JSON.parse(await callGemini(prompt));
+    const f = data.features[0];
+    return {
+        wps: f.geometry.coordinates.map(c => [c[1], c[0]]),
+        dist: f.properties.summary.distance,
+        dur: f.properties.summary.duration
+    };
 }
 
 async function main() {
-    console.log(`Deep auditing ${walks.length} walks...\n`);
-    let updated = 0, correct = 0, failed = 0;
+    console.log(`Re-routing ${walks.length} walks via ORS foot-hiking...\n`);
+    let ok = 0, fail = 0;
 
     for (let i = 0; i < walks.length; i++) {
-        const walk = walks[i];
-        const isCirc = walk.endLat === walk.lat && walk.endLon === walk.lon;
-        console.log(`[${i + 1}/${walks.length}] ${walk.name} (${isCirc ? 'circular' : 'linear'})...`);
+        const w = walks[i];
+
+        // Apply car park fixes
+        if (FIXES[w.name]) {
+            const f = FIXES[w.name];
+            const wasCirc = w.endLat === w.lat && w.endLon === w.lon;
+            w.lat = f.lat; w.lon = f.lon;
+            if (wasCirc) { w.endLat = f.lat; w.endLon = f.lon; }
+            console.log(`  Fixed car park: ${w.name}`);
+        }
+
+        const circ = w.endLat === w.lat && w.endLon === w.lon;
+        console.log(`[${i + 1}/${walks.length}] ${w.name} (${circ ? 'circ' : 'lin'})...`);
 
         try {
-            const r = await auditWalk(walk);
-
-            // Fix circular/linear classification
-            if (r.isCircular !== undefined) {
-                if (r.isCircular && (walk.endLat !== walk.lat || walk.endLon !== walk.lon)) {
-                    walks[i].endLat = walk.lat;
-                    walks[i].endLon = walk.lon;
-                }
+            let coords;
+            if (circ) {
+                const d = DEST[w.name];
+                if (!d) { console.log('  Skip: no dest'); fail++; continue; }
+                coords = [[w.lon, w.lat], [d[1], d[0]], [w.lon, w.lat]];
+            } else {
+                coords = [[w.lon, w.lat], [w.endLon, w.endLat]];
             }
 
-            if (r.needsUpdate && r.updates) {
-                const changes = [];
-                for (const [k, v] of Object.entries(r.updates)) {
-                    if (v !== undefined && v !== null && v !== '') { walks[i][k] = v; changes.push(k); }
-                }
-                if (changes.length > 0) {
-                    console.log(`  ✅ Updated: ${changes.join(', ')}`);
-                    if (r.notes) console.log(`  📝 ${r.notes.substring(0, 200)}`);
-                    updated++;
-                } else { console.log('  ✔️ Correct'); correct++; }
-            } else { console.log('  ✔️ Correct'); correct++; }
-
-            // Rate limit
-            if (i < walks.length - 1) await new Promise(r => setTimeout(r, 3000));
-        } catch (err) {
-            console.log(`  ❌ Error: ${err.message.substring(0, 120)}`);
-            failed++;
-            await new Promise(r => setTimeout(r, 5000));
+            const r = await fetchORS(coords);
+            walks[i].waypoints = r.wps;
+            console.log(`  ✅ ${r.wps.length} pts, ${(r.dist / 1000).toFixed(1)}km`);
+            ok++;
+            if (i < walks.length - 1) await new Promise(resolve => setTimeout(resolve, 1600));
+        } catch (e) {
+            console.log(`  ❌ ${e.message.substring(0, 100)}`);
+            fail++;
+            await new Promise(resolve => setTimeout(resolve, 3000));
         }
     }
 
     fs.writeFileSync(walksPath, JSON.stringify(walks, null, 2));
-    console.log(`\n${'═'.repeat(50)}`);
-    console.log(`✅ Updated: ${updated} walks`);
-    console.log(`✔️ Correct: ${correct} walks`);
-    console.log(`❌ Failed: ${failed} walks`);
-    console.log(`📁 Saved to public/data/walks.json`);
+    console.log(`\nDone: ${ok} routed, ${fail} failed`);
 }
 
-main().catch(err => { console.error('Fatal:', err); process.exit(1); });
+main().catch(e => { console.error(e); process.exit(1); });
