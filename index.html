@@ -7,6 +7,12 @@
     <title>Trail Mapper Pro — Lake District</title>
     <meta name="description"
         content="Create and explore walking routes in the Lake District with real trail routing, AI walk generation, and detailed step-by-step directions.">
+    <meta name="theme-color" content="#0c1117">
+    <meta property="og:title" content="Trail Mapper Pro — Lake District">
+    <meta property="og:description"
+        content="Create and explore walking routes in the Lake District with real trail routing and AI walk generation.">
+    <meta property="og:type" content="website">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap"
@@ -184,18 +190,28 @@
             <div class="ai-layout">
                 <div class="ai-sidebar">
                     <h2>🤖 AI Walk Generator</h2>
-                    <p class="ai-hint">Describe the walk you want and Gemini AI will create it with real trail routes.</p>
+                    <p class="ai-hint">Describe the walk you want and Gemini AI will create it with real trail routes.
+                    </p>
 
                     <div class="ai-presets">
                         <span class="preset-label">Quick prompts:</span>
-                        <button class="preset-btn" data-prompt="A gentle 1-hour lakeside walk suitable for families near Windermere">🌊 Easy lakeside</button>
-                        <button class="preset-btn" data-prompt="A challenging 4-hour summit walk with dramatic ridge views near Langdale">⛰️ Summit challenge</button>
-                        <button class="preset-btn" data-prompt="A moderate 2-hour woodland walk with waterfalls near Ambleside">💧 Waterfall walk</button>
-                        <button class="preset-btn" data-prompt="A short 45-minute walk perfect for sunset with panoramic views">🌅 Sunset stroll</button>
+                        <button class="preset-btn"
+                            data-prompt="A gentle 1-hour lakeside walk suitable for families near Windermere">🌊 Easy
+                            lakeside</button>
+                        <button class="preset-btn"
+                            data-prompt="A challenging 4-hour summit walk with dramatic ridge views near Langdale">⛰️
+                            Summit challenge</button>
+                        <button class="preset-btn"
+                            data-prompt="A moderate 2-hour woodland walk with waterfalls near Ambleside">💧 Waterfall
+                            walk</button>
+                        <button class="preset-btn"
+                            data-prompt="A short 45-minute walk perfect for sunset with panoramic views">🌅 Sunset
+                            stroll</button>
                     </div>
 
                     <div class="ai-input-wrap">
-                        <textarea id="ai-prompt" rows="4" placeholder="e.g. I want a 2-hour moderate walk with stunning lake views and a cosy pub stop near Ambleside..."></textarea>
+                        <textarea id="ai-prompt" rows="4"
+                            placeholder="e.g. I want a 2-hour moderate walk with stunning lake views and a cosy pub stop near Ambleside..."></textarea>
                         <button class="btn-ai-generate" id="btn-ai-generate">✨ Generate Walk</button>
                     </div>
 
@@ -225,18 +241,21 @@
 
                 <div class="settings-section">
                     <h3>API Keys</h3>
-                    <p class="settings-hint">Keys are stored locally in your browser. Never sent anywhere except to the respective API services.</p>
+                    <p class="settings-hint">Keys are stored locally in your browser. Never sent anywhere except to the
+                        respective API services.</p>
 
                     <label class="settings-label">
                         OpenRouteService API Key
                         <input type="password" id="settings-ors-key" placeholder="Enter ORS API key...">
-                        <small>Get a free key at <a href="https://openrouteservice.org/dev/#/signup" target="_blank">openrouteservice.org</a></small>
+                        <small>Get a free key at <a href="https://openrouteservice.org/dev/#/signup"
+                                target="_blank">openrouteservice.org</a></small>
                     </label>
 
                     <label class="settings-label">
                         Google Gemini API Key
                         <input type="password" id="settings-gemini-key" placeholder="Enter Gemini API key...">
-                        <small>Get a key at <a href="https://aistudio.google.com/apikey" target="_blank">aistudio.google.com</a></small>
+                        <small>Get a key at <a href="https://aistudio.google.com/apikey"
+                                target="_blank">aistudio.google.com</a></small>
                     </label>
 
                     <button class="btn-save-settings" id="btn-save-settings">💾 Save Settings</button>
@@ -244,7 +263,8 @@
 
                 <div class="settings-section">
                     <h3>Route Audit Tool</h3>
-                    <p class="settings-hint">Re-route all walks using real trail data from OpenRouteService. Requires ORS API key.</p>
+                    <p class="settings-hint">Re-route all walks using real trail data from OpenRouteService. Requires
+                        ORS API key.</p>
                     <button class="btn-audit" id="btn-audit-routes">🔄 Re-Route All Walks (Real Trail Data)</button>
                     <div class="audit-progress" id="audit-progress" style="display:none;"></div>
                 </div>
@@ -263,7 +283,8 @@
 
                 <div class="settings-section">
                     <h3>Walk JSON Schema</h3>
-                    <p class="settings-hint">Use this format for importing walks or for AI tools to generate compatible files:</p>
+                    <p class="settings-hint">Use this format for importing walks or for AI tools to generate compatible
+                        files:</p>
                     <pre class="schema-preview">{
   "name": "Walk Name",
   "distance": "3.5 km",

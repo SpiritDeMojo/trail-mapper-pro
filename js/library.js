@@ -9,10 +9,19 @@ let filteredWalks = [];
 let detailMap = null;
 let activeFilters = { difficulty: 'all', type: 'all' };
 
+const WALKS_VERSION = '1.1'; // Bump this to invalidate localStorage cache
+
 /**
  * Get walk data (from localStorage if modified, otherwise from server)
  */
 export async function loadWalks() {
+    // Check version to invalidate stale cache
+    const cachedVersion = localStorage.getItem('trail_mapper_walks_version');
+    if (cachedVersion !== WALKS_VERSION) {
+        localStorage.removeItem('trail_mapper_walks');
+        localStorage.setItem('trail_mapper_walks_version', WALKS_VERSION);
+    }
+
     // Check for locally modified walks
     const localWalks = localStorage.getItem('trail_mapper_walks');
     if (localWalks) {

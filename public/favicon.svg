@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0c1117"/>
+      <stop offset="100%" stop-color="#1a2332"/>
+    </linearGradient>
+    <linearGradient id="trail" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#4ecdc4"/>
+      <stop offset="100%" stop-color="#3ba69f"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="14" fill="url(#bg)"/>
+  <!-- Mountain -->
+  <path d="M8 48 L24 18 L32 30 L40 16 L56 48 Z" fill="#243040" stroke="#2a3a4a" stroke-width="1"/>
+  <path d="M24 18 L28 24 L20 24 Z" fill="#536b82" opacity="0.5"/>
+  <path d="M40 16 L45 24 L35 24 Z" fill="#536b82" opacity="0.5"/>
+  <!-- Trail path -->
+  <path d="M12 50 Q20 38 28 42 Q36 46 44 34 Q48 28 52 30" fill="none" stroke="url(#trail)" stroke-width="3" stroke-linecap="round" opacity="0.9"/>
+  <!-- Trail dots -->
+  <circle cx="12" cy="50" r="2.5" fill="#4ecdc4"/>
+  <circle cx="52" cy="30" r="2.5" fill="#f0a830"/>
+</svg>
