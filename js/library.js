@@ -9,7 +9,7 @@ let filteredWalks = [];
 let detailMap = null;
 let activeFilters = { difficulty: 'all', type: 'all' };
 
-const WALKS_VERSION = '2.0'; // Bump to invalidate localStorage and load fresh ORS routes
+const WALKS_VERSION = '6.0'; // GPX-derived coordinates + minimal attribution
 
 /**
  * Get walk data (from localStorage if modified, otherwise from server)
@@ -256,12 +256,26 @@ export function openDetail(index) {
         setTimeout(() => { gpxBtn.textContent = '📥 Download GPX'; }, 2000);
     };
 
+    // "Navigate to Car Park" button — driving directions to parking
+    let navBtn = document.getElementById('btn-nav-carpark');
+    if (!navBtn) {
+        navBtn = document.createElement('button');
+        navBtn.id = 'btn-nav-carpark';
+        navBtn.className = 'btn-nav-carpark';
+        document.getElementById('btn-export-detail').parentNode.appendChild(navBtn);
+    }
+    navBtn.textContent = '🅿️ Navigate to Car Park';
+    navBtn.onclick = () => {
+        const url = `https://www.google.com/maps/dir/?api=1&destination=${w.lat},${w.lon}&travelmode=driving`;
+        window.open(url, '_blank');
+    };
+
     // Route type badge (Circular/Linear)
     const isCircular = w.endLat === w.lat && w.endLon === w.lon;
     const routeType = document.getElementById('detail-route-type');
     if (routeType) {
         routeType.innerHTML = isCircular
-            ? '<span style="color:#4ecdc4;">🔄 Circular Route</span>'
+            ? '<span style="color:#f0a830;">🔄 Circular Route</span>'
             : '<span style="color:#a78bfa;">➡️ Linear Route</span>';
     }
 
@@ -283,19 +297,16 @@ export function openDetail(index) {
             drawRoute(detailMap, w.waypoints);
             fitToWaypoints(detailMap, w.waypoints, [50, 50]);
 
-            // Start marker
-            const startWp = w.waypoints[0];
-            parkingMarker(startWp[0], startWp[1], w.start).addTo(detailMap);
+            // 1. ANCHOR CAR PARK TO EXACT JSON COORDINATE
+            parkingMarker(w.lat, w.lon, w.start).addTo(detailMap);
 
-            // End/feature marker
-            const endWp = w.waypoints[w.waypoints.length - 1];
-            if (w.endLat && w.endLon &&
-                (Math.abs(w.endLat - startWp[0]) > 0.001 || Math.abs(w.endLon - startWp[1]) > 0.001)) {
-                destMarker(w.endLat, w.endLon, w.name).addTo(detailMap);
+            // 2. ANCHOR POI TO EXACT JSON COORDINATE (type-specific icon)
+            if (w.endLat && w.endLon) {
+                destMarker(w.endLat, w.endLon, w.name, w.walkType).addTo(detailMap);
             } else {
-                const midIdx = Math.floor(w.waypoints.length / 3);
-                const midWp = w.waypoints[midIdx];
-                destMarker(midWp[0], midWp[1], w.name + ' (feature)').addTo(detailMap);
+                // Fallback only if endLat/endLon are missing
+                const midIdx = Math.floor(w.waypoints.length / 2);
+                destMarker(w.waypoints[midIdx][0], w.waypoints[midIdx][1], w.name + ' (Summit)', w.walkType).addTo(detailMap);
             }
         } else {
             parkingMarker(w.lat, w.lon, w.start).addTo(detailMap);

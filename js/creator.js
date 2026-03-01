@@ -1,19 +1,16 @@
 /* ═══════════════════════════════════════════════════════
-   Walk Creator — Interactive route builder
+   Walk Creator — Interactive multi-waypoint route builder
    ═══════════════════════════════════════════════════════ */
 
 import { createMap, parkingMarker, destMarker, drawRoute, fitToWaypoints } from './map-utils.js';
-import { fetchHikingRoute, fetchCircularRoute, interpolateRoute, formatDistance, formatDuration, getORSKey } from './route-service.js';
+import { fetchHikingRoute, fetchCircularRoute, fetchMultiWaypointRoute, interpolateRoute, formatDistance, formatDuration, getORSKey } from './route-service.js';
 import { addWalk } from './library.js';
 
 let creatorMap = null;
-let startPin = null;
-let endPin = null;
+let creatorWaypoints = []; // Array to hold unlimited clicks
+let markers = [];
 let routeLayers = null;
 let generatedWaypoints = [];
-let startCoords = null;
-let endCoords = null;
-let clickCount = 0;
 let isCircular = true;
 
 /**
@@ -23,20 +20,27 @@ export function initCreator() {
     if (creatorMap) return;
 
     creatorMap = createMap('creator-map', {
-        center: [54.39, -2.93],
-        zoom: 13
+        center: [54.43, -2.97], // Center on Lake District
+        zoom: 11
     });
 
-    // Click to place pins
+    // Click to place unlimited pins
     creatorMap.on('click', (e) => {
         const { lat, lng } = e.latlng;
-        if (clickCount === 0) {
-            setCarPark(lat, lng);
-            clickCount = 1;
-        } else if (clickCount === 1) {
-            setDestination(lat, lng);
-            clickCount = 2;
-        }
+        creatorWaypoints.push([lat, lng]);
+
+        let markerTitle = creatorWaypoints.length === 1 ? '🅿️ Car Park' : `Waypoint ${creatorWaypoints.length}`;
+        let marker = creatorWaypoints.length === 1
+            ? parkingMarker(lat, lng, markerTitle).addTo(creatorMap)
+            : destMarker(lat, lng, markerTitle).addTo(creatorMap);
+
+        markers.push(marker);
+
+        // Update UI
+        document.getElementById('pin-start').classList.add('set');
+        document.getElementById('pin-start').querySelector('.pin-coords').textContent = `${creatorWaypoints.length} point${creatorWaypoints.length !== 1 ? 's' : ''} set`;
+
+        checkGenerateReady();
     });
 
     // Generate button
@@ -59,60 +63,30 @@ export function initCreator() {
     });
     document.getElementById('route-linear').addEventListener('click', () => {
         isCircular = false;
-        document.getElementById('route-linear').classList.remove('active');
-        document.getElementById('route-circular').classList.add('active');
-        // Swap
         document.getElementById('route-linear').classList.add('active');
         document.getElementById('route-circular').classList.remove('active');
     });
 }
 
-function setCarPark(lat, lng) {
-    if (startPin) creatorMap.removeLayer(startPin);
-    startCoords = [lat, lng];
-    startPin = parkingMarker(lat, lng, 'Car Park').addTo(creatorMap);
-
-    const row = document.getElementById('pin-start');
-    row.classList.add('set');
-    row.querySelector('.pin-coords').textContent = `${lat.toFixed(5)}, ${lng.toFixed(5)}`;
-
-    checkGenerateReady();
-}
-
-function setDestination(lat, lng) {
-    if (endPin) creatorMap.removeLayer(endPin);
-    endCoords = [lat, lng];
-    endPin = destMarker(lat, lng, 'Point of Interest').addTo(creatorMap);
-
-    const row = document.getElementById('pin-end');
-    row.classList.add('set');
-    row.querySelector('.pin-coords').textContent = `${lat.toFixed(5)}, ${lng.toFixed(5)}`;
-
-    checkGenerateReady();
-}
-
 function checkGenerateReady() {
-    document.getElementById('btn-generate').disabled = !(startCoords && endCoords);
+    // Need at least 2 points to generate a route
+    document.getElementById('btn-generate').disabled = creatorWaypoints.length < 2;
 }
 
 function clearPins() {
-    if (startPin) { creatorMap.removeLayer(startPin); startPin = null; }
-    if (endPin) { creatorMap.removeLayer(endPin); endPin = null; }
+    markers.forEach(m => creatorMap.removeLayer(m));
+    markers = [];
     if (routeLayers) {
         creatorMap.removeLayer(routeLayers.line);
         creatorMap.removeLayer(routeLayers.glow);
         routeLayers = null;
     }
 
-    startCoords = null;
-    endCoords = null;
+    creatorWaypoints = [];
     generatedWaypoints = [];
-    clickCount = 0;
 
     document.getElementById('pin-start').classList.remove('set');
     document.getElementById('pin-start').querySelector('.pin-coords').textContent = 'Click map to set...';
-    document.getElementById('pin-end').classList.remove('set');
-    document.getElementById('pin-end').querySelector('.pin-coords').textContent = 'Click map to set...';
     document.getElementById('btn-generate').disabled = true;
     document.getElementById('creator-form').style.display = 'none';
     document.getElementById('json-output').style.display = 'none';
@@ -122,10 +96,10 @@ function clearPins() {
 }
 
 /**
- * Generate walking route
+ * Generate walking route through all placed waypoints
  */
 async function generateRoute() {
-    if (!startCoords || !endCoords) return;
+    if (creatorWaypoints.length < 2) return;
 
     const btn = document.getElementById('btn-generate');
     btn.disabled = true;
@@ -133,7 +107,7 @@ async function generateRoute() {
 
     const statusEl = document.createElement('div');
     statusEl.className = 'route-status';
-    statusEl.innerHTML = '<span class="spinner"></span> Finding best trail route...';
+    statusEl.innerHTML = '<span class="spinner"></span> Snapping your points to real trails...';
     document.querySelector('.creator-map-wrap').appendChild(statusEl);
 
     try {
@@ -141,21 +115,28 @@ async function generateRoute() {
         let routeData;
 
         if (hasKey) {
+            // Copy the user's clicked waypoints
+            let routePoints = [...creatorWaypoints];
+
+            // If circular, append the first point to the end to close the loop
             if (isCircular) {
-                routeData = await fetchCircularRoute(startCoords[0], startCoords[1], endCoords[0], endCoords[1]);
-            } else {
-                routeData = await fetchHikingRoute(startCoords[0], startCoords[1], endCoords[0], endCoords[1]);
+                routePoints.push(creatorWaypoints[0]);
             }
+
+            // Use the multi-waypoint fetcher to snap to real trails
+            routeData = await fetchMultiWaypointRoute(routePoints);
             generatedWaypoints = routeData.waypoints;
 
             // Auto-fill form
             document.getElementById('wf-distance').value = formatDistance(routeData.distance);
             document.getElementById('wf-time').value = formatDuration(routeData.duration);
 
-            statusEl.innerHTML = `✅ Trail route found: ${formatDistance(routeData.distance)}, ~${formatDuration(routeData.duration)}`;
+            statusEl.innerHTML = `✅ Trail route snapped: ${formatDistance(routeData.distance)}, ~${formatDuration(routeData.duration)}`;
         } else {
-            generatedWaypoints = interpolateRoute(startCoords, endCoords);
-            statusEl.innerHTML = '⚠️ No ORS API key — showing straight-line preview. Add key in Settings for real trail routing.';
+            // Fallback — use the raw clicked points
+            generatedWaypoints = [...creatorWaypoints];
+            if (isCircular) generatedWaypoints.push(creatorWaypoints[0]);
+            statusEl.innerHTML = '⚠️ No ORS API key — showing raw points. Add key in Settings for real trail snapping.';
         }
 
         // Clear previous route
@@ -173,7 +154,10 @@ async function generateRoute() {
 
     } catch (err) {
         console.error('Route generation failed:', err);
-        generatedWaypoints = interpolateRoute(startCoords, endCoords);
+
+        // Fallback to raw points
+        generatedWaypoints = [...creatorWaypoints];
+        if (isCircular) generatedWaypoints.push(creatorWaypoints[0]);
 
         if (routeLayers) {
             creatorMap.removeLayer(routeLayers.line);
@@ -196,6 +180,9 @@ async function generateRoute() {
  * Build walk object from form
  */
 function buildWalkObject() {
+    const startCoords = creatorWaypoints[0];
+    const endCoords = creatorWaypoints[creatorWaypoints.length - 1];
+
     return {
         name: document.getElementById('wf-name').value || 'Unnamed Walk',
         distance: document.getElementById('wf-distance').value || '',

@@ -98,9 +98,8 @@
                 <div class="detail-map-wrap">
                     <div id="detail-map" class="detail-map"></div>
                 </div>
-                <div id="detail-elevation" style="padding:0 16px;margin-bottom:12px;"></div>
-                <div id="detail-route-type" style="padding:0 16px;margin-bottom:8px;font-size:13px;font-weight:600;">
-                </div>
+                <div id="detail-elevation"></div>
+                <div id="detail-route-type"></div>
                 <div class="detail-info">
                     <div class="detail-payoff" id="detail-payoff"></div>
                     <div class="detail-desc" id="detail-desc"></div>
@@ -119,16 +118,13 @@
             <div class="creator-layout">
                 <div class="creator-sidebar">
                     <h2>Create a Walk</h2>
-                    <p class="creator-hint">Click the map to place pins. First click = 🅿️ Car Park, second click = 🏔️
-                        Point of Interest. Route will follow real hiking trails.</p>
+                    <p class="creator-hint">Click the map to trace your route. First click = 🅿️ Car Park, then click
+                        along the safe path to place breadcrumb waypoints. The route will snap to real hiking trails.
+                    </p>
 
                     <div class="creator-pins">
                         <div class="pin-row" id="pin-start">
-                            <span class="pin-label">🅿️ Car Park</span>
-                            <span class="pin-coords">Click map to set...</span>
-                        </div>
-                        <div class="pin-row" id="pin-end">
-                            <span class="pin-label">🏔️ Destination</span>
+                            <span class="pin-label">📍 Waypoints</span>
                             <span class="pin-coords">Click map to set...</span>
                         </div>
                     </div>
@@ -261,6 +257,14 @@
                                 target="_blank">aistudio.google.com</a></small>
                     </label>
 
+                    <label class="settings-label">
+                        Google Maps API Key
+                        <input type="password" id="settings-google-maps-key" placeholder="Enter Google Maps API key...">
+                        <small>Enable <strong>Maps JavaScript API</strong> at <a
+                                href="https://console.cloud.google.com/apis/library" target="_blank">Google Cloud
+                                Console</a></small>
+                    </label>
+
                     <button class="btn-save-settings" id="btn-save-settings">💾 Save Settings</button>
                 </div>
 
@@ -310,6 +314,7 @@
     </main>
 
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet.gridlayer.googlemutant@0.14.1/dist/Leaflet.GoogleMutant.js"></script>
     <script type="module" src="/js/app.js"></script>
 </body>
 

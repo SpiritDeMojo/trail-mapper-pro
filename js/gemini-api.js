@@ -112,19 +112,23 @@ You must return ONLY valid JSON (no markdown, no explanation) with this exact st
 }
 
 CRITICAL RULES FOR ROUTING:
+- Prioritize safe, established paths over the absolute shortest route.
+- NEVER route straight up a steep contour line or cliff face. Always use longer, zig-zagging routes if it reduces incline and increases safety.
+- Include waypoints that act as 'Points of Interest' (e.g., viewpoints, tarns, historical ruins) to create a more engaging, meandering walk.
 - lat/lon is the CAR PARK (real Lake District coordinates ~54.2-54.6 lat, -2.7 to -3.3 lon)
-- loopWaypoints are 4-6 intermediate points forming the ACTUAL walking loop
-  - These must be on or very near real footpaths, bridleways, or tracks
-  - They define the route shape — ORS will route between them on real paths
+- loopWaypoints are 4-6 intermediate points forming the ACTUAL safe walking loop.
+  - These must be on or very near real footpaths, bridleways, or tracks.
+  - Space them to capture key turns, safe ascents, and features.
+  - NEVER put waypoints on lake surfaces or cliff faces.
+  - They define the route shape — ORS will route between them on real paths.
   - For circular: the walk goes CarPark → wp1 → wp2 → wp3 → wp4 → CarPark
   - For linear: the walk goes CarPark → wp1 → wp2 → wp3 → EndPoint
-  - Space them to capture key turns and features (don't cluster them)
-  - NEVER put waypoints on lake surfaces, cliff faces, or away from paths
 - For circular walks: endLat/endLon = lat/lon (returns to car park)
 - For linear walks: endLat/endLon is the finishing point
 - Use ACTUAL place names, car parks, paths, landmarks that REALLY EXIST
 - Directions should be 5-8 detailed steps matching the waypoint sequence
-- parkingDetail should include real postcodes where possible`;
+- parkingDetail should include real postcodes where possible
+- Think like a mountain rescue volunteer: if a route looks dangerous on the ground, don't recommend it`;
 
     const requestBody = {
         contents: [

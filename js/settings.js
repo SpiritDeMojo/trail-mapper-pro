@@ -5,6 +5,7 @@
 import { getORSKey, setORSKey, fetchCircularRoute, fetchHikingRoute, formatDistance, formatDuration } from './route-service.js';
 import { getGeminiKey, setGeminiKey } from './gemini-api.js';
 import { getWalks, setWalks, addWalk } from './library.js';
+import { setGoogleMapsKey } from './map-utils.js';
 
 /**
  * Initialise settings view
@@ -13,6 +14,10 @@ export function initSettings() {
     // Load current keys (these are local dev overrides only)
     document.getElementById('settings-ors-key').value = getORSKey();
     document.getElementById('settings-gemini-key').value = getGeminiKey();
+
+    // Load Google Maps key
+    const gmField = document.getElementById('settings-google-maps-key');
+    if (gmField) gmField.value = localStorage.getItem('google_maps_key') || '';
 
     // Save settings
     document.getElementById('btn-save-settings').addEventListener('click', saveSettings);
@@ -30,9 +35,11 @@ export function initSettings() {
 function saveSettings() {
     const orsKey = document.getElementById('settings-ors-key').value.trim();
     const geminiKey = document.getElementById('settings-gemini-key').value.trim();
+    const googleMapsKey = document.getElementById('settings-google-maps-key')?.value.trim();
 
     if (orsKey) setORSKey(orsKey);
     if (geminiKey) setGeminiKey(geminiKey);
+    if (googleMapsKey) setGoogleMapsKey(googleMapsKey);
 
     const btn = document.getElementById('btn-save-settings');
     btn.textContent = '✅ Saved!';

@@ -14,7 +14,22 @@ Browse 32 hand-curated Lake District walks with detailed information including s
 - Filter by difficulty (Easy, Moderate, Challenging)
 - Filter by type (Summit, Lakeside, Waterfall, Heritage, Woodland, Ridge, Village)
 - Full detail view with OpenTopoMap showing contour lines and footpaths
+- Circular / Linear route type indicator
 - Export any walk as compatible JSON
+
+### 📈 Elevation Profiles
+Each walk detail view includes a crisp, HiDPI-aware elevation profile chart rendered on canvas with:
+
+- Synthetic elevation curve based on waypoint data
+- Distance and elevation axis labels
+- Subtle grid lines for readability
+- Responsive scaling that adapts to any screen width
+
+### 📥 GPX Export
+Download any walk as a `.gpx` file for use with GPS devices, Garmin, Komoot, AllTrails, or any other GPX-compatible app.
+
+### 🅿️ Google Maps Navigation
+One-tap "Navigate to Car Park" button opens Google Maps with driving directions to the walk's parking location. Works on mobile and desktop.
 
 ### 🗺️ Walk Creator
 Build custom walking routes by clicking on the map:
@@ -33,10 +48,13 @@ Describe the walk you want in plain English and AI creates it:
 - Quick preset prompts for common walk types
 - Add AI-generated walks directly to the library
 
+### 🗻 Terrain & Satellite Toggle
+Switch between OpenTopoMap (contour lines, footpaths), OpenStreetMap, and Google Satellite view on any map.
+
 ### ⚙️ Tools & Settings
 - **Route Audit Tool** — Batch re-route all walks using real trail GPS data
 - **Import/Export** — Paste JSON to import walks, export full library
-- **API Key Management** — ORS and Gemini keys stored locally in browser
+- **API Key Management** — ORS, Gemini, and Google Maps keys stored locally in browser
 - **Walk JSON Schema** — Documented format for external AI tools to generate compatible walks
 
 ---
@@ -56,12 +74,17 @@ npm run dev
 
 The app opens at `http://localhost:5174/`
 
-### API Keys (Pre-configured)
-Both API keys are baked into the app for instant use:
-- **OpenRouteService** — Real trail routing (foot-hiking profile)
-- **Google Gemini** — AI walk generation
+### API Keys
+API keys can be configured in the ⚙️ Settings panel:
+- **OpenRouteService** — Real trail routing (foot-hiking profile). [Get a free key](https://openrouteservice.org/dev/#/signup)
+- **Google Gemini** — AI walk generation. [Get a key](https://aistudio.google.com/apikey)
+- **Google Maps** — Satellite map tiles. [Enable Maps JavaScript API](https://console.cloud.google.com/apis/library)
 
-You can override these in the ⚙️ Settings panel.
+For local development, keys can also be set via `.env.local`:
+```
+VITE_ORS_KEY=your_ors_key
+VITE_GEMINI_KEY=your_gemini_key
+```
 
 ---
 
@@ -72,6 +95,7 @@ You can override these in the ⚙️ Settings panel.
 | **Vite** | Build tool & dev server |
 | **Leaflet** | Interactive maps |
 | **OpenTopoMap** | Topographic map tiles with contour lines |
+| **Google Maps** | Satellite & terrain map tiles |
 | **OpenRouteService** | Real GPS trail routing (foot-hiking) |
 | **Google Gemini AI** | Natural language walk generation |
 | **Vanilla JS** | Zero-framework, fast & lightweight |
@@ -82,20 +106,28 @@ You can override these in the ⚙️ Settings panel.
 
 ```
 trail-mapper-pro/
-├── index.html          # App shell (4 views)
-├── style.css           # Premium dark trail theme
-├── vite.config.js      # Vite configuration
-├── data/
-│   └── walks.json      # 32 curated Lake District walks
+├── index.html              # App shell (4 views)
+├── style.css               # Premium dark trail theme
+├── vite.config.js          # Vite configuration
+├── package.json
+├── api/                    # Vercel serverless functions
+│   ├── gemini.js           # Gemini API proxy
+│   └── ors.js              # ORS API proxy
+├── public/
+│   └── data/
+│       └── walks.json      # 32 curated Lake District walks
+├── scripts/
+│   ├── audit-v2.cjs        # Batch route audit tool
+│   └── gpx-to-json.cjs     # GPX file converter
 └── js/
-    ├── app.js           # Router & state management
-    ├── library.js       # Walk library & detail view
-    ├── creator.js       # Interactive route builder
-    ├── ai-studio.js     # Gemini AI walk generator
-    ├── settings.js      # API keys, import/export, audit
-    ├── map-utils.js     # Shared Leaflet helpers
-    ├── route-service.js # OpenRouteService client
-    └── gemini-api.js    # Gemini API client
+    ├── app.js              # Router & state management
+    ├── library.js          # Walk library & detail view
+    ├── creator.js          # Interactive route builder
+    ├── ai-studio.js        # Gemini AI walk generator
+    ├── settings.js         # API keys, import/export, audit
+    ├── map-utils.js        # Shared Leaflet helpers & elevation profile
+    ├── route-service.js    # OpenRouteService client
+    └── gemini-api.js       # Gemini API client
 ```
 
 ---
@@ -117,7 +149,7 @@ All walks use this compatible JSON schema:
   "elevation": "238m",
   "terrain": "Woodland and open fell",
   "walkType": "summit",
-  "waypoints": [[54.38, -2.90], ...],
+  "waypoints": [[54.38, -2.90], "..."],
   "directions": [{"step": 1, "instruction": "...", "landmark": "..."}],
   "parkingDetail": "Car park details...",
   "thePayoff": "The wow moment..."
