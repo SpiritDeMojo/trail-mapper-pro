@@ -60,6 +60,42 @@ async function callGemini(requestBody) {
 }
 
 /**
+ * Sanitise JSON strings that Gemini sometimes returns with minor formatting issues
+ * (trailing commas, markdown fences, unquoted short values)
+ */
+function sanitizeJSON(raw) {
+    let s = raw
+        .replace(/```json\n?/g, '')
+        .replace(/```\n?/g, '')
+        .trim();
+
+    // Remove trailing commas before } or ]
+    s = s.replace(/,\s*([}\]])/g, '$1');
+
+    // First try a straight parse
+    try { return JSON.parse(s); } catch (_) { /* fall through */ }
+
+    // Try extracting just the JSON object/array
+    const start = s.indexOf('{');
+    const end = s.lastIndexOf('}');
+    if (start !== -1 && end !== -1 && end > start) {
+        const sub = s.slice(start, end + 1).replace(/,\s*([}\]])/g, '$1');
+        try { return JSON.parse(sub); } catch (_) { /* fall through */ }
+    }
+
+    // Array variant
+    const arrStart = s.indexOf('[');
+    const arrEnd = s.lastIndexOf(']');
+    if (arrStart !== -1 && arrEnd !== -1 && arrEnd > arrStart) {
+        const sub = s.slice(arrStart, arrEnd + 1).replace(/,\s*([}\]])/g, '$1');
+        try { return JSON.parse(sub); } catch (_) { /* fall through */ }
+    }
+
+    // Give up — throw with the original text for debugging
+    throw new SyntaxError('Could not parse Gemini response as JSON: ' + s.slice(0, 200));
+}
+
+/**
  * Extract text from Gemini response (handles thinking model parts)
  */
 function extractTextFromResponse(data) {
@@ -151,8 +187,7 @@ CRITICAL RULES FOR ROUTING:
         throw new Error('Gemini returned an empty response.');
     }
 
-    const cleanJson = text.replace(/```json\n?/g, '').replace(/```\n?/g, '').trim();
-    const walk = JSON.parse(cleanJson);
+    const walk = sanitizeJSON(text);
 
     if (!walk.name || !walk.lat || !walk.lon) {
         throw new Error('Gemini response missing required fields (name, lat, lon).');
@@ -192,8 +227,7 @@ Generate 5-8 steps. Be specific about turns, landmarks, and features. Make direc
         const text = extractTextFromResponse(data);
         if (!text) return [];
 
-        const cleanJson = text.replace(/```json\n?/g, '').replace(/```\n?/g, '').trim();
-        return JSON.parse(cleanJson);
+        return sanitizeJSON(text);
     } catch (e) {
         console.warn('Direction generation failed:', e);
         return [];

@@ -3,7 +3,7 @@
    ═══════════════════════════════════════════════════════ */
 
 import { createMap, parkingMarker, destMarker, drawRoute, fitToWaypoints } from './map-utils.js';
-import { fetchHikingRoute, fetchCircularRoute, fetchMultiWaypointRoute, interpolateRoute, formatDistance, formatDuration, getORSKey } from './route-service.js';
+import { fetchHikingRoute, fetchCircularRoute, fetchMultiWaypointRoute, interpolateRoute, formatDistance, formatDuration } from './route-service.js';
 import { addWalk } from './library.js';
 
 let creatorMap = null;
@@ -111,33 +111,24 @@ async function generateRoute() {
     document.querySelector('.creator-map-wrap').appendChild(statusEl);
 
     try {
-        const hasKey = !!getORSKey();
-        let routeData;
+        // Copy the user's clicked waypoints
+        let routePoints = [...creatorWaypoints];
 
-        if (hasKey) {
-            // Copy the user's clicked waypoints
-            let routePoints = [...creatorWaypoints];
-
-            // If circular, append the first point to the end to close the loop
-            if (isCircular) {
-                routePoints.push(creatorWaypoints[0]);
-            }
-
-            // Use the multi-waypoint fetcher to snap to real trails
-            routeData = await fetchMultiWaypointRoute(routePoints);
-            generatedWaypoints = routeData.waypoints;
-
-            // Auto-fill form
-            document.getElementById('wf-distance').value = formatDistance(routeData.distance);
-            document.getElementById('wf-time').value = formatDuration(routeData.duration);
-
-            statusEl.innerHTML = `✅ Trail route snapped: ${formatDistance(routeData.distance)}, ~${formatDuration(routeData.duration)}`;
-        } else {
-            // Fallback — use the raw clicked points
-            generatedWaypoints = [...creatorWaypoints];
-            if (isCircular) generatedWaypoints.push(creatorWaypoints[0]);
-            statusEl.innerHTML = '⚠️ No ORS API key — showing raw points. Add key in Settings for real trail snapping.';
+        // If circular, append the first point to the end to close the loop
+        if (isCircular) {
+            routePoints.push(creatorWaypoints[0]);
         }
+
+        // Use the multi-waypoint fetcher to snap to real trails
+        // callORS will try the server proxy first (production), then direct API (local dev)
+        const routeData = await fetchMultiWaypointRoute(routePoints);
+        generatedWaypoints = routeData.waypoints;
+
+        // Auto-fill form
+        document.getElementById('wf-distance').value = formatDistance(routeData.distance);
+        document.getElementById('wf-time').value = formatDuration(routeData.duration);
+
+        statusEl.innerHTML = `✅ Trail route snapped: ${formatDistance(routeData.distance)}, ~${formatDuration(routeData.duration)}`;
 
         // Clear previous route
         if (routeLayers) {
