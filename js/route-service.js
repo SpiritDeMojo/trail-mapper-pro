@@ -35,9 +35,11 @@ async function callORS(requestBody) {
             return await proxyRes.json();
         }
 
-        // Proxy failed — fall through to direct call
+        // Log proxy failure for debugging
+        console.warn(`ORS proxy returned ${proxyRes.status} — falling back to direct API call`);
     } catch (err) {
         // Network error (proxy doesn't exist in local dev) — fall through
+        console.warn('ORS proxy unavailable — falling back to direct API call');
     }
 
     // Direct API call with local key
@@ -77,7 +79,8 @@ export async function fetchHikingRoute(startLat, startLon, endLat, endLon, viaPo
     const data = await callORS({
         coordinates,
         preference: 'recommended',
-        instructions: true
+        instructions: true,
+        elevation: true
     });
 
     const feature = data.features[0];
@@ -106,7 +109,8 @@ export async function fetchCircularRoute(startLat, startLon, destLat, destLon) {
     const data = await callORS({
         coordinates,
         preference: 'recommended',
-        instructions: true
+        instructions: true,
+        elevation: true
     });
 
     const feature = data.features[0];
@@ -137,7 +141,8 @@ export async function fetchMultiWaypointRoute(waypointArray) {
     const data = await callORS({
         coordinates,
         preference: 'recommended',
-        instructions: true
+        instructions: true,
+        elevation: true
     });
 
     const feature = data.features[0];
