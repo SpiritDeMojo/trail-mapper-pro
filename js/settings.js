@@ -1,8 +1,4 @@
-/* ═══════════════════════════════════════════════════════
-   Settings — API keys, import/export, route audit
-   ═══════════════════════════════════════════════════════ */
-
-import { getORSKey, setORSKey, fetchCircularRoute, fetchHikingRoute, formatDistance, formatDuration } from './route-service.js';
+import { getORSKey, setORSKey, formatDistance, formatDuration } from './route-service.js';
 import { getGeminiKey, setGeminiKey } from './gemini-api.js';
 import { getWalks, setWalks, addWalk } from './library.js';
 import { setGoogleMapsKey } from './map-utils.js';
@@ -22,10 +18,21 @@ export function initSettings() {
     // Save settings
     document.getElementById('btn-save-settings').addEventListener('click', saveSettings);
 
-    // Route audit
-    document.getElementById('btn-audit-routes').addEventListener('click', auditRoutes);
+    // GPX import (file input + drag-and-drop)
+    const gpxInput = document.getElementById('gpx-file-input');
+    const gpxZone = document.getElementById('gpx-drop-zone');
+    if (gpxInput) gpxInput.addEventListener('change', (e) => handleGPX(e.target.files[0]));
+    if (gpxZone) {
+        gpxZone.addEventListener('dragover', (e) => { e.preventDefault(); gpxZone.classList.add('dragover'); });
+        gpxZone.addEventListener('dragleave', () => gpxZone.classList.remove('dragover'));
+        gpxZone.addEventListener('drop', (e) => {
+            e.preventDefault();
+            gpxZone.classList.remove('dragover');
+            handleGPX(e.dataTransfer.files[0]);
+        });
+    }
 
-    // Import walk
+    // Import walk (JSON)
     document.getElementById('btn-import-walk').addEventListener('click', importWalk);
 
     // Export all
@@ -47,89 +54,106 @@ function saveSettings() {
 }
 
 /**
- * Re-route all walks using real ORS trail data
- * In production, routes go through the serverless proxy automatically
+ * Haversine distance between two points in meters
  */
-async function auditRoutes() {
-    const walks = getWalks();
-    const progressEl = document.getElementById('audit-progress');
-    progressEl.style.display = 'block';
+function haversineDist(lat1, lon1, lat2, lon2) {
+    const R = 6371000;
+    const dLat = (lat2 - lat1) * Math.PI / 180;
+    const dLon = (lon2 - lon1) * Math.PI / 180;
+    const a = Math.sin(dLat / 2) ** 2 +
+        Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
+        Math.sin(dLon / 2) ** 2;
+    return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+}
 
-    const total = walks.length;
-    let completed = 0;
-    let failed = 0;
+/**
+ * Parse a GPX file and add the walk to the library
+ */
+async function handleGPX(file) {
+    if (!file) return;
+    const statusEl = document.getElementById('gpx-status');
+    statusEl.style.display = 'block';
+    statusEl.innerHTML = '<span class="spinner"></span> Parsing GPX...';
 
-    progressEl.innerHTML = `
-        <div>Re-routing ${total} walks using real GPS trail data...</div>
-        <div class="progress-bar"><div class="progress-fill" style="width: 0%"></div></div>
-        <div id="audit-log" style="margin-top:8px;font-size:11px;color:var(--text-muted);max-height:200px;overflow-y:auto;"></div>
-    `;
+    try {
+        const text = await file.text();
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(text, 'text/xml');
 
-    const logEl = document.getElementById('audit-log');
-    const fillEl = progressEl.querySelector('.progress-fill');
+        // Extract track points (<trkpt>) or route points (<rtept>)
+        let points = Array.from(doc.querySelectorAll('trkpt'));
+        if (points.length === 0) points = Array.from(doc.querySelectorAll('rtept'));
+        if (points.length < 2) throw new Error('GPX file contains fewer than 2 points.');
 
-    for (let i = 0; i < walks.length; i++) {
-        const w = walks[i];
-        const progress = ((i + 1) / total * 100).toFixed(0);
-        fillEl.style.width = `${progress}%`;
+        const waypoints = points.map(pt => [
+            parseFloat(pt.getAttribute('lat')),
+            parseFloat(pt.getAttribute('lon'))
+        ]);
 
-        try {
-            logEl.innerHTML += `<div>🔄 ${w.name}...</div>`;
-            logEl.scrollTop = logEl.scrollHeight;
+        // Get track name
+        const nameEl = doc.querySelector('trk > name') || doc.querySelector('rte > name') || doc.querySelector('metadata > name');
+        const name = nameEl ? nameEl.textContent.trim() : file.name.replace('.gpx', '');
 
-            // Determine if circular or linear
-            const isCircular = !w.endLat || !w.endLon ||
-                (Math.abs(w.lat - w.endLat) < 0.002 && Math.abs(w.lon - w.endLon) < 0.002);
-
-            let routeData;
-            if (isCircular) {
-                // For circular walks, use the farthest waypoint as the destination
-                let destLat, destLon;
-                if (w.waypoints && w.waypoints.length > 4) {
-                    // Find the waypoint farthest from start (the summit/feature)
-                    let maxDist = 0;
-                    for (const wp of w.waypoints) {
-                        const dist = Math.abs(wp[0] - w.lat) + Math.abs(wp[1] - w.lon);
-                        if (dist > maxDist) {
-                            maxDist = dist;
-                            destLat = wp[0];
-                            destLon = wp[1];
-                        }
-                    }
-                } else {
-                    destLat = w.lat + 0.005;
-                    destLon = w.lon + 0.005;
-                }
-                routeData = await fetchCircularRoute(w.lat, w.lon, destLat, destLon);
-            } else {
-                routeData = await fetchHikingRoute(w.lat, w.lon, w.endLat, w.endLon);
-            }
-
-            // Update walk
-            walks[i].waypoints = routeData.waypoints;
-            walks[i].distance = formatDistance(routeData.distance);
-            walks[i].time = formatDuration(routeData.duration);
-
-            completed++;
-            logEl.innerHTML += `<div style="color:var(--easy);">✅ ${w.name} — ${formatDistance(routeData.distance)}</div>`;
-
-            // Rate limit: wait 1.5s between requests
-            if (i < walks.length - 1) {
-                await new Promise(r => setTimeout(r, 1500));
-            }
-        } catch (err) {
-            failed++;
-            logEl.innerHTML += `<div style="color:var(--challenging);">❌ ${w.name}: ${err.message}</div>`;
+        // Calculate total distance
+        let totalDist = 0;
+        for (let i = 1; i < waypoints.length; i++) {
+            totalDist += haversineDist(waypoints[i - 1][0], waypoints[i - 1][1], waypoints[i][0], waypoints[i][1]);
         }
 
-        logEl.scrollTop = logEl.scrollHeight;
+        // Detect circular (start ≈ end)
+        const first = waypoints[0];
+        const last = waypoints[waypoints.length - 1];
+        const isCircular = haversineDist(first[0], first[1], last[0], last[1]) < 200;
+
+        // Estimate time (~4 km/h walking)
+        const hours = totalDist / 4000;
+
+        // Extract elevation from GPX if available
+        const elePoints = points.map(pt => {
+            const ele = pt.querySelector('ele');
+            return ele ? parseFloat(ele.textContent) : null;
+        }).filter(e => e !== null);
+        let elevationGain = 'N/A';
+        if (elePoints.length > 1) {
+            let gain = 0;
+            for (let i = 1; i < elePoints.length; i++) {
+                const diff = elePoints[i] - elePoints[i - 1];
+                if (diff > 0) gain += diff;
+            }
+            elevationGain = `${Math.round(gain)}m`;
+        }
+
+        const walk = {
+            name,
+            distance: formatDistance(totalDist),
+            time: formatDuration(hours * 3600),
+            difficulty: totalDist > 10000 || (elePoints.length && elevationGain !== 'N/A' && parseInt(elevationGain) > 500) ? 'Challenging' : totalDist > 5000 ? 'Moderate' : 'Easy',
+            desc: `Imported from GPX: ${name}`,
+            start: 'Car Park',
+            lat: first[0],
+            lon: first[1],
+            elevation: elevationGain,
+            terrain: '',
+            routeUrl: '',
+            walkType: 'summit',
+            waypoints,
+            endLat: isCircular ? first[0] : last[0],
+            endLon: isCircular ? first[1] : last[1],
+            directions: [],
+            parkingDetail: '',
+            thePayoff: ''
+        };
+
+        addWalk(walk);
+        statusEl.className = 'gpx-status success';
+        statusEl.innerHTML = `✅ Imported "${name}" — ${formatDistance(totalDist)}, ${waypoints.length} points`;
+
+        // Reset file input
+        document.getElementById('gpx-file-input').value = '';
+    } catch (err) {
+        statusEl.className = 'gpx-status error';
+        statusEl.innerHTML = `❌ ${err.message}`;
     }
-
-    // Save updated walks
-    setWalks(walks);
-
-    progressEl.querySelector('div:first-child').innerHTML =
-        `✅ Complete: ${completed} re-routed, ${failed} failed out of ${total}`;
 }
 
 /**

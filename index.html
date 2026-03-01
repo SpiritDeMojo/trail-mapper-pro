@@ -269,11 +269,13 @@
                 </div>
 
                 <div class="settings-section">
-                    <h3>Route Audit Tool</h3>
-                    <p class="settings-hint">Re-route all walks using real trail data from OpenRouteService. Requires
-                        ORS API key.</p>
-                    <button class="btn-audit" id="btn-audit-routes">🔄 Re-Route All Walks (Real Trail Data)</button>
-                    <div class="audit-progress" id="audit-progress" style="display:none;"></div>
+                    <h3>Import GPX File</h3>
+                    <p class="settings-hint">Drop or select a .gpx file to create a walk from GPS track data.</p>
+                    <label class="gpx-drop-zone" id="gpx-drop-zone">
+                        <input type="file" id="gpx-file-input" accept=".gpx" style="display:none;">
+                        <span>📂 Click or drop .gpx file here</span>
+                    </label>
+                    <div class="gpx-status" id="gpx-status" style="display:none;"></div>
                 </div>
 
                 <div class="settings-section">
