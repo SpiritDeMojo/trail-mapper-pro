@@ -1,12 +1,12 @@
 /* ═══════════════════════════════════════════════════════
-   Gemini API — Google Generative AI client for walk generation
+   Gemini API - Google Generative AI client for walk generation
    ═══════════════════════════════════════════════════════ */
 
 const PROXY_ENDPOINT = '/api/gemini';
 const DIRECT_ENDPOINT = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent';
 
 /**
- * Get Gemini API key — checks localStorage first, then Vite env var for local dev
+ * Get Gemini API key - checks localStorage first, then Vite env var for local dev
  */
 export function getGeminiKey() {
     return localStorage.getItem('gemini_api_key') || (typeof import.meta !== 'undefined' && import.meta.env?.VITE_GEMINI_KEY) || '';
@@ -20,7 +20,7 @@ export function setGeminiKey(key) {
 }
 
 /**
- * Make a Gemini API request — tries proxy (production), falls back to direct (local dev)
+ * Make a Gemini API request - tries proxy (production), falls back to direct (local dev)
  */
 async function callGemini(requestBody) {
     // Try serverless proxy first
@@ -34,9 +34,9 @@ async function callGemini(requestBody) {
         if (proxyRes.ok) {
             return await proxyRes.json();
         }
-        // Proxy failed — fall through to direct call
+        // Proxy failed - fall through to direct call
     } catch (err) {
-        // Network error (proxy doesn't exist in local dev) — fall through
+        // Network error (proxy doesn't exist in local dev) - fall through
     }
 
     // Direct API call with local key
@@ -91,7 +91,7 @@ function sanitizeJSON(raw) {
         try { return JSON.parse(sub); } catch (_) { /* fall through */ }
     }
 
-    // Give up — throw with the original text for debugging
+    // Give up - throw with the original text for debugging
     throw new SyntaxError('Could not parse Gemini response as JSON: ' + s.slice(0, 200));
 }
 
@@ -121,7 +121,7 @@ export async function generateWalkFromPrompt(userPrompt) {
 
 You must return ONLY valid JSON (no markdown, no explanation) with this exact structure:
 {
-    "name": "Walk name — short, evocative",
+    "name": "Walk name - short, evocative",
     "distance": "e.g. 3.5 km",
     "time": "e.g. 1.5 hours",
     "difficulty": "Easy | Moderate | Challenging",
@@ -158,9 +158,8 @@ CRITICAL RULES FOR ROUTING:
   - These must be on or very near real footpaths, bridleways, or tracks on SOLID GROUND.
   - Space them to capture key turns, safe ascents, and features.
   - NEVER put waypoints on lake surfaces, over water, or on cliff faces. Waypoints MUST be on known pedestrian paths and solid ground ONLY.
-  - FOR LAKESIDE WALKS: "Lakeside" means tracing the land perimeter of the water. Do not generate straight lines across lakes or tarns. All coordinates must be on the shore or surrounding paths.
-  - If routing around a lake, provide waypoints that follow the curve of the shoreline paths to prevent OpenRouteService from attempting a direct water crossing.
-  - They define the route shape — ORS will route between them on real paths.
+  - FOR LAKESIDE WALKS: LLMs are bad at estimating shoreline coordinates and will accidentally put points in the water. DO NOT attempt to densely plot coordinates around a lake. Instead, provide only 1 or 2 established landmarks ON SOLID GROUND (e.g. a known cafe, village, or fell base), and the routing engine will automatically trace the lakeside path between them safely.
+  - They define the route shape - ORS will route between them on real paths.
   - For circular: the walk goes CarPark → wp1 → wp2 → wp3 → wp4 → CarPark
   - For linear: the walk goes CarPark → wp1 → wp2 → wp3 → EndPoint
 - For circular walks: endLat/endLon = lat/lon (returns to car park)
