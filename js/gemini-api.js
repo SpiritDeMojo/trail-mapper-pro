@@ -158,6 +158,8 @@ CRITICAL RULES FOR ROUTING:
   - These must be on or very near real footpaths, bridleways, or tracks on SOLID GROUND.
   - Space them to capture key turns, safe ascents, and features.
   - NEVER put waypoints on lake surfaces, over water, or on cliff faces. Waypoints MUST be on known pedestrian paths and solid ground ONLY.
+  - FOR LAKESIDE WALKS: "Lakeside" means tracing the land perimeter of the water. Do not generate straight lines across lakes or tarns. All coordinates must be on the shore or surrounding paths.
+  - If routing around a lake, provide waypoints that follow the curve of the shoreline paths to prevent OpenRouteService from attempting a direct water crossing.
   - They define the route shape — ORS will route between them on real paths.
   - For circular: the walk goes CarPark → wp1 → wp2 → wp3 → wp4 → CarPark
   - For linear: the walk goes CarPark → wp1 → wp2 → wp3 → EndPoint
