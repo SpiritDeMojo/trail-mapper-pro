@@ -1,50 +1,59 @@
 /**
- * map-snapshot.js
- * Fetches a static map image of a bounding box for the LLM Vision Pipeline.
+ * Map Snapshot Generator for Gemini Vision Input
  */
 
-// We get the key from localStorage or Vite env
-function getGoogleMapsKey() {
-    return localStorage.getItem('gmaps_api_key') || (typeof import.meta !== 'undefined' && import.meta.env?.VITE_GOOGLE_MAPS_KEY) || '';
+/**
+ * Convert lat/lon to tile X/Y coordinates
+ */
+function lon2tile(lon, zoom) {
+    return Math.floor((lon + 180) / 360 * Math.pow(2, zoom));
 }
 
-export async function getStaticMapImageBase64(bbox) {
-    const key = getGoogleMapsKey();
-    if (!key) {
-        throw new Error("No Google Maps API key available for static map snapshot.");
-    }
-    
-    // bbox is [latMin, latMax, lonMin, lonMax]
-    const [latMin, latMax, lonMin, lonMax] = bbox;
-    
-    // We can use the 'visible' parameter to ensure the bounding box is visible
-    // or just calculate the center. 'visible' is better to perfectly fit the bbox.
-    // Format: visible=lat,lng|lat,lng
-    const visibleParams = `${latMin},${lonMin}|${latMax},${lonMax}`;
-    
-    // Use terrain map to see paths and topography better
-    const url = `https://maps.googleapis.com/maps/api/staticmap?size=640x640&maptype=terrain&visible=${visibleParams}&key=${key}`;
-    
+function lat2tile(lat, zoom) {
+    return Math.floor((1 - Math.log(Math.tan(lat * Math.PI / 180) + 1 / Math.cos(lat * Math.PI / 180)) / Math.PI) / 2 * Math.pow(2, zoom));
+}
+
+/**
+ * Generate a static map image (base64) for a given bounding box.
+ * Grabs the central tile covering the area.
+ * 
+ * @param {Object} bbox - {minLat, maxLat, minLon, maxLon}
+ * @returns {Promise<string>} - Base64 string of the image (without data:image/png;base64, prefix)
+ */
+export async function fetchMapSnapshot(bbox) {
     try {
-        const response = await fetch(url);
+        const centerLat = (bbox.minLat + bbox.maxLat) / 2;
+        const centerLon = (bbox.minLon + bbox.maxLon) / 2;
+        
+        // Zoom 13 is usually good for a walk (gives a good topo overview)
+        const zoom = 13;
+        
+        const x = lon2tile(centerLon, zoom);
+        const y = lat2tile(centerLat, zoom);
+        
+        const tileUrl = `https://tile.opentopomap.org/${zoom}/${x}/${y}.png`;
+        
+        const response = await fetch(tileUrl);
         if (!response.ok) {
-            throw new Error(`Static Maps API returned ${response.status}`);
+            throw new Error(`Failed to fetch map tile: ${response.status}`);
         }
         
-        // Convert to base64
         const blob = await response.blob();
+        
         return new Promise((resolve, reject) => {
             const reader = new FileReader();
             reader.onloadend = () => {
-                // reader.result is like "data:image/jpeg;base64,/9j/4AAQSkZJRg..."
-                const base64data = reader.result.split(',')[1]; 
+                // The result is a data URL like: data:image/png;base64,iVBORw0KGgo...
+                // We just want the base64 part for Gemini inline_data
+                const base64data = reader.result.split(',')[1];
                 resolve(base64data);
             };
             reader.onerror = reject;
             reader.readAsDataURL(blob);
         });
+        
     } catch (error) {
-        console.error("Error fetching map snapshot:", error);
-        throw error;
+        console.warn('Map snapshot generation failed:', error);
+        return null; // Graceful fallback
     }
 }

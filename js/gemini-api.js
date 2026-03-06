@@ -2,8 +2,8 @@
    Gemini API - Google Generative AI client for walk generation
    ═══════════════════════════════════════════════════════ */
 
-import { fetchAreaOSMData } from './overpass.js';
-import { getStaticMapImageBase64 } from './map-snapshot.js';
+import { fetchOSMData } from './overpass.js';
+import { fetchMapSnapshot } from './map-snapshot.js';
 
 const PROXY_ENDPOINT = '/api/gemini';
 const DIRECT_ENDPOINT = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent';
@@ -120,35 +120,41 @@ function extractTextFromResponse(data) {
  * Generate a walk from a natural language description using Gemini + Google Search
  */
 export async function generateWalkFromPrompt(userPrompt) {
-    // 1. Quick LLM call to extract the 'area'
-    const extractAreaBody = {
-        contents: [{ role: 'user', parts: [{ text: `Extract the main Lake District area/location from this walk request: "${userPrompt}". Return ONLY the area name (e.g. "Grasmere", "Ambleside"). If none, return "Lake District".` }] }],
-        generationConfig: { temperature: 0.1, maxOutputTokens: 20 }
-    };
-    
-    let areaName = "Lake District";
+    // Step A: Extract Area and Walk Type
+    const areaExtractionPrompt = `Extract the main area/location and the walk type from this user request.
+Return ONLY valid JSON like this: {"area": "Grasmere", "walkType": "lakeside"}
+If no specific area is mentioned, return null for area.
+User request: ${userPrompt}`;
+
+    let extractedInfo = { area: null, walkType: null };
     try {
-        const areaData = await callGemini(extractAreaBody);
-        const areaText = extractTextFromResponse(areaData);
-        if (areaText) areaName = areaText.trim().replace(/["']/g, '');
+        const extractBody = {
+            contents: [{ role: 'user', parts: [{ text: areaExtractionPrompt }] }],
+            generationConfig: { temperature: 0.1, maxOutputTokens: 200, responseMimeType: 'application/json' }
+        };
+        const res = await callGemini(extractBody);
+        const text = extractTextFromResponse(res);
+        if (text) extractedInfo = sanitizeJSON(text);
     } catch (e) {
-        console.warn("Could not extract area, defaulting to Lake District", e);
+        console.warn('Area extraction failed, falling back to prompt-only:', e);
     }
-    
-    // 2. Fetch OSM data and Map Snapshot if we have a specific area
+
+    // Step B: Fetch OSM Data & Map Snapshot
     let osmData = null;
-    let base64Map = null;
-    
-    if (areaName && areaName.toLowerCase() !== "lake district") {
+    let mapBase64 = null;
+
+    if (extractedInfo && extractedInfo.area) {
         try {
-            osmData = await fetchAreaOSMData(areaName);
-            base64Map = await getStaticMapImageBase64(osmData.bbox);
+            osmData = await fetchOSMData(extractedInfo.area);
+            if (osmData && osmData.bbox) {
+                mapBase64 = await fetchMapSnapshot(osmData.bbox);
+            }
         } catch (e) {
-            console.warn("Vision pipeline failed, falling back to old prompt", e);
+            console.warn('OSM/Vision data fetch failed, continuing with prompt-only fallback:', e);
         }
     }
 
-    const systemPrompt = `You are an expert Lake District walking guide and route planner. Given a user's description of their ideal walk, you generate a detailed walk specification with PRECISE route waypoints in JSON format.
+    let systemPrompt = `You are an expert Lake District walking guide and route planner. Given a user's description of their ideal walk, you generate a detailed walk specification with PRECISE route waypoints in JSON format.
 
 You must return ONLY valid JSON (no markdown, no explanation) with this exact structure:
 {
@@ -200,24 +206,32 @@ CRITICAL RULES FOR ROUTING:
 - parkingDetail should include real postcodes where possible
 - Think like a mountain rescue volunteer: if a route looks dangerous on the ground, don't recommend it`;
 
-    let parts = [{ text: systemPrompt + '\n\nUser request: ' + userPrompt }];
+    const parts = [];
 
-    if (osmData && base64Map) {
-        const visionInstructions = `\n\nVISION PIPELINE DATA:
-You have been provided with an image of a map for the area "${areaName}", showing the terrain and paths.
-Additionally, here is data from OpenStreetMap for this area:
-${osmData.textData}
+    if (osmData && mapBase64) {
+        systemPrompt += `
 
-INSTRUCTIONS FOR MAP DATA:
-- ONLY use the car parks listed above for the 'start' location. Ensure the coordinates match exactly.
-- ONLY route the walk along the paths visible in the image and listed in the named paths.
-- Ensure loopWaypoints align with visible solid ground paths on the map provided.`;
+You have been provided a topographic map image of the area AND a list of real car parks and named footpaths from OpenStreetMap. You MUST choose your starting car park and waypoints ONLY from the provided car park list. You MUST place intermediate waypoints on or beside the named footpaths provided. DO NOT invent coordinates — use the provided OSM data.
 
-        parts[0].text += visionInstructions;
+=== OSM DATA ===
+CAR PARKS:
+${JSON.stringify(osmData.carParks, null, 2)}
+
+NAMED PATHS (Centroids):
+${JSON.stringify(osmData.paths, null, 2)}
+
+POIs:
+${JSON.stringify(osmData.pois, null, 2)}
+`;
         parts.push({
-            inline_data: { mime_type: "image/jpeg", data: base64Map }
+            inline_data: {
+                mime_type: "image/png",
+                data: mapBase64
+            }
         });
     }
+
+    parts.push({ text: systemPrompt + '\n\nUser request: ' + userPrompt });
 
     const requestBody = {
         contents: [

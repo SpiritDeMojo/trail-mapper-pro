@@ -1,88 +1,98 @@
 /**
- * overpass.js
- * Queries OpenStreetMap (via Nominatim and Overpass API) for car parks and footpaths in a given area.
+ * Service to query Overpass API for real OpenStreetMap data
  */
-
-export async function fetchAreaOSMData(areaName) {
+export async function fetchOSMData(areaName) {
     try {
-        // 1. Get bounding box from Nominatim
-        // We add "Lake District" to prioritize local results if user just types "Grasmere"
-        const searchQuery = areaName.toLowerCase().includes('lake district') 
-            ? areaName 
-            : `${areaName}, Lake District, UK`;
-            
-        const nominatimUrl = `https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(searchQuery)}&format=json&limit=1`;
+        // 1. Resolve area to bounding box using Nominatim
+        // We append "Lake District, UK" for better resolution within context
+        const searchName = areaName.toLowerCase().includes('lake district') ? areaName : `${areaName}, Lake District, UK`;
+        const nominatimUrl = `https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(searchName)}&format=json&limit=1`;
         
-        const nomRes = await fetch(nominatimUrl, {
-            headers: {
-                'Accept': 'application/json',
-                'User-Agent': 'TrailMapperPro/1.0 (VisionPipeline)'
-            }
+        const nominatimRes = await fetch(nominatimUrl, {
+            headers: { 'User-Agent': 'TrailMapperPro/1.0' }
         });
+        const nominatimData = await nominatimRes.json();
         
-        if (!nomRes.ok) throw new Error(`Nominatim error: ${nomRes.status}`);
-        const nomData = await nomRes.json();
-        
-        if (!nomData || nomData.length === 0) {
-            throw new Error(`Area not found: ${areaName}`);
+        if (!nominatimData || nominatimData.length === 0) {
+            console.warn(`Nominatim could not find bounding box for ${areaName}`);
+            return null;
         }
         
-        const location = nomData[0];
-        // Nominatim boundingbox is [lat_min, lat_max, lon_min, lon_max]
-        const [latMin, latMax, lonMin, lonMax] = location.boundingbox.map(Number);
+        const place = nominatimData[0];
+        // Nominatim boundingbox is [latMin, latMax, lonMin, lonMax]
+        const bbox = {
+            minLat: parseFloat(place.boundingbox[0]),
+            maxLat: parseFloat(place.boundingbox[1]),
+            minLon: parseFloat(place.boundingbox[2]),
+            maxLon: parseFloat(place.boundingbox[3])
+        };
         
-        // 2. Query Overpass API for car parks and paths within this bounding box
-        // Overpass bbox format is (south, west, north, east) -> (latMin, lonMin, latMax, lonMax)
+        // Overpass requires (south, west, north, east)
+        const bboxStr = `${bbox.minLat},${bbox.minLon},${bbox.maxLat},${bbox.maxLon}`;
+        
+        // 2. Query Overpass API
         const overpassQuery = `
             [out:json][timeout:25];
             (
-                node["amenity"="parking"](${latMin},${lonMin},${latMax},${lonMax});
-                way["highway"~"path|footway|track"](${latMin},${lonMin},${latMax},${lonMax});
+              node["amenity"="parking"]["name"](${bboxStr});
+              way["amenity"="parking"]["name"](${bboxStr});
+              way["highway"~"footway|path|bridleway"]["name"](${bboxStr});
+              node["tourism"~"viewpoint|picnic_site|information"]["name"](${bboxStr});
+              node["amenity"="cafe"]["name"](${bboxStr});
             );
-            out body;
-            >;
-            out skel qt;
+            out center;
         `;
         
         const overpassUrl = 'https://overpass-api.de/api/interpreter';
         const overpassRes = await fetch(overpassUrl, {
             method: 'POST',
-            body: overpassQuery
+            body: `data=${encodeURIComponent(overpassQuery)}`,
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded'
+            }
         });
         
-        if (!overpassRes.ok) throw new Error(`Overpass error: ${overpassRes.status}`);
         const overpassData = await overpassRes.json();
         
-        // 3. Process the data into a readable text format for the LLM
-        let carParks = [];
-        let paths = [];
+        // 3. Simplify result
+        const result = {
+            bbox: bbox,
+            carParks: [],
+            paths: [],
+            pois: []
+        };
         
-        for (const el of overpassData.elements) {
-            if (el.type === 'node' && el.tags && el.tags.amenity === 'parking') {
-                const name = el.tags.name || 'Unnamed Car Park';
-                carParks.push(`Car Park: ${name} (Lat: ${el.lat}, Lon: ${el.lon})`);
-            } else if (el.type === 'way' && el.tags && el.tags.highway) {
-                const name = el.tags.name || `Unnamed ${el.tags.highway}`;
-                // Just listing the paths, maybe roughly where they are if possible, 
-                // but nodes aren't fully resolved easily without walking the refs.
-                // Just giving the names is helpful for the LLM to know they exist.
-                if (el.tags.name) {
-                    paths.push(`Path: ${name} (${el.tags.highway})`);
+        if (overpassData && overpassData.elements) {
+            for (const el of overpassData.elements) {
+                if (el.tags && el.tags.name) {
+                    const lat = el.lat || (el.center && el.center.lat);
+                    const lon = el.lon || (el.center && el.center.lon);
+                    
+                    if (el.tags.amenity === 'parking') {
+                        result.carParks.push({ name: el.tags.name, lat, lon });
+                    } else if (el.tags.highway) {
+                        // For paths we return the centroid and name
+                        result.paths.push({ name: el.tags.name, centroid: {lat, lon} });
+                    } else {
+                        const type = el.tags.tourism || el.tags.amenity;
+                        result.pois.push({ name: el.tags.name, type, lat, lon });
+                    }
                 }
             }
         }
         
         // Deduplicate paths
-        paths = [...new Set(paths)];
+        const uniquePaths = new Map();
+        for (const p of result.paths) {
+            if (!uniquePaths.has(p.name)) {
+                uniquePaths.set(p.name, p);
+            }
+        }
+        result.paths = Array.from(uniquePaths.values());
         
-        return {
-            bbox: [latMin, latMax, lonMin, lonMax],
-            center: { lat: location.lat, lon: location.lon },
-            textData: `OSM Data for ${areaName}:\n\nCAR PARKS:\n${carParks.join('\n')}\n\nNAMED PATHS:\n${paths.join('\n')}`
-        };
-        
+        return result;
     } catch (error) {
-        console.error("Error fetching OSM data:", error);
-        throw error;
+        console.warn('OSM data fetch failed:', error);
+        return null; // Graceful fallback
     }
 }
