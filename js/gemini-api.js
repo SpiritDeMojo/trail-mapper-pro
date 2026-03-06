@@ -98,6 +98,8 @@ function sanitizeJSON(raw) {
 /**
  * Extract text from Gemini response (handles thinking model parts)
  */
+function escapeXSS(obj) { if (typeof obj === 'string') { return obj.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#039;'); } else if (Array.isArray(obj)) { return obj.map(escapeXSS); } else if (obj !== null && typeof obj === 'object') { const newObj = {}; for (const key in obj) { newObj[key] = escapeXSS(obj[key]); } return newObj; } return obj; }
+
 function extractTextFromResponse(data) {
     const parts = data.candidates?.[0]?.content?.parts;
     if (!parts || parts.length === 0) return null;
@@ -153,9 +155,9 @@ CRITICAL RULES FOR ROUTING:
 - Include waypoints that act as 'Points of Interest' (e.g., viewpoints, tarns, historical ruins) to create a more engaging, meandering walk.
 - lat/lon is the CAR PARK (real Lake District coordinates ~54.2-54.6 lat, -2.7 to -3.3 lon)
 - loopWaypoints are 4-6 intermediate points forming the ACTUAL safe walking loop.
-  - These must be on or very near real footpaths, bridleways, or tracks.
+  - These must be on or very near real footpaths, bridleways, or tracks on SOLID GROUND.
   - Space them to capture key turns, safe ascents, and features.
-  - NEVER put waypoints on lake surfaces or cliff faces.
+  - NEVER put waypoints on lake surfaces, over water, or on cliff faces. Waypoints MUST be on known pedestrian paths and solid ground ONLY.
   - They define the route shape — ORS will route between them on real paths.
   - For circular: the walk goes CarPark → wp1 → wp2 → wp3 → wp4 → CarPark
   - For linear: the walk goes CarPark → wp1 → wp2 → wp3 → EndPoint
@@ -187,7 +189,7 @@ CRITICAL RULES FOR ROUTING:
         throw new Error('Gemini returned an empty response.');
     }
 
-    const walk = sanitizeJSON(text);
+    const walk = escapeXSS(sanitizeJSON(text));
 
     if (!walk.name || !walk.lat || !walk.lon) {
         throw new Error('Gemini response missing required fields (name, lat, lon).');
@@ -227,7 +229,7 @@ Generate 5-8 steps. Be specific about turns, landmarks, and features. Make direc
         const text = extractTextFromResponse(data);
         if (!text) return [];
 
-        return sanitizeJSON(text);
+        return escapeXSS(sanitizeJSON(text));
     } catch (e) {
         console.warn('Direction generation failed:', e);
         return [];
