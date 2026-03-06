@@ -2,6 +2,9 @@
    Gemini API - Google Generative AI client for walk generation
    ═══════════════════════════════════════════════════════ */
 
+import { fetchAreaOSMData } from './overpass.js';
+import { getStaticMapImageBase64 } from './map-snapshot.js';
+
 const PROXY_ENDPOINT = '/api/gemini';
 const DIRECT_ENDPOINT = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent';
 
@@ -117,6 +120,34 @@ function extractTextFromResponse(data) {
  * Generate a walk from a natural language description using Gemini + Google Search
  */
 export async function generateWalkFromPrompt(userPrompt) {
+    // 1. Quick LLM call to extract the 'area'
+    const extractAreaBody = {
+        contents: [{ role: 'user', parts: [{ text: `Extract the main Lake District area/location from this walk request: "${userPrompt}". Return ONLY the area name (e.g. "Grasmere", "Ambleside"). If none, return "Lake District".` }] }],
+        generationConfig: { temperature: 0.1, maxOutputTokens: 20 }
+    };
+    
+    let areaName = "Lake District";
+    try {
+        const areaData = await callGemini(extractAreaBody);
+        const areaText = extractTextFromResponse(areaData);
+        if (areaText) areaName = areaText.trim().replace(/["']/g, '');
+    } catch (e) {
+        console.warn("Could not extract area, defaulting to Lake District", e);
+    }
+    
+    // 2. Fetch OSM data and Map Snapshot if we have a specific area
+    let osmData = null;
+    let base64Map = null;
+    
+    if (areaName && areaName.toLowerCase() !== "lake district") {
+        try {
+            osmData = await fetchAreaOSMData(areaName);
+            base64Map = await getStaticMapImageBase64(osmData.bbox);
+        } catch (e) {
+            console.warn("Vision pipeline failed, falling back to old prompt", e);
+        }
+    }
+
     const systemPrompt = `You are an expert Lake District walking guide and route planner. Given a user's description of their ideal walk, you generate a detailed walk specification with PRECISE route waypoints in JSON format.
 
 You must return ONLY valid JSON (no markdown, no explanation) with this exact structure:
@@ -160,8 +191,8 @@ CRITICAL RULES FOR ROUTING:
   - NEVER put waypoints on lake surfaces, over water, or on cliff faces. Waypoints MUST be on known pedestrian paths and solid ground ONLY.
   - FOR LAKESIDE WALKS: LLMs are bad at estimating shoreline coordinates and will accidentally put points in the water. DO NOT attempt to densely plot coordinates around a lake. Instead, provide only 1 or 2 established landmarks ON SOLID GROUND (e.g. a known cafe, village, or fell base), and the routing engine will automatically trace the lakeside path between them safely.
   - They define the route shape - ORS will route between them on real paths.
-  - For circular: the walk goes CarPark → wp1 → wp2 → wp3 → wp4 → CarPark
-  - For linear: the walk goes CarPark → wp1 → wp2 → wp3 → EndPoint
+  - For circular: the walk goes CarPark -> wp1 -> wp2 -> wp3 -> wp4 -> CarPark
+  - For linear: the walk goes CarPark -> wp1 -> wp2 -> wp3 -> EndPoint
 - For circular walks: endLat/endLon = lat/lon (returns to car park)
 - For linear walks: endLat/endLon is the finishing point
 - Use ACTUAL place names, car parks, paths, landmarks that REALLY EXIST
@@ -169,11 +200,30 @@ CRITICAL RULES FOR ROUTING:
 - parkingDetail should include real postcodes where possible
 - Think like a mountain rescue volunteer: if a route looks dangerous on the ground, don't recommend it`;
 
+    let parts = [{ text: systemPrompt + '\n\nUser request: ' + userPrompt }];
+
+    if (osmData && base64Map) {
+        const visionInstructions = `\n\nVISION PIPELINE DATA:
+You have been provided with an image of a map for the area "${areaName}", showing the terrain and paths.
+Additionally, here is data from OpenStreetMap for this area:
+${osmData.textData}
+
+INSTRUCTIONS FOR MAP DATA:
+- ONLY use the car parks listed above for the 'start' location. Ensure the coordinates match exactly.
+- ONLY route the walk along the paths visible in the image and listed in the named paths.
+- Ensure loopWaypoints align with visible solid ground paths on the map provided.`;
+
+        parts[0].text += visionInstructions;
+        parts.push({
+            inline_data: { mime_type: "image/jpeg", data: base64Map }
+        });
+    }
+
     const requestBody = {
         contents: [
             {
                 role: 'user',
-                parts: [{ text: systemPrompt + '\n\nUser request: ' + userPrompt }]
+                parts: parts
             }
         ],
         generationConfig: {
