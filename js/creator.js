@@ -95,6 +95,23 @@ function clearPins() {
     if (status) status.remove();
 }
 
+// Debounce utility
+default function debounce(func, wait = 250) {
+    let timeout;
+    return function(...args) {
+        clearTimeout(timeout);
+        timeout = setTimeout(() => func.apply(this, args), wait);
+    };
+}
+
+// Wrap generateRoute with debounce
+const debouncedGenerateRoute = debounce(generateRoute, 500);
+
+// Rebind generate button to debounced version
+document.getElementById('btn-generate').removeEventListener('click', generateRoute);
+document.getElementById('btn-generate').addEventListener('click', debouncedGenerateRoute);
+
+
 /**
  * Generate walking route through all placed waypoints
  */

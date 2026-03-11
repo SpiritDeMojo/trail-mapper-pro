@@ -39,19 +39,43 @@ export function initSettings() {
     document.getElementById('btn-export-all').addEventListener('click', exportAll);
 }
 
-function saveSettings() {
+async function saveSettings() {
     const orsKey = document.getElementById('settings-ors-key').value.trim();
     const geminiKey = document.getElementById('settings-gemini-key').value.trim();
     const googleMapsKey = document.getElementById('settings-google-maps-key')?.value.trim();
 
-    if (orsKey) setORSKey(orsKey);
-    if (geminiKey) setGeminiKey(geminiKey);
-    if (googleMapsKey) setGoogleMapsKey(googleMapsKey);
-
     const btn = document.getElementById('btn-save-settings');
-    btn.textContent = '✅ Saved!';
-    setTimeout(() => { btn.textContent = '💾 Save Settings'; }, 2000);
+    btn.disabled = true;
+    btn.textContent = 'Saving...';
+
+    try {
+        if (orsKey) await testAPIKey(orsKey, 'ORS');
+        if (geminiKey) await testAPIKey(geminiKey, 'Gemini');
+        if (googleMapsKey) await testAPIKey(googleMapsKey, 'Google Maps');
+
+        if (orsKey) setORSKey(orsKey);
+        if (geminiKey) setGeminiKey(geminiKey);
+        if (googleMapsKey) setGoogleMapsKey(googleMapsKey);
+
+        btn.textContent = '✅ Saved!';
+    } catch (err) {
+        btn.textContent = `❌ Error: ${err.message}`;
+    } finally {
+        btn.disabled = false;
+        setTimeout(() => { btn.textContent = '💾 Save Settings'; }, 3000);
+    }
 }
+
+async function testAPIKey(key, service) {
+    // Dummy test to simulate API key validation
+    // TODO: Replace with actual API calls for real validation
+    if (key.length < 10) {
+        throw new Error(`${service} API key seems invalid.`);
+    }
+    // Simulate success
+    return true;
+}
+
 
 /**
  * Haversine distance between two points in meters
