@@ -1,3 +1,5 @@
+import { rateLimit } from './rateLimiter.js';
+
 export default async function handler(req, res) {
     // Restrict CORS - only allow same-origin or localhost for dev
     const origin = req.headers.origin || '';
@@ -39,6 +41,13 @@ export default async function handler(req, res) {
         return res.status(400).json({ error: 'Payload too large' });
     }
 
+    // Rate limiting key on IP address
+    const ip = req.headers['x-forwarded-for'] || req.socket.remoteAddress || 'unknown';
+    const limitResult = await rateLimit(ip, 10, 60000); // 10 requests per 60 seconds
+    if (!limitResult.allowed) {
+        return res.status(429).json({ error: 'Too many requests' });
+    }
+
     const GEMINI_KEY = process.env.GEMINI_API_KEY;
     if (!GEMINI_KEY) return res.status(500).json({ error: 'Gemini API key not configured' });
 
@@ -59,3 +68,4 @@ export default async function handler(req, res) {
         return res.status(500).json({ error: err.message });
     }
 }
+

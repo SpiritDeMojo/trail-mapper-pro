@@ -1,3 +1,5 @@
+import { rateLimit } from './rateLimiter.js';
+
 export default async function handler(req, res) {
     // Restrict CORS - only allow same-origin or localhost for dev
     const origin = req.headers.origin || '';
@@ -36,6 +38,13 @@ export default async function handler(req, res) {
         elevation: !!elevation,
         options: options || undefined
     };
+
+    // Rate limiting key on IP address
+    const ip = req.headers['x-forwarded-for'] || req.socket.remoteAddress || 'unknown';
+    const limitResult = await rateLimit(ip, 10, 60000); // 10 req/min
+    if (!limitResult.allowed) {
+        return res.status(429).json({ error: 'Too many requests' });
+    }
 
     const ORS_KEY = process.env.ORS_API_KEY;
     if (!ORS_KEY) return res.status(500).json({ error: 'ORS API key not configured' });
