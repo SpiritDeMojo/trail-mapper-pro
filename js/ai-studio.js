@@ -145,6 +145,7 @@ async function aiGenerate() {
         }
 
         // Step 3: Generate directions if AI didn't provide good ones
+        // Moved this after snapping route to map to sync directions with snapped route
         if (!walk.directions || walk.directions.length < 3) {
             statusEl.innerHTML = '<span class="spinner"></span> Step 3/3: AI generating step-by-step directions...';
             const dirs = await generateDirections(walk.name, generatedWaypoints, walk.start || 'Car Park', walk.difficulty);

@@ -78,7 +78,7 @@ export async function fetchHikingRoute(startLat, startLon, endLat, endLon, viaPo
 
     const data = await callORS({
         coordinates,
-        radiuses: coordinates.map(() => 500),
+        radiuses: coordinates.map(() => 800),
         options: { avoid_features: ['ferries', 'fords'], profile_params: { weightings: { steepness_difficulty: 2 } } },
         preference: 'recommended',
         instructions: true,
@@ -110,7 +110,7 @@ export async function fetchCircularRoute(startLat, startLon, destLat, destLon) {
 
     const data = await callORS({
         coordinates,
-        radiuses: coordinates.map(() => 500),
+        radiuses: coordinates.map(() => 800),
         options: { avoid_features: ['ferries', 'fords'], profile_params: { weightings: { steepness_difficulty: 2 } } },
         preference: 'recommended',
         instructions: true,
@@ -144,7 +144,7 @@ export async function fetchMultiWaypointRoute(waypointArray) {
 
     const data = await callORS({
         coordinates,
-        radiuses: coordinates.map(() => 500),
+        radiuses: coordinates.map(() => 800),
         options: { avoid_features: ['ferries', 'fords'], profile_params: { weightings: { steepness_difficulty: 2 } } },
         preference: 'recommended',
         instructions: true,
